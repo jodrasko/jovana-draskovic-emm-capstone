@@ -1,0 +1,20 @@
+[
+  {
+    "physicianId": "1",
+    "name": "Dr. Rube Seabrook",
+    "phone": "6048186200",
+    "specialty": "General Surgeon"
+  },
+  {
+    "physicianId": "2",
+    "name": "Dr. Denzel Windsor",
+    "phone": "6047126205",
+    "specialty": "Family Doctor/G.P."
+  },
+  {
+    "physicianId": "3",
+    "name": "Dr. Rosalind Wood",
+    "phone": "6041003456",
+    "specialty": "Chiropractor"
+  }
+]

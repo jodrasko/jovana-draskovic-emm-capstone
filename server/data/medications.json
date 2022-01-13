@@ -1,0 +1,26 @@
+[
+  {
+    "medicationId": "21",
+    "profileId": "10",
+    "physicianId": "1",
+    "dosage": "500 mg orally 3 times a day for 14 to 28 days",
+    "name": "Amoxicillin",
+    "refillExpireDate": 1626359541000
+  },
+  {
+    "medicationId": "22",
+    "profileId": "11",
+    "physicianId": "2",
+    "dosage": "200 mg orally every 4 hours as needed",
+    "name": "Ibuprofen",
+    "refillExpireDate": 1625238122000
+  },
+  {
+    "medicationId": "23",
+    "profileId": "12",
+    "physicianId": "3",
+    "dosage": "5 mg orally 1 or 2 times a day",
+    "name": "Amphetamine",
+    "refillExpireDate": 1620983771000
+  }
+]
