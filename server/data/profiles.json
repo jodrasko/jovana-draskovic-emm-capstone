@@ -52,5 +52,18 @@
       "name": "Pharmasave",
       "phone": "6046697700"
     }
+  },
+  {
+    "id": "9cf8e17d-9c2c-4277-a4c9-ddaaeb5e49a9",
+    "title": "Cute Poodle Puppies",
+    "channel": "Unknown",
+    "image": "blue-image-placeholder.jpg",
+    "description": "Cute poodle puppies playing in a park",
+    "views": "100",
+    "likes": "50",
+    "duration": "2:05",
+    "video": "https://project-2-api.herokuapp.com/stream",
+    "timestamp": 1642142629133,
+    "comments": []
   }
 ]

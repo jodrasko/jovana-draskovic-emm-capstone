@@ -3,7 +3,10 @@ const app = express();
 const port = process.env.PORT || 8080;
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-const profilesRouter = require("./routes/profiles");
+const profilesRoutes = require("./routes/profiles");
+const physiciansRoutes = require("./routes/physicians");
+const medicationsRoutes = require("./routes/medications");
+const notesRoutes = require("./routes/notes");
 
 //const fn = require("./functions.js");
 require("dotenv").config();
@@ -85,12 +88,15 @@ app.post("/login", (req, res) => {
 // The authorize middleware function must check for
 // a token, verify that the token is valid, decode
 // the token and put the decoded data onto req.decoded
-app.get("/profile", authorize, (req, res) => {
+app.get("/new-profile", authorize, (req, res) => {
   console.log("req.decoded=", req.decoded);
   res.json(req.decoded);
 });
 
-app.use("/profile", profilesRouter);
+app.use("/profile", profilesRoutes);
+app.use("/physician", physiciansRoutes);
+app.use("/medication", medicationsRoutes);
+app.use("/note", notesRoutes);
 
 app.listen(port, () => {
   console.log(`Listening on ${port}`);

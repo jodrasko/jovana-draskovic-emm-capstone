@@ -1,6 +1,6 @@
 [
   {
-    "notesId": "44",
+    "noteId": "44",
     "physicianId": "1",
     "profileId": "10",
     "remark": {
@@ -10,7 +10,7 @@
     "date": 1625238122000
   },
   {
-    "notesId": "45",
+    "noteId": "45",
     "physicianId": "2",
     "profileId": "10",
     "remark": {
@@ -20,7 +20,7 @@
     "date": 1631273521000
   },
   {
-    "notesId": "46",
+    "noteId": "46",
     "physicianId": "3",
     "profileId": "12",
     "remark": {
