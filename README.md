@@ -1,10 +1,10 @@
-# BrainFlix App
+# eMM (electronicMedicalManagement)
 
 ## Instructions
 
-BrainFlix App is a new video streaming platform that provides you with the opportunity to upload original content as well.
+eMM is a full stack web application for users to store information about medication/physician/consult notes and have quick access to their personal medical history.
 
-## Getting Started with BrainFlix App
+## Getting Started with eMM
 
 Set up a environment file for the client and the server.
 
@@ -44,4 +44,4 @@ To start client run:
 
 ### `npm start`
 
-A browser tab will open [http://localhost:3000](http://localhost:3000) with the BrainFlix App running.
+A browser tab will open [http://localhost:3000](http://localhost:3000) with the eMM web application running.
