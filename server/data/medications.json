@@ -16,11 +16,11 @@
     "refillExpireDate": 1625238122000
   },
   {
-    "medicationId": "23",
-    "profileId": "12",
-    "physicianId": "3",
-    "dosage": "5 mg orally 1 or 2 times a day",
-    "name": "Amphetamine",
-    "refillExpireDate": 1620983771000
+    "medicationId": "250c9b08-13ca-438a-956e-e93805e7668a",
+    "physicianId": "1",
+    "profileId": "10",
+    "name": "Levothyroxine",
+    "dosage": "100 mg orally 3 times a day for 10 to 12 days",
+    "refillExpireDate": 1626359541000
   }
 ]

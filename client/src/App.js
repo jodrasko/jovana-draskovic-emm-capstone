@@ -12,7 +12,7 @@ class App extends Component {
     isSignedUp: false,
     isLoggedIn: false,
     isLoginError: false,
-    errorMessage: "",
+    errorMessage: ""
   };
 
   login = (e) => {
@@ -21,13 +21,13 @@ class App extends Component {
     axios
       .post(loginUrl, {
         username: e.target.username.value,
-        password: e.target.password.value,
+        password: e.target.password.value
       })
       .then((response) => {
         console.log(response);
         sessionStorage.setItem("token", response.data.token);
         this.setState({
-          isLoggedIn: true,
+          isLoggedIn: true
         });
       })
       .catch((err) => {
@@ -40,14 +40,14 @@ class App extends Component {
     e.preventDefault();
     axios
       .post(signupUrl, {
-        name: e.target.name.value,
+        preferredName: e.target.name.value,
         username: e.target.username.value,
-        password: e.target.password.value,
+        password: e.target.password.value
       })
       .then((response) => {
         console.log(response);
         this.setState({
-          isSignedUp: true,
+          isSignedUp: true
         });
       })
       .catch((err) => console.log(err));

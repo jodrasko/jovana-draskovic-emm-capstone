@@ -28,7 +28,11 @@ class Profile extends Component {
   }
   render() {
     const { isLoading, userInfo } = this.state;
-    return isLoading ? <h1>Loading...</h1> : <h1>Welcome {userInfo.name}!</h1>;
+    return isLoading ? (
+      <h1>Loading...</h1>
+    ) : (
+      <h1>Welcome {userInfo.preferredName}!</h1>
+    );
   }
 }
 
