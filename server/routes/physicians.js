@@ -91,9 +91,7 @@ physiciansRouter.put("/:physicianId", (req, res) => {
   physiciansData.splice(index, 1, updatedPhysician);
   writeData(physiciansData);
 
-  res
-    .status(200)
-    .json({ message: "Successfully Updated Physician Information" });
+  res.status(200).json(updatedPhysician);
 });
 
 // delete physician information

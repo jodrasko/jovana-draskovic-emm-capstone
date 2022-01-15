@@ -113,9 +113,7 @@ medicationsRouter.put("/:medicationId", (req, res) => {
   medicationsData.splice(index, 1, updatedMedication);
   writeData(medicationsData);
 
-  res
-    .status(200)
-    .json({ message: "Successfully Updated Medication Information" });
+  res.status(200).json(updatedMedication);
 });
 
 // delete medication information
