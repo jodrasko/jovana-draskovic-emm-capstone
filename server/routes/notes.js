@@ -15,10 +15,6 @@ const writeFile = (notesData) => {
 notesRouter.get("/", (req, res) => {
   const notesData = readData();
 
-  //   let newnotesData = notesData.map((note) => {
-  //     const { id, title, channel, image } = note;
-  //     return { id, title, channel, image };
-  //   });
   res.status(200).json(notesData);
 });
 
