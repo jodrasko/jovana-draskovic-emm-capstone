@@ -1,0 +1,33 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.page-container {
+  display: flex;
+}
+
+.card-container {
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  border-radius: 3px;
+  margin: 0;
+
+  // position: absolute;
+  // left: 4.27%;
+  // right: 4.27%;
+  // top: 14.25%;
+
+  background: $white;
+
+  @include tablet {
+    left: 4.27%;
+    right: 4.27%;
+    top: 10.25%;
+  }
+
+  @include desktop {
+    left: 4.27%;
+    right: 4.27%;
+    top: 10.25%;
+  }
+}

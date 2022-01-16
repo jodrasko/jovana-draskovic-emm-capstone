@@ -85,6 +85,7 @@ app.post("/signup", (req, res) => {
     preferredName,
     password // library like bcrypt to Hash the password. For demo purposes only.
   };
+  // TODO: VALIDATE THAT USERNAME IS UNIQUE. IF NOT DISPLAY ERROR
 
   profilesData.push(profile); // adding to the array of profiles.
   writeFile(profilesData); // save new data
@@ -110,7 +111,7 @@ app.post("/login", (req, res) => {
       jsonSecretKey
     );
     console.log("B token=", token);
-    res.json({ token });
+    res.json({ token, profileId: user.profileId });
   } else {
     res.json({
       token: "",

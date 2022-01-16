@@ -1,113 +1,37 @@
-import React, { Component } from "react";
-import Profile from "./pages/Profile";
+import { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
-import axios from "axios";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import SignupPage from "./pages/SignupPage/SignupPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import EditProfile from "./components/EditProfile/EditProfile";
+import PhysicianList from "./pages/PhysicianList/PhysicianList";
+import MedicationList from "./pages/MedicationList/MedicationList";
+import NoteList from "./pages/NoteList/NoteList";
 
-const baseUrl = "http://localhost:8080";
-const loginUrl = `${baseUrl}/login`;
-const signupUrl = `${baseUrl}/signup`;
-
+// BrainFlix Application
 class App extends Component {
-  state = {
-    isSignedUp: false,
-    isLoggedIn: false,
-    isLoginError: false,
-    errorMessage: ""
-  };
-
-  login = (e) => {
-    e.preventDefault();
-    console.log(e);
-    axios
-      .post(loginUrl, {
-        username: e.target.username.value,
-        password: e.target.password.value
-      })
-      .then((response) => {
-        console.log(response);
-        sessionStorage.setItem("token", response.data.token);
-        this.setState({
-          isLoggedIn: true
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-        this.setState({ isLoginError: true, errorMessage: err });
-      });
-  };
-
-  signup = (e) => {
-    e.preventDefault();
-    axios
-      .post(signupUrl, {
-        preferredName: e.target.name.value,
-        username: e.target.username.value,
-        password: e.target.password.value
-      })
-      .then((response) => {
-        console.log(response);
-        this.setState({
-          isSignedUp: true
-        });
-      })
-      .catch((err) => console.log(err));
-  };
-
-  renderSignUp() {
-    return (
-      <div>
-        <h1>SignUp</h1>
-        <form ref={(form) => (this.signUpForm = form)} onSubmit={this.signup}>
-          <div className="form-group">
-            Username: <input type="text" name="username" />
-          </div>
-          <div className="form-group">
-            Name: <input type="text" name="name" />
-          </div>
-          <div className="form-group">
-            Password:{" "}
-            <input type="password" name="password" autoComplete="true" />
-          </div>
-          <button className="btn btn-primary" type="submit">
-            Signup
-          </button>
-        </form>
-      </div>
-    );
-  }
-
-  renderLogin = () => {
-    const { isLoginError, errorMessage } = this.state;
-    return (
-      <div>
-        <h1>Login</h1>
-        {isLoginError && <label style={{ color: "red" }}>{errorMessage}</label>}
-        <form ref={(form) => (this.loginForm = form)} onSubmit={this.login}>
-          <div className="form-group">
-            Username: <input type="text" name="username" />
-          </div>
-          <div className="form-group">
-            Password: <input type="password" name="password" />
-          </div>
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
-        </form>
-      </div>
-    );
-  };
-
   render() {
-    const { isLoggedIn, isSignedUp } = this.state;
-
-    // Handle the Signup/Login
-    if (!isSignedUp) return this.renderSignUp();
-    if (!isLoggedIn) return this.renderLogin();
-
     return (
-      <div className="App">
-        <Profile />
-      </div>
+      <>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" exact={true} component={LoginPage} />
+            <Route path="/signup" component={SignupPage} />
+            <Route path="/profile" component={ProfilePage} />
+            <Route path="/edit-profile" component={EditProfile} />\
+            <Route path="/physicians" component={PhysicianList} />
+            <Route path="/medications" component={MedicationList} />
+            <Route path="/notes" component={NoteList} />
+            {/* <Route
+              path="/videos/:videoId"
+              render={(routerProps) => {
+                return <MainPage {...routerProps} />;
+              }} */}
+            {/* /> */}
+          </Switch>
+        </BrowserRouter>
+      </>
     );
   }
 }

@@ -3,25 +3,6 @@ const { v4: uuid } = require("uuid");
 const fs = require("fs");
 const profilesRouter = Router();
 
-// {
-//   "profileId": "11",
-//   "username": "c@d.com",
-//   "password": "456",
-//   "preferredName": "John",
-//   "familyDoctor": {
-//     "name": "Dr. Douglas Choo",
-//     "phone": "6045732565"
-//   },
-//   "emergencyContact": {
-//     "name": "Ana Hudson",
-//     "phone": "6041235566"
-//   },
-//   "pharmacyInfo": {
-//     "name": "Urban Fare",
-//     "phone": "6049757550"
-//   }
-// },
-
 const readData = () => {
   const profilesData = fs.readFileSync("./data/profiles.json");
   return JSON.parse(profilesData);
@@ -33,15 +14,47 @@ const writeData = (profilesData) => {
     JSON.stringify(profilesData, null, 2)
   );
 };
+// {
+//   "profileId": "10",
+//   "username": "a@b.com",
+//   "password": "123",
+//   "preferredName": "Arnold",
+//   "familyDoctor": {
+//     "name": "Dr. Isaiah Bregman",
+//     "phone": "6048732255"
+//   },
+//   "emergencyContact": {
+//     "name": "John Doe",
+//     "phone": "6041235555"
+//   },
+//   "pharmacyInfo": {
+//     "name": "Urban Fare",
+//     "phone": "6049757550"
+//   }
 
 profilesRouter.get("/", (req, res) => {
   const profilesData = readData();
 
-  // let newprofilesData = profilesData.map((profile) => {
-  //   // const { id, title, channel, image } = profile;
-  //   return profile;
-  // });
-  res.status(200).json(profilesData);
+  const newProfilesData = profilesData.map((profile) => {
+    const {
+      profileId,
+      username,
+      preferredName,
+      familyDoctor,
+      emergencyContact,
+      pharmacyInfo
+    } = profile;
+    const reducedProfile = {
+      profileId,
+      username,
+      preferredName,
+      familyDoctor,
+      emergencyContact,
+      pharmacyInfo
+    };
+    return reducedProfile;
+  });
+  res.status(200).json(newProfilesData);
 });
 
 profilesRouter.get("/:profileId", (req, res) => {
@@ -55,16 +68,27 @@ profilesRouter.get("/:profileId", (req, res) => {
     return res.status(404).send("The profile is not found");
   }
 
-  res.status(200).json(profile);
+  const {
+    profileId,
+    username,
+    preferredName,
+    familyDoctor,
+    emergencyContact,
+    pharmacyInfo
+  } = profile;
+
+  const reducedProfile = {
+    profileId,
+    username,
+    preferredName,
+    familyDoctor,
+    emergencyContact,
+    pharmacyInfo
+  };
+
+  res.status(200).json(reducedProfile);
 });
 
-// we can use PUT method here - Replace ALL current representations of the      | 4.3.4 |
-// |         | target resource with the request payload.
-//
-// POST    | Perform resource-specific processing on the     | 4.3.3 |
-//    |         | request payload.
-// Create or replace the state of the target resource with the state defined by the representation enclosed in the request.
-// https://en.wikipedia.org/wiki/Representational_state_transfer#Semantics_of_HTTP_methods
 const profileValidation = (req, res, next) => {
   if (
     !req.body.familyDoctor ||
@@ -83,7 +107,7 @@ const profileValidation = (req, res, next) => {
 
 profilesRouter.put("/:profileId", profileValidation, (req, res) => {
   const profilesData = readData();
-
+  console.log("req body=", req.body);
   const index = profilesData.findIndex(
     (profile) => profile.profileId === req.params.profileId
   );
@@ -123,23 +147,6 @@ profilesRouter.put("/:profileId", profileValidation, (req, res) => {
 
   res.status(200).json(updatedProfile);
 });
-
-//"profileId": "11",
-//   "username": "c@d.com",
-//   "password": "456",
-//   "preferredName": "John",
-//   "familyDoctor": {
-//     "name": "Dr. Douglas Choo",
-//     "phone": "6045732565"
-//   },
-//   "emergencyContact": {
-//     "name": "Ana Hudson",
-//     "phone": "6041235566"
-//   },
-//   "pharmacyInfo": {
-//     "name": "Urban Fare",
-//     "phone": "6049757550"
-//   }
 
 const videoValidation = (req, res, next) => {
   if (!req.body.title || !req.body.description) {
