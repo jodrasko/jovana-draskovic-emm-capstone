@@ -1,17 +1,22 @@
 import axios from "axios";
 import { Component } from "react";
 import { Link } from "react-router-dom";
-import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
-
+import "./ProfilePage.scss";
+// import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import Sidebar from "../../components/Sidebar/Sidebar";
 const baseUrl = "http://localhost:8080";
 //const profileUrl = `${baseUrl}/new-profile`;
 //const profileUrl = `${baseUrl}/profile/${profileId}`;
 
-class Profile extends Component {
-  state = {
-    isLoading: true,
-    profile: {}
-  };
+class ProfilePage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      profile: {}
+    };
+  }
+
   componentDidMount() {
     // here grab token from sessionStorage
     const token = sessionStorage.getItem("token");
@@ -30,53 +35,49 @@ class Profile extends Component {
       })
       .catch((err) => console.log(err));
   }
-  // [
-  //   {
-  //     "profileId": "10",
-  //     "username": "a@b.com",
-  //     "password": "123",
-  //     "preferredName": "Arnold",
-  //     "familyDoctor": {
-  //       "name": "Dr. Isaiah Bregman",
-  //       "phone": "6048732255"
-  //     },
-  //     "emergencyContact": {
-  //       "name": "John Doe",
-  //       "phone": "6041235555"
-  //     },
-  //     "pharmacyInfo": {
-  //       "name": "Urban Fare",
-  //       "phone": "6049757550"
-  //     }
+
   render() {
+    console.log("render");
+
     const { isLoading, profile } = this.state;
+
+    //<label style={{ color: "red" }}>{errorMessage}</label>
     return isLoading ? (
       <h1>Loading...</h1>
     ) : (
-      <SidebarAndCard>
-        <h1>Welcome {profile.preferredName}!</h1>
-
-        <div>
-          <h2>Family Doctor:</h2>
-          <h3>G.P. Name:</h3> <span>{profile.familyDoctor.name}</span>
-          <h3>Phone Number:</h3>
-          <span>{profile.familyDoctor.phone}</span>
-        </div>
-        <div>
-          <h2>Emergency Contact:</h2>
-          <h3>Name:</h3> <span>{profile.emergencyContact.name}</span>
-          <h3>Phone Number:</h3> <span>{profile.emergencyContact.phone}</span>
-        </div>
-        <div>
-          <h2>Pharmacy Information:</h2>
-          <h3>Name:</h3> <span>{profile.pharmacyInfo.name}</span>
-          <h3>Phone Number:</h3> <span>{profile.pharmacyInfo.phone}</span>
+      <div className="container">
+        <div className="left-box">
+          <Sidebar />
         </div>
 
-        <Link to="/edit-profile">Edit</Link>
-      </SidebarAndCard>
+        <div className="right-box">
+          <button type="button" onClick={this.hideContent}>
+            Back
+          </button>
+          <h1>{profile.preferredName}'s Profile</h1>
+
+          <div>
+            <h2>Family Doctor:</h2>
+            <h3>G.P. Name:</h3> <span>{profile.familyDoctor.name}</span>
+            <h3>Phone Number:</h3>
+            <span>{profile.familyDoctor.phone}</span>
+          </div>
+          <div>
+            <h2>Emergency Contact:</h2>
+            <h3>Name:</h3> <span>{profile.emergencyContact.name}</span>
+            <h3>Phone Number:</h3> <span>{profile.emergencyContact.phone}</span>
+          </div>
+          <div>
+            <h2>Pharmacy Information:</h2>
+            <h3>Name:</h3> <span>{profile.pharmacyInfo.name}</span>
+            <h3>Phone Number:</h3> <span>{profile.pharmacyInfo.phone}</span>
+          </div>
+
+          <Link to="/edit-profile">Edit</Link>
+        </div>
+      </div>
     );
   }
 }
 
-export default Profile;
+export default ProfilePage;

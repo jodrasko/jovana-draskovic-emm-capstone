@@ -1,0 +1,32 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    flex-direction: row;
+  }
+}
+
+.left-box {
+  @include tablet {
+  }
+
+  @include desktop {
+  }
+}
+
+.right-box {
+  @include tablet {
+  }
+
+  @include desktop {
+  }
+}

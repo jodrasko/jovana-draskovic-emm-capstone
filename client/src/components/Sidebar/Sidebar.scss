@@ -3,6 +3,41 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/colors" as *;
 
-.sidebar-list {
-  display: flex;
+li {
+  a:link,
+  a:visited,
+  a:active,
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+.sidebar-box {
+  background-color: lightgreen;
+  width: 100%;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    //justify-content: space-between;
+    //align-content: center;
+    list-style-type: none;
+    //height: 24px;
+    text-align: center;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    @include desktop {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    margin: 2rem;
+  }
+}
+.no-underline {
+  text-decoration: none;
 }

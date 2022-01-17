@@ -1,0 +1,17 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.main-list {
+  display: flex;
+  width: 100%;
+  height: 60rem;
+  z-index: 100;
+  overflow: hidden;
+  //   background-color: red;
+  //   padding: 1.2rem;
+  //   max-width: 750px;
+  position: relative;
+  //   min-height: 250px;
+}

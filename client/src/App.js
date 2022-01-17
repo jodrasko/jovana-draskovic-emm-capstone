@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
@@ -8,6 +8,8 @@ import EditProfile from "./components/EditProfile/EditProfile";
 import PhysicianList from "./pages/PhysicianList/PhysicianList";
 import MedicationList from "./pages/MedicationList/MedicationList";
 import NoteList from "./pages/NoteList/NoteList";
+
+import MainList from "./pages/MainList/MainList";
 
 // BrainFlix Application
 class App extends Component {
@@ -23,6 +25,7 @@ class App extends Component {
             <Route path="/physicians" component={PhysicianList} />
             <Route path="/medications" component={MedicationList} />
             <Route path="/notes" component={NoteList} />
+            <Route path="/main-list" component={MainList} />
             {/* <Route
               path="/videos/:videoId"
               render={(routerProps) => {
