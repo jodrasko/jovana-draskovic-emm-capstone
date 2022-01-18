@@ -6,6 +6,7 @@ import SignupPage from "./pages/SignupPage/SignupPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfile from "./components/EditProfile/EditProfile";
 import PhysicianList from "./pages/PhysicianList/PhysicianList";
+import EditPhysician from "./components/EditPhysician/EditPhysician";
 import MedicationList from "./pages/MedicationList/MedicationList";
 import NoteList from "./pages/NoteList/NoteList";
 
@@ -23,6 +24,11 @@ class App extends Component {
             <Route path="/profile" component={ProfilePage} />
             <Route path="/edit-profile" component={EditProfile} />\
             <Route path="/physicians" component={PhysicianList} />
+            <Route
+              path="/edit-physician/:physicianId"
+              component={EditPhysician}
+            />
+            <Route path="/add-physician" component={EditPhysician} />
             <Route path="/medications" component={MedicationList} />
             <Route path="/notes" component={NoteList} />
             <Route path="/main-list" component={MainList} />
