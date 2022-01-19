@@ -4,12 +4,6 @@ import { Link } from "react-router-dom";
 import "./Sidebar.scss";
 import MenuIcon from "../../assets/images/Icons/menu_black_24dp.svg";
 
-// import { Redirect } from "react-router";
-// import "./LoginPage.scss";
-
-// const baseUrl = "http://localhost:8080";
-// const signupUrl = `${baseUrl}/signup`;
-
 class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -20,14 +14,10 @@ class Sidebar extends Component {
     this.toggleHide = this.toggleHide.bind(this);
   }
 
-  // TODO: ADD TOGGLE EFFECT - collapse and uncollapse
   handleClick = (e) => {
     e.preventDefault();
     console.log("handleClick");
     this.toggleHide();
-    // this.setState({
-    //   expand: true //show
-    // });
   };
 
   toggleHide() {

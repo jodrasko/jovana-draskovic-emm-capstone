@@ -3,24 +3,17 @@ import { Component } from "react";
 import { Redirect } from "react-router";
 
 class EditProfile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      isSavedProfile: false,
+  state = {
+    isLoading: true,
+    isSavedProfile: false,
 
-      familyDoctorName: "",
-      familyDoctorPhone: "",
-      emergencyContactName: "",
-      emergencyContactPhone: "",
-      pharmacyInfoName: "",
-      pharmacyInfoPhone: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClickCancel = this.handleClickCancel.bind(this);
-  }
+    familyDoctorName: "",
+    familyDoctorPhone: "",
+    emergencyContactName: "",
+    emergencyContactPhone: "",
+    pharmacyInfoName: "",
+    pharmacyInfoPhone: ""
+  };
 
   handleClickCancel = (e) => {
     e.preventDefault();

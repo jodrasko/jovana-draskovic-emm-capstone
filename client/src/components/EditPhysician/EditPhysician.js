@@ -4,22 +4,15 @@ import { Redirect } from "react-router";
 import "../EditPhysician/EditPhysician.scss";
 
 class EditPhysician extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      isSavedPhysician: false,
-      isAdd: false,
+  state = {
+    isLoading: true,
+    isSavedPhysician: false,
+    isAdd: false,
 
-      name: "",
-      phone: "",
-      specialty: ""
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClickCancel = this.handleClickCancel.bind(this);
-  }
+    name: "",
+    phone: "",
+    specialty: ""
+  };
 
   handleClickCancel = (e) => {
     e.preventDefault();
@@ -76,12 +69,6 @@ class EditPhysician extends Component {
     e.target.reset();
   };
 
-  // {
-  //   "physicianId": "1",
-  //   "name": "Dr. Andrew Seabrook",
-  //   "phone": "6041116201",
-  //   "specialty": "Endocrinology"
-  // }
   componentDidMount() {
     // here grab token from sessionStorage
     // const token = sessionStorage.getItem("token");

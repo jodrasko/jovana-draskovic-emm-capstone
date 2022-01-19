@@ -2,21 +2,14 @@ import axios from "axios";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import "./ProfilePage.scss";
-// import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 import Sidebar from "../../components/Sidebar/Sidebar";
 const baseUrl = "http://localhost:8080";
-//const profileUrl = `${baseUrl}/new-profile`;
-//const profileUrl = `${baseUrl}/profile/${profileId}`;
 
 class ProfilePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      profile: {}
-    };
-  }
-
+  state = {
+    isLoading: true,
+    profile: {}
+  };
   componentDidMount() {
     // here grab token from sessionStorage
     const token = sessionStorage.getItem("token");
@@ -41,7 +34,6 @@ class ProfilePage extends Component {
 
     const { isLoading, profile } = this.state;
 
-    //<label style={{ color: "red" }}>{errorMessage}</label>
     return isLoading ? (
       <h1>Loading...</h1>
     ) : (

@@ -3,23 +3,16 @@ import { Component } from "react";
 import PhysicianItem from "../../components/PhysicianItem/PhysicianItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import { Link } from "react-router-dom";
-// import { Redirect } from "react-router";
 import "../PhysicianList/PhysicianList.scss";
 
-// const baseUrl = "http://localhost:8080";
-// const signupUrl = `${baseUrl}/signup`;
-
 class PhysicianList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      physicians: [],
-      showModal: false,
-      physicianId: "",
-      physicianName: ""
-    };
-  }
+  state = {
+    isLoading: true,
+    physicians: [],
+    showModal: false,
+    physicianId: "",
+    physicianName: ""
+  };
   getAllPhysicians() {
     const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
@@ -59,7 +52,7 @@ class PhysicianList extends Component {
       .then((res) => {
         this.hideModal();
         this.getAllPhysicians();
-        this.hideModal();
+        // this.hideModal();
       })
       .catch((err) => console.log(err));
   };

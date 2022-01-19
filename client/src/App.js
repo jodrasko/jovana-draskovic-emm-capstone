@@ -8,6 +8,7 @@ import EditProfile from "./components/EditProfile/EditProfile";
 import PhysicianList from "./pages/PhysicianList/PhysicianList";
 import EditPhysician from "./components/EditPhysician/EditPhysician";
 import MedicationList from "./pages/MedicationList/MedicationList";
+import EditMedication from "./components/EditMedication/EditMedication";
 import NoteList from "./pages/NoteList/NoteList";
 
 import MainList from "./pages/MainList/MainList";
@@ -22,7 +23,7 @@ class App extends Component {
             <Route path="/" exact={true} component={LoginPage} />
             <Route path="/signup" component={SignupPage} />
             <Route path="/profile" component={ProfilePage} />
-            <Route path="/edit-profile" component={EditProfile} />\
+            <Route path="/edit-profile" component={EditProfile} />
             <Route path="/physicians" component={PhysicianList} />
             <Route
               path="/edit-physician/:physicianId"
@@ -30,6 +31,11 @@ class App extends Component {
             />
             <Route path="/add-physician" component={EditPhysician} />
             <Route path="/medications" component={MedicationList} />
+            <Route path="/add-medication" component={EditMedication} />
+            <Route
+              path="/edit-medication/:medicationId"
+              component={EditMedication}
+            />
             <Route path="/notes" component={NoteList} />
             <Route path="/main-list" component={MainList} />
             {/* <Route

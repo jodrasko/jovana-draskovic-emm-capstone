@@ -1,32 +1,11 @@
-// import axios from "axios";
 import { Component } from "react";
 import { Link } from "react-router-dom";
-// import { Redirect } from "react-router";
 import Card from "../Card/Card";
 import "../PhysicianItem/PhysicianItem.scss";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 
-// const baseUrl = "http://localhost:8080";
-// const signupUrl = `${baseUrl}/signup`;
-
 class PhysicianItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleClickCancel = this.handleClickCancel.bind(this);
-  }
-
-  // {
-  //   "physicianId": "1",
-  //   "name": "Dr. Andrew Seabrook",
-  //   "phone": "6041116201",
-  //   "specialty": "Endocrinology"
-  // }
-
   render() {
     console.log("physician=", this.props.physician);
     return (
