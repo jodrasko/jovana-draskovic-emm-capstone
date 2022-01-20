@@ -10,6 +10,7 @@ import EditPhysician from "./components/EditPhysician/EditPhysician";
 import MedicationList from "./pages/MedicationList/MedicationList";
 import EditMedication from "./components/EditMedication/EditMedication";
 import NoteList from "./pages/NoteList/NoteList";
+import EditNote from "./components/EditNote/EditNote";
 
 import MainList from "./pages/MainList/MainList";
 
@@ -37,7 +38,10 @@ class App extends Component {
               component={EditMedication}
             />
             <Route path="/notes" component={NoteList} />
+            <Route path="/add-note" component={EditNote} />
+            <Route path="/edit-note/:noteId" component={EditNote} />
             <Route path="/main-list" component={MainList} />
+
             {/* <Route
               path="/videos/:videoId"
               render={(routerProps) => {
