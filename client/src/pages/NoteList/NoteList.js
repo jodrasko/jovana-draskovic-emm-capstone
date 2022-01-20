@@ -5,26 +5,17 @@ import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import { Link } from "react-router-dom";
 import "../NoteList/NoteList.scss";
 
-// {
-//   "noteId": "44",
-//   "physicianId": "1",
-//   "profileId": "10",
-//   "remark": {
-//     "complaint": "Been having a headache the last week that will not go away.",
-//     "consult": "Doctor prescribed Advil."
-//   },
-//   "date": 1625238122000
-// },
-
 class NoteList extends Component {
   state = {
     isLoading: true,
     notes: [],
     showModal: false,
     noteId: "",
+    physicianName: "",
     physicianId: "",
     complaintRemark: "",
-    consultRemark: ""
+    consultRemark: "",
+    remark: null
   };
 
   getAllNotes() {
@@ -49,11 +40,12 @@ class NoteList extends Component {
     this.getAllNotes();
   }
 
-  showModal = (noteId, noteName) => {
+  showModal = (noteId, physicianName, remark) => {
     this.setState({
       showModal: true,
-      noteId
-      // noteName // this is an object
+      noteId,
+      physicianName,
+      remark
     });
   };
   hideModal = () => {
@@ -67,7 +59,6 @@ class NoteList extends Component {
       .then((res) => {
         this.hideModal();
         this.getAllNotes();
-        // this.hideModal();
       })
       .catch((err) => console.log(err));
   };
@@ -77,8 +68,9 @@ class NoteList extends Component {
       <>
         {this.state.showModal && (
           <DeleteModal
-            title={`Delete ${this.state.noteId} note?`}
-            message={`Please confirm that you'd like to delete ${this.state.noteId} from the list of notes. You won't be able to undo this action.`}
+            title={`Delete ${this.state.physicianName}'s note?`}
+            message={`Please confirm that you'd like to delete ${this.state.physicianName}'s note. You won't be able to undo this action.`}
+            remark={this.state.remark}
             onClose={this.hideModal}
             onDelete={this.deleteNote}
           />

@@ -16,6 +16,15 @@ const DeleteModal = (props) => {
         />
         <h1 className="modal__title">{props.title}</h1>
         <p className="modal__message">{props.message}</p>
+        {props.remark && (
+          <div>
+            <h3>Consult:</h3>
+            <p className="modal__message">{props.remark.consult}</p>
+            <h3>Complaint:</h3>
+            <p className="modal__message">{props.remark.complaint}</p>
+          </div>
+        )}
+
         <div className="modal__footer">
           <Button value="Cancel" type="secondary" onClick={props.onClose} />
           <Button value="Delete" type="delete" onClick={props.onDelete} />

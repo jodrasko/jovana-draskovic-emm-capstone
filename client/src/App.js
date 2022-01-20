@@ -14,7 +14,7 @@ import EditNote from "./components/EditNote/EditNote";
 
 import MainList from "./pages/MainList/MainList";
 
-// BrainFlix Application
+// eMM Application
 class App extends Component {
   render() {
     return (
@@ -41,13 +41,6 @@ class App extends Component {
             <Route path="/add-note" component={EditNote} />
             <Route path="/edit-note/:noteId" component={EditNote} />
             <Route path="/main-list" component={MainList} />
-
-            {/* <Route
-              path="/videos/:videoId"
-              render={(routerProps) => {
-                return <MainPage {...routerProps} />;
-              }} */}
-            {/* /> */}
           </Switch>
         </BrowserRouter>
       </>

@@ -7,17 +7,6 @@ import "../NoteItem/NoteItem.scss";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
 
-// {
-//   "noteId": "44",
-//   "physicianId": "1",
-//   "profileId": "10",
-//   "remark": {
-//     "complaint": "Been having a headache the last week that will not go away.",
-//     "consult": "Doctor prescribed Advil."
-//   },
-//   "date": 1625238122000
-// },
-
 class NoteItem extends Component {
   state = {
     physicianName: ""
@@ -37,8 +26,6 @@ class NoteItem extends Component {
         this.setState({
           isLoading: false,
           physicianName: response.data.name
-          // phone: response.data.phone,
-          // specialty: response.data.specialty
         });
       })
       .catch((err) => console.log(err));
@@ -69,7 +56,8 @@ class NoteItem extends Component {
             onClick={() =>
               this.props.onClick(
                 this.props.note.noteId,
-                this.state.physicianName
+                this.state.physicianName,
+                this.props.note.remark
               )
             }
           />
