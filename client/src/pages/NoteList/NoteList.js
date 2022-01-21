@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import NoteItem from "../../components/NoteItem/NoteItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
+import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 import { Link } from "react-router-dom";
 import "../NoteList/NoteList.scss";
 
@@ -27,9 +28,12 @@ class NoteList extends Component {
       .get(url)
       .then((response) => {
         console.log(response);
+        const filterNote = response.data.filter(
+          (note) => note.profileId === profileId
+        );
         this.setState({
           isLoading: false,
-          notes: response.data
+          notes: filterNote
         });
       })
       .catch((err) => console.log(err));
@@ -65,7 +69,7 @@ class NoteList extends Component {
 
   render() {
     return (
-      <>
+      <SidebarAndCard>
         {this.state.showModal && (
           <DeleteModal
             title={`Delete ${this.state.physicianName}'s note?`}
@@ -98,7 +102,7 @@ class NoteList extends Component {
             })}
           </ul>
         </section>
-      </>
+      </SidebarAndCard>
     );
   }
 }

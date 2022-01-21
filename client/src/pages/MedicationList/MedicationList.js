@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import MedicationItem from "../../components/MedicationItem/MedicationItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
+import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 import { Link } from "react-router-dom";
 import "../MedicationList/MedicationList.scss";
 
@@ -23,9 +24,12 @@ class MedicationList extends Component {
       .get(url)
       .then((response) => {
         console.log(response);
+        const filterMedication = response.data.filter(
+          (medication) => medication.profileId === profileId
+        );
         this.setState({
           isLoading: false,
-          medications: response.data
+          medications: filterMedication
         });
       })
       .catch((err) => console.log(err));
@@ -61,7 +65,7 @@ class MedicationList extends Component {
 
   render() {
     return (
-      <>
+      <SidebarAndCard>
         {this.state.showModal && (
           <DeleteModal
             title={`Delete ${this.state.medicationName} medication?`}
@@ -85,7 +89,7 @@ class MedicationList extends Component {
             })}
           </ul>
         </section>
-      </>
+      </SidebarAndCard>
     );
   }
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import PhysicianItem from "../../components/PhysicianItem/PhysicianItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
+import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 import { Link } from "react-router-dom";
 import "../PhysicianList/PhysicianList.scss";
 
@@ -59,7 +60,7 @@ class PhysicianList extends Component {
 
   render() {
     return (
-      <>
+      <SidebarAndCard>
         {this.state.showModal && (
           <DeleteModal
             title={`Delete ${this.state.physicianName} physician?`}
@@ -83,7 +84,7 @@ class PhysicianList extends Component {
             })}
           </ul>
         </section>
-      </>
+      </SidebarAndCard>
     );
   }
 }

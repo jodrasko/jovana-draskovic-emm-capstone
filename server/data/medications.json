@@ -22,5 +22,21 @@
     "name": "Levothyroxine",
     "dosage": "100 mg orally 3 times a day for 10 to 12 days",
     "refillExpireDate": 1626359541000
+  },
+  {
+    "medicationId": "890692a5-80d6-4330-a507-d82b8b911c86",
+    "physicianId": "2",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "name": "Tylenol",
+    "dosage": "1 tablet every 6 hours",
+    "refillExpireDate": 1642752000000
+  },
+  {
+    "medicationId": "8009dd50-78fb-40f3-8563-d34f9ffdc567",
+    "physicianId": "1",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "name": "Levothyroxine",
+    "dosage": "100 mg orally 3 times a day for 10 to 12 days",
+    "refillExpireDate": 1652857200000
   }
 ]

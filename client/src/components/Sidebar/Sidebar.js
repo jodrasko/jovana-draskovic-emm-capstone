@@ -54,7 +54,7 @@ class Sidebar extends Component {
               </li>
               <li className="sidebar-box__item">
                 <Link to="/notes" className="no-underline">
-                  Notes/Consults
+                  Notes
                 </Link>
               </li>
             </ul>

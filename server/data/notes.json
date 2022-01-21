@@ -34,9 +34,19 @@
     "physicianId": "3",
     "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
     "remark": {
-      "complaint": "headache",
-      "consult": "1"
+      "complaint": "Headache that has lasted more than 24 hours. I tried Tylenol it hasn't helped.",
+      "consult": "Doctor recommended to go to the ER."
     },
     "date": 1643356800000
+  },
+  {
+    "noteId": "059cfbdf-261c-4766-8e31-64751c375b42",
+    "physicianId": "1",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "remark": {
+      "complaint": "Pain in my left arm. \nI can't raise my left arm. It's too painful. Also, had a temperature last night of 38 degrees celsius.",
+      "consult": "Doctor recommended Tylenol for a few days. If nothing improves come back to the office or go to the ER."
+    },
+    "date": 1644480000000
   }
 ]

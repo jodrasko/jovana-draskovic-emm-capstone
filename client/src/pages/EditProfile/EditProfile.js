@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Component } from "react";
 import { Redirect } from "react-router";
+import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 
 class EditProfile extends Component {
   state = {
@@ -107,7 +108,7 @@ class EditProfile extends Component {
     return isLoading ? (
       <h1>Loading...</h1>
     ) : (
-      <>
+      <SidebarAndCard>
         <h1>Edit Profile</h1>
         <label style={{ color: "blue" }}>All fields are mandatory.</label>
         <form onSubmit={this.handleSubmit}>
@@ -185,7 +186,7 @@ class EditProfile extends Component {
             </button>
           </div>
         </form>
-      </>
+      </SidebarAndCard>
     );
   }
 }

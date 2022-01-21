@@ -2,7 +2,8 @@ import axios from "axios";
 import { Component } from "react";
 import { Redirect } from "react-router";
 import getFormattedDate from "../../util/helpers";
-import "../EditMedication/EditMedication.scss";
+import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import "./EditMedication.scss";
 
 class EditMedication extends Component {
   state = {
@@ -148,7 +149,7 @@ class EditMedication extends Component {
     return isLoading ? (
       <h1>Loading...</h1>
     ) : (
-      <>
+      <SidebarAndCard>
         <h1> {isAdd ? "Add" : "Edit"} Medication</h1>
         <label style={{ color: "blue" }}>All fields are mandatory.</label>
         <form onSubmit={this.handleSubmit}>
@@ -221,7 +222,7 @@ class EditMedication extends Component {
             </button>
           </div>
         </form>
-      </>
+      </SidebarAndCard>
     );
   }
 }

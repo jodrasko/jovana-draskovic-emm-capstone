@@ -4,13 +4,13 @@ import "./App.scss";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
-import EditProfile from "./components/EditProfile/EditProfile";
+import EditProfile from "./pages/EditProfile/EditProfile";
 import PhysicianList from "./pages/PhysicianList/PhysicianList";
-import EditPhysician from "./components/EditPhysician/EditPhysician";
+import EditPhysician from "./pages/EditPhysician/EditPhysician";
 import MedicationList from "./pages/MedicationList/MedicationList";
-import EditMedication from "./components/EditMedication/EditMedication";
+import EditMedication from "./pages/EditMedication/EditMedication";
 import NoteList from "./pages/NoteList/NoteList";
-import EditNote from "./components/EditNote/EditNote";
+import EditNote from "./pages/EditNote/EditNote";
 
 import MainList from "./pages/MainList/MainList";
 

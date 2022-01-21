@@ -14,16 +14,24 @@ const SidebarAndCard = ({ children }) => {
 
   return (
     <div className="page-container">
-      <div className="show-for-desktop">
+      <div className="page-sidebar">
         <Sidebar />
       </div>
-      <div className="hide-for-mobile">{children}</div>;
+      <div className="page-card">{children}</div>
     </div>
   );
 };
 
 export default SidebarAndCard;
 
+{
+  /* <div className="container">
+<div className="left-box">
+  <Sidebar />
+</div>
+
+<div className="right-box"> */
+}
 // class SidebarAndCard extends Component {
 //   render() {
 //     return (

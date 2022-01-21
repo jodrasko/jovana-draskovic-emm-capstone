@@ -41,7 +41,7 @@ class NoteItem extends Component {
             <h3>Remark:</h3>
             <h4>Complaint:</h4> <span>{this.props.note.remark.complaint}</span>
             <h4>Consult:</h4> <span>{this.props.note.remark.consult}</span>
-            <h3>Date:</h3>
+            <h3>Appointment Date:</h3>
             <span className="comment__value">
               {getFormattedDate(new Date(this.props.note.date))}
             </span>

@@ -1,7 +1,8 @@
 import axios from "axios";
 import { Component } from "react";
 import { Redirect } from "react-router";
-import "../EditPhysician/EditPhysician.scss";
+import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import "./EditPhysician.scss";
 
 class EditPhysician extends Component {
   state = {
@@ -105,7 +106,7 @@ class EditPhysician extends Component {
     return isLoading ? (
       <h1>Loading...</h1>
     ) : (
-      <>
+      <SidebarAndCard>
         <h1> {isAdd ? "Add" : "Edit"} Physician</h1>
         <label style={{ color: "blue" }}>All fields are mandatory.</label>
         <form onSubmit={this.handleSubmit}>
@@ -151,7 +152,7 @@ class EditPhysician extends Component {
             </button>
           </div>
         </form>
-      </>
+      </SidebarAndCard>
     );
   }
 }
