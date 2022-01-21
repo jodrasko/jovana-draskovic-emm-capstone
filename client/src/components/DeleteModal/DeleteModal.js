@@ -18,11 +18,23 @@ const DeleteModal = (props) => {
         <p className="modal__message">{props.message}</p>
         {props.remark && (
           <div>
-            <h3>Consult:</h3>
-            <p className="modal__message">{props.remark.consult}</p>
-            <h3>Complaint:</h3>
-            <p className="modal__message">{props.remark.complaint}</p>
+            {props.remark.consult && (
+              <>
+                <h3>Consult:</h3>
+                <p className="modal__message">{props.remark.consult}</p>
+              </>
+            )}
+            {props.remark.complaint && (
+              <>
+                <h3>Complaint:</h3>
+                <p className="modal__message">{props.remark.complaint}</p>
+              </>
+            )}
           </div>
+        )}
+
+        {props.postMessage && (
+          <p className="modal__message">{props.postMessage}</p>
         )}
 
         <div className="modal__footer">

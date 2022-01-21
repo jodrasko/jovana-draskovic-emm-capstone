@@ -3,7 +3,6 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import "./ProfilePage.scss";
 import Sidebar from "../../components/Sidebar/Sidebar";
-const baseUrl = "http://localhost:8080";
 
 class ProfilePage extends Component {
   state = {
@@ -14,7 +13,7 @@ class ProfilePage extends Component {
     // here grab token from sessionStorage
     const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
-    const profileUrl = `${baseUrl}/profile/${profileId}`;
+    const profileUrl = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;
     axios
       .get(profileUrl, {
         headers: { authorization: `Bearer ${token}` }
@@ -50,19 +49,33 @@ class ProfilePage extends Component {
 
           <div>
             <h2>Family Doctor:</h2>
-            <h3>G.P. Name:</h3> <span>{profile.familyDoctor.name}</span>
+            <h3>G.P. Name:</h3>{" "}
+            <span>{profile.familyDoctor ? profile.familyDoctor.name : ""}</span>
             <h3>Phone Number:</h3>
-            <span>{profile.familyDoctor.phone}</span>
+            <span>
+              {profile.familyDoctor ? profile.familyDoctor.phone : ""}
+            </span>
           </div>
+
           <div>
             <h2>Emergency Contact:</h2>
-            <h3>Name:</h3> <span>{profile.emergencyContact.name}</span>
-            <h3>Phone Number:</h3> <span>{profile.emergencyContact.phone}</span>
+            <h3>Name:</h3>{" "}
+            <span>
+              {profile.emergencyContact ? profile.emergencyContact.name : ""}
+            </span>
+            <h3>Phone Number:</h3>{" "}
+            <span>
+              {profile.emergencyContact ? profile.emergencyContact.phone : ""}
+            </span>
           </div>
           <div>
             <h2>Pharmacy Information:</h2>
-            <h3>Name:</h3> <span>{profile.pharmacyInfo.name}</span>
-            <h3>Phone Number:</h3> <span>{profile.pharmacyInfo.phone}</span>
+            <h3>Name:</h3>{" "}
+            <span>{profile.pharmacyInfo ? profile.pharmacyInfo.name : ""}</span>
+            <h3>Phone Number:</h3>{" "}
+            <span>
+              {profile.pharmacyInfo ? profile.pharmacyInfo.phone : ""}
+            </span>
           </div>
 
           <Link to="/edit-profile">Edit</Link>

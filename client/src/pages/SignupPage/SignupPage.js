@@ -1,15 +1,62 @@
-// import axios from "axios";
+import axios from "axios";
 import { Component } from "react";
-// import { Link } from "react-router-dom";
-// import { Redirect } from "react-router";
-// import "./LoginPage.scss";
+import { Redirect } from "react-router";
+import "./SignupPage.scss";
 
-// const baseUrl = "http://localhost:8080";
-// const signupUrl = `${baseUrl}/signup`;
+const signupUrl = `${process.env.REACT_APP_API_URL}/signup`;
 
 class SignupPage extends Component {
+  state = {
+    isSignedUp: false,
+    isLoginError: false,
+    errorMessage: ""
+  };
+
+  signup = (e) => {
+    e.preventDefault();
+    axios
+      .post(signupUrl, {
+        preferredName: e.target.preferredName.value,
+        username: e.target.username.value,
+        password: e.target.password.value
+      })
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          isSignedUp: true
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  renderSignUp() {
+    return (
+      <div>
+        <h1>SignUp</h1>
+        <form ref={(form) => (this.signUpForm = form)} onSubmit={this.signup}>
+          <div className="form-group">
+            Username: <input type="text" name="username" />
+          </div>
+          <div className="form-group">
+            Name: <input type="text" name="preferredName" />
+          </div>
+          <div className="form-group">
+            Password:{" "}
+            <input type="password" name="password" autoComplete="true" />
+          </div>
+          <button className="btn btn-primary" type="submit">
+            Signup
+          </button>
+        </form>
+      </div>
+    );
+  }
+
   render() {
-    return <h1>Signup Page</h1>;
+    if (this.state.isSignedUp) {
+      return <Redirect to="/" />;
+    }
+    return this.renderSignUp();
   }
 }
 

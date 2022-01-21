@@ -94,5 +94,23 @@
       "name": "Apple Pharmacy",
       "phone": "6045557700"
     }
+  },
+  {
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "username": "Ana123",
+    "password": "123",
+    "preferredName": "Ana",
+    "familyDoctor": {
+      "name": "Dr. John Boo",
+      "phone": "604-111-1112"
+    },
+    "emergencyContact": {
+      "name": "Mark Doo",
+      "phone": "604-778-7777"
+    },
+    "pharmacyInfo": {
+      "name": "Pharmacy M",
+      "phone": "604-000-0001"
+    }
   }
 ]

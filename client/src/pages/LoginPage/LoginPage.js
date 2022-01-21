@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import "./LoginPage.scss";
 
-const baseUrl = "http://localhost:8080";
-const loginUrl = `${baseUrl}/login`;
+const loginUrl = `${process.env.REACT_APP_API_URL}/login`;
 
 class LoginPage extends Component {
   state = {
@@ -68,6 +67,7 @@ class LoginPage extends Component {
   };
 
   render() {
+    console.log("render login");
     if (this.state.isLoggedIn) {
       return <Redirect to="/profile" />;
     }

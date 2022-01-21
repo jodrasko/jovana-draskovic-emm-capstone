@@ -75,12 +75,24 @@ class EditProfile extends Component {
         console.log(response);
         this.setState({
           isLoading: false,
-          familyDoctorName: response.data.familyDoctor.name,
-          familyDoctorPhone: response.data.familyDoctor.phone,
-          emergencyContactName: response.data.emergencyContact.name,
-          emergencyContactPhone: response.data.emergencyContact.phone,
-          pharmacyInfoName: response.data.pharmacyInfo.name,
-          pharmacyInfoPhone: response.data.pharmacyInfo.phone
+          familyDoctorName: response.data.familyDoctor
+            ? response.data.familyDoctor.name
+            : "",
+          familyDoctorPhone: response.data.familyDoctor
+            ? response.data.familyDoctor.phone
+            : "",
+          emergencyContactName: response.data.emergencyContact
+            ? response.data.emergencyContact.name
+            : "",
+          emergencyContactPhone: response.data.emergencyContact
+            ? response.data.emergencyContact.phone
+            : "",
+          pharmacyInfoName: response.data.pharmacyInfo
+            ? response.data.pharmacyInfo.name
+            : "",
+          pharmacyInfoPhone: response.data.pharmacyInfo
+            ? response.data.pharmacyInfo.phone
+            : ""
         });
       })
       .catch((err) => console.log(err));

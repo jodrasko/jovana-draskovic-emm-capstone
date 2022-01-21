@@ -69,7 +69,15 @@ class NoteList extends Component {
         {this.state.showModal && (
           <DeleteModal
             title={`Delete ${this.state.physicianName}'s note?`}
-            message={`Please confirm that you'd like to delete ${this.state.physicianName}'s note. You won't be able to undo this action.`}
+            message={`Please confirm that you'd like to delete ${
+              this.state.physicianName
+            }'s appointment note${
+              this.state.remark &&
+              (this.state.remark.consult || this.state.remark.complaint)
+                ? ":"
+                : "."
+            }`}
+            postMessage={`You won't be able to undo this action.`}
             remark={this.state.remark}
             onClose={this.hideModal}
             onDelete={this.deleteNote}

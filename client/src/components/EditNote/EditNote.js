@@ -196,7 +196,6 @@ class EditNote extends Component {
               id="complaintRemark"
               placeholder="Add a complaint note"
               onChange={this.handleChange}
-              required
             ></textarea>
             <label htmlFor="consultRemark">Consult:</label>
             <textarea
@@ -206,7 +205,6 @@ class EditNote extends Component {
               id="consultRemark"
               placeholder="Add a consult note"
               onChange={this.handleChange}
-              required
             ></textarea>
           </div>
 

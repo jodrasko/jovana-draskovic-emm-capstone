@@ -41,8 +41,8 @@ notesRouter.post("/", (req, res) => {
     !req.body.physicianId ||
     !req.body.profileId ||
     !req.body.remark ||
-    !req.body.remark.complaint ||
-    !req.body.remark.consult ||
+    // !req.body.remark.complaint ||
+    // !req.body.remark.consult ||
     !req.body.date
   ) {
     // Send back error message
@@ -83,8 +83,8 @@ notesRouter.put("/:noteId", (req, res) => {
     !req.body.physicianId ||
     !req.body.profileId ||
     !req.body.remark ||
-    !req.body.remark.complaint ||
-    !req.body.remark.consult ||
+    // !req.body.remark.complaint ||
+    // !req.body.remark.consult ||
     !req.body.date
   ) {
     // Send back error message
