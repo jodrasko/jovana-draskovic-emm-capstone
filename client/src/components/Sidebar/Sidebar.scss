@@ -24,8 +24,21 @@ li {
 }
 
 .sidebar-box {
-  background-color: lightgreen;
+  background-color: #c1deba;
   width: 100%;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  &__logo {
+    background-color: #c1deba;
+    width: 80px;
+    height: 52px;
+    // border: 2px solid $logo-blue;
+  }
 
   &__icon {
     display: flex;

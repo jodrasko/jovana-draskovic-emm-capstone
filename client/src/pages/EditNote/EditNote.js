@@ -188,7 +188,6 @@ class EditNote extends Component {
               onChange={this.handleChange}
               required
             />
-            <h2>Remarks:</h2>
             <label htmlFor="complaintRemark">Complaint:</label>
             <textarea
               className="publish-form__description"

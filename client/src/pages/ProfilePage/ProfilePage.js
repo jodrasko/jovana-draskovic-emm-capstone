@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./ProfilePage.scss";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import Card from "../../components/Card/Card";
 
 class ProfilePage extends Component {
   state = {
@@ -38,36 +39,42 @@ class ProfilePage extends Component {
       <h1>Loading...</h1>
     ) : (
       <SidebarAndCard>
-        <h1>{profile.preferredName}'s Profile</h1>
+        <Card>
+          <h1>{profile.preferredName}'s Profile</h1>
 
-        <div>
-          <h2>Family Doctor:</h2>
-          <h3>G.P. Name:</h3>{" "}
-          <span>{profile.familyDoctor ? profile.familyDoctor.name : ""}</span>
-          <h3>Phone Number:</h3>
-          <span>{profile.familyDoctor ? profile.familyDoctor.phone : ""}</span>
-        </div>
+          <div>
+            <h2>Family Doctor:</h2>
+            <h3>G.P. Name:</h3>{" "}
+            <span>{profile.familyDoctor ? profile.familyDoctor.name : ""}</span>
+            <h3>Phone Number:</h3>
+            <span>
+              {profile.familyDoctor ? profile.familyDoctor.phone : ""}
+            </span>
+          </div>
 
-        <div>
-          <h2>Emergency Contact:</h2>
-          <h3>Name:</h3>{" "}
-          <span>
-            {profile.emergencyContact ? profile.emergencyContact.name : ""}
-          </span>
-          <h3>Phone Number:</h3>{" "}
-          <span>
-            {profile.emergencyContact ? profile.emergencyContact.phone : ""}
-          </span>
-        </div>
-        <div>
-          <h2>Pharmacy Information:</h2>
-          <h3>Name:</h3>{" "}
-          <span>{profile.pharmacyInfo ? profile.pharmacyInfo.name : ""}</span>
-          <h3>Phone Number:</h3>{" "}
-          <span>{profile.pharmacyInfo ? profile.pharmacyInfo.phone : ""}</span>
-        </div>
+          <div>
+            <h2>Emergency Contact:</h2>
+            <h3>Name:</h3>{" "}
+            <span>
+              {profile.emergencyContact ? profile.emergencyContact.name : ""}
+            </span>
+            <h3>Phone Number:</h3>{" "}
+            <span>
+              {profile.emergencyContact ? profile.emergencyContact.phone : ""}
+            </span>
+          </div>
+          <div>
+            <h2>Pharmacy Information:</h2>
+            <h3>Name:</h3>{" "}
+            <span>{profile.pharmacyInfo ? profile.pharmacyInfo.name : ""}</span>
+            <h3>Phone Number:</h3>{" "}
+            <span>
+              {profile.pharmacyInfo ? profile.pharmacyInfo.phone : ""}
+            </span>
+          </div>
 
-        <Link to="/edit-profile">Edit</Link>
+          <Link to="/edit-profile">Edit</Link>
+        </Card>
       </SidebarAndCard>
     );
   }
