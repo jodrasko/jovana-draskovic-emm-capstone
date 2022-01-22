@@ -1,4 +1,4 @@
-import InStockLogo from "../../assets/InStock-Logo.svg";
+import EmmLogo from "../../assets/images/Icons/logo.svg";
 import "../Header/Header.scss";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
@@ -17,7 +17,6 @@ class Header extends Component {
     };
   }
 
-
   setActiveId(id) {
     this.setState({
       activeId: id
@@ -33,8 +32,15 @@ class Header extends Component {
             className="header__link"
             onClick={() => this.setActiveId(1)}
           >
-            <img src={InStockLogo} alt="InStock logo" />
+            <img src={EmmLogo} alt="eMM logo" />
           </Link>
+          {/* 
+          <img
+              src={EmmLogo}
+              className="sidebar-box__logo"
+              alt="emm logo"
+              onClick={this.handleClick}
+            /> */}
 
           <ul className="header__list">
             {values.map((val) => (

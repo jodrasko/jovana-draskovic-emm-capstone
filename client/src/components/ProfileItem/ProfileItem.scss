@@ -1,0 +1,12 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.profile-item {
+  &__heading {
+    @include font-stack-m-h2;
+    margin: 0;
+    padding-bottom: 0.3rem;
+  }
+}

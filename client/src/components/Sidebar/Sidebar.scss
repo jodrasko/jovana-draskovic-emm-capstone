@@ -24,8 +24,14 @@ li {
 }
 
 .sidebar-box {
-  background-color: #c1deba;
+  background-color: $emm-denim;
   width: 100%;
+  padding: 0.5rem 1rem 0.5rem 0.7rem;
+  position: relative;
+
+  @include tablet {
+    width: 300px;
+  }
 
   &__heading {
     display: flex;
@@ -34,14 +40,22 @@ li {
   }
 
   &__logo {
-    background-color: #c1deba;
-    width: 80px;
+    display: flex;
+    background-color: $emm-denim;
+    width: 115px;
     height: 52px;
     // border: 2px solid $logo-blue;
+
+    @include tablet {
+      display: none;
+    }
   }
 
   &__icon {
     display: flex;
+    width: 32px;
+    height: 52px;
+    margin: 0;
     @include tablet {
       display: none;
     }
@@ -49,6 +63,13 @@ li {
     @include desktop {
       display: none;
     }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
   }
 
   &__list {
@@ -59,6 +80,13 @@ li {
     list-style-type: none;
     //height: 24px;
     text-align: center;
+    background-color: $emm-denim;
+    padding: 0;
+    position: absolute;
+    top: 52px;
+    right: 0;
+    left: 0;
+    // left: 40%;
 
     @include tablet {
       flex-direction: column;
@@ -69,10 +97,46 @@ li {
     }
   }
 
-  &__item {
-    margin: 2rem;
+  &__menu-item {
+    width: 150px;
+    padding-left: 3rem;
+    text-align: left;
   }
-}
-.no-underline {
-  text-decoration: none;
+
+  &__symbol {
+    margin: 0;
+    width: 36px;
+    height: 36px;
+  }
+
+  &__item {
+    margin: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0;
+    border-radius: 1.25rem;
+    border: 5px solid $emm-grey;
+    background-color: $emm-grey;
+
+    &:last-child {
+      margin: 0.5rem 1rem 1.2rem 1rem;
+    }
+
+    a:link,
+    a:visited,
+    a:active {
+      text-decoration: none;
+      color: $instock-black;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      padding: 0;
+      background-color: $white;
+      border: 5px solid $white;
+      border-radius: 1.25rem;
+    }
+
+    // &:first-child {
+    //   padding-right: 1rem;
+    // }
+  }
 }

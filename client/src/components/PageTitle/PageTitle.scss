@@ -1,0 +1,23 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.page-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  &__heading {
+    // @include font-stack-m-h1;
+    font-style: normal;
+    font-family: "Serif";
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+
+    color: $emm-denim;
+    margin: 0;
+  }
+}

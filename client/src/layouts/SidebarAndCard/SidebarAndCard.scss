@@ -6,18 +6,33 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  @include tablet {
-    flex-direction: row;
-  }
+  // @include tablet {
+  //   flex-direction: row;
+  // }
 
-  @include desktop {
-    flex-direction: row;
-  }
+  // @include desktop {
+  //   flex-direction: row;
+  // }
 }
 
 .page-card {
-  background-color: #e7c4b1;
+  background-color: $white;
   color: $instock-black;
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.page-middle {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    flex-direction: row;
+  }
+  @include desktop {
+    flex-direction: row;
+  }
 }
 
 // .card-container {

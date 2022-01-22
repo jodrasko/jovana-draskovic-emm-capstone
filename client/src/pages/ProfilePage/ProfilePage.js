@@ -4,13 +4,23 @@ import { Link } from "react-router-dom";
 import "./ProfilePage.scss";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import Header from "../../components/Header/Header";
 import Card from "../../components/Card/Card";
+import LabelValue from "../../components/LabelValue/LabelValue";
+import ProfileItem from "../../components/ProfileItem/ProfileItem";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 class ProfilePage extends Component {
   state = {
     isLoading: true,
     profile: {}
   };
+
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.history.push("/edit-profile");
+  };
+
   componentDidMount() {
     // here grab token from sessionStorage
     const token = sessionStorage.getItem("token");
@@ -39,42 +49,33 @@ class ProfilePage extends Component {
       <h1>Loading...</h1>
     ) : (
       <SidebarAndCard>
-        <Card>
-          <h1>{profile.preferredName}'s Profile</h1>
+        <PageTitle
+          title={`${profile.preferredName}'s Profile`}
+          type="edit"
+          onClick={this.handleClick}
+          buttonValue=""
+        />
+        {/* <div></div>
+        <h1>{profile.preferredName}'s Profile</h1>
+        <Link to="/edit-profile">Edit</Link> */}
 
-          <div>
-            <h2>Family Doctor:</h2>
-            <h3>G.P. Name:</h3>{" "}
-            <span>{profile.familyDoctor ? profile.familyDoctor.name : ""}</span>
-            <h3>Phone Number:</h3>
-            <span>
-              {profile.familyDoctor ? profile.familyDoctor.phone : ""}
-            </span>
-          </div>
+        <ProfileItem
+          heading="Family Doctor"
+          name={profile.familyDoctor ? profile.familyDoctor.name : ""}
+          phone={profile.familyDoctor ? profile.familyDoctor.phone : ""}
+        />
 
-          <div>
-            <h2>Emergency Contact:</h2>
-            <h3>Name:</h3>{" "}
-            <span>
-              {profile.emergencyContact ? profile.emergencyContact.name : ""}
-            </span>
-            <h3>Phone Number:</h3>{" "}
-            <span>
-              {profile.emergencyContact ? profile.emergencyContact.phone : ""}
-            </span>
-          </div>
-          <div>
-            <h2>Pharmacy Information:</h2>
-            <h3>Name:</h3>{" "}
-            <span>{profile.pharmacyInfo ? profile.pharmacyInfo.name : ""}</span>
-            <h3>Phone Number:</h3>{" "}
-            <span>
-              {profile.pharmacyInfo ? profile.pharmacyInfo.phone : ""}
-            </span>
-          </div>
+        <ProfileItem
+          heading="Emergency Contact"
+          name={profile.emergencyContact ? profile.emergencyContact.name : ""}
+          phone={profile.emergencyContact ? profile.emergencyContact.phone : ""}
+        />
 
-          <Link to="/edit-profile">Edit</Link>
-        </Card>
+        <ProfileItem
+          heading="Pharmacy Information"
+          name={profile.pharmacyInfo ? profile.pharmacyInfo.name : ""}
+          phone={profile.pharmacyInfo ? profile.pharmacyInfo.phone : ""}
+        />
       </SidebarAndCard>
     );
   }

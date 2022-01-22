@@ -1,6 +1,7 @@
 // import axios from "axios";
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 import "./Sidebar.scss";
 import MenuIcon from "../../assets/images/Icons/menu_black_24dp.svg";
 import MedicationIcon from "../../assets/images/Icons/medicines.svg";
@@ -10,19 +11,29 @@ import NoteIcon from "../../assets/images/Icons/notes.svg";
 import EmmLogo from "../../assets/images/Icons/logo.svg";
 
 class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      expand: false
-    };
+  state = {
+    expand: false,
+    isRedirectToProfile: false
+  };
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     expand: false
+  //   };
 
-    this.toggleHide = this.toggleHide.bind(this);
-  }
+  //   this.toggleHide = this.toggleHide.bind(this);
+  // }
 
   handleClick = (e) => {
     e.preventDefault();
     console.log("handleClick");
     this.toggleHide();
+  };
+
+  handleLogoClick = (e) => {
+    e.preventDefault();
+    // this.props.history.push("/profile");
+    this.setState({ isRedirectToProfile: true });
   };
 
   toggleHide() {
@@ -31,6 +42,9 @@ class Sidebar extends Component {
 
   render() {
     console.log("expand", this.state.expand);
+    if (this.state.isRedirectToProfile) {
+      return <Redirect to="/profile" />;
+    }
     return (
       <>
         <div className="sidebar-box">
@@ -39,7 +53,7 @@ class Sidebar extends Component {
               src={EmmLogo}
               className="sidebar-box__logo"
               alt="emm logo"
-              onClick={this.handleClick}
+              onClick={this.handleLogoClick}
             />
             <img
               src={MenuIcon}
@@ -51,47 +65,47 @@ class Sidebar extends Component {
           <div className={this.state.expand ? "" : "hide"}>
             <ul className="sidebar-box__list">
               <li className="sidebar-box__item">
-                <Link to="/profile" className="no-underline">
+                <Link to="/profile" className="sidebar-box__link">
                   <img
                     src={ProfileIcon}
-                    className="sidebar-box__icon"
+                    className="sidebar-box__symbol"
                     alt="profile icon"
                     onClick={this.handleClick}
                   />
-                  Profile
+                  <span className="sidebar-box__menu-item">Profile</span>
                 </Link>
               </li>
               <li className="sidebar-box__item">
-                <Link to="/physicians" className="no-underline">
+                <Link to="/physicians" className="sidebar-box__link">
                   <img
                     src={PhysicianIcon}
-                    className="sidebar-box__icon"
+                    className="sidebar-box__symbol"
                     alt="physician icon"
                     onClick={this.handleClick}
                   />
-                  Physicians
+                  <span className="sidebar-box__menu-item">Physicians</span>
                 </Link>
               </li>
               <li className="sidebar-box__item">
-                <Link to="/medications" className="no-underline">
+                <Link to="/medications" className="sidebar-box__link">
                   <img
                     src={MedicationIcon}
-                    className="sidebar-box__icon"
+                    className="sidebar-box__symbol"
                     alt="medicine icon"
                     onClick={this.handleClick}
                   />
-                  Medications
+                  <span className="sidebar-box__menu-item">Medications</span>
                 </Link>
               </li>
               <li className="sidebar-box__item">
-                <Link to="/notes" className="no-underline">
+                <Link to="/notes" className="sidebar-box__link">
                   <img
                     src={NoteIcon}
-                    className="sidebar-box__icon"
+                    className="sidebar-box__symbol"
                     alt="note icon"
                     onClick={this.handleClick}
                   />
-                  Notes
+                  <span className="sidebar-box__menu-item">Notes</span>
                 </Link>
               </li>
             </ul>

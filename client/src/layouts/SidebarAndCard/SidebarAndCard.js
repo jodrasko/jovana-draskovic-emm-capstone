@@ -1,5 +1,7 @@
 import "./SidebarAndCard.scss";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 // import { Component } from "react";
 
 // Card Component
@@ -14,10 +16,15 @@ const SidebarAndCard = ({ children }) => {
 
   return (
     <div className="page-container">
-      <div className="page-sidebar">
+      <Header />
+      <div className="page-middle">
         <Sidebar />
+
+        <div className="page-card">{children}</div>
       </div>
-      <div className="page-card">{children}</div>
+      <div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
