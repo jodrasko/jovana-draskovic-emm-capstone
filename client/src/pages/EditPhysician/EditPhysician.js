@@ -2,6 +2,8 @@ import axios from "axios";
 import { Component } from "react";
 import { Redirect } from "react-router";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import Button from "../../components/Button/Button";
+import Card from "../../components/Card/Card";
 import "./EditPhysician.scss";
 
 class EditPhysician extends Component {
@@ -107,51 +109,65 @@ class EditPhysician extends Component {
       <h1>Loading...</h1>
     ) : (
       <SidebarAndCard>
-        <h1> {isAdd ? "Add" : "Edit"} Physician</h1>
-        <label style={{ color: "blue" }}>All fields are mandatory.</label>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="name">G.P. Name:</label>
-            <input
-              type="text"
-              value={this.state.name}
-              name="name"
-              onChange={this.handleChange}
-              required
-            />
-            <br></br>
-            <label htmlFor="phone">Phone Number:</label>
-            <input
-              type="text"
-              value={this.state.phone}
-              name="phone"
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="specialty">Specialty:</label>{" "}
-            <input
-              type="text"
-              value={this.state.specialty}
-              name="specialty"
-              onChange={this.handleChange}
-              required
-            />
-          </div>
+        <div className="edit-physician">
+          <h1 className="edit-physician__heading">
+            {" "}
+            {isAdd ? "Add" : "Edit"} Physician
+          </h1>
+          <Card>
+            <div className="edit-physician__message">
+              <span>All fields are mandatory.</span>
+            </div>
+            <form onSubmit={this.handleSubmit} className="physician-form">
+              <div className="physician-form__item">
+                <label htmlFor="name" className="physician-form__label">
+                  Name:
+                </label>
+                <input
+                  type="text"
+                  className="physician-form__input"
+                  value={this.state.name}
+                  name="name"
+                  onChange={this.handleChange}
+                  required
+                />
+                <br></br>
+                <label htmlFor="phone" className="physician-form__label">
+                  Phone Number:
+                </label>
+                <input
+                  type="text"
+                  className="physician-form__input"
+                  value={this.state.phone}
+                  name="phone"
+                  onChange={this.handleChange}
+                  required
+                />
+                <label htmlFor="specialty" className="physician-form__label">
+                  Specialty:
+                </label>{" "}
+                <input
+                  type="text"
+                  className="physician-form__input"
+                  value={this.state.specialty}
+                  name="specialty"
+                  onChange={this.handleChange}
+                  required
+                />
+              </div>
 
-          <br></br>
-          <div>
-            <button className="btn btn-primary" type="submit">
-              SAVE
-            </button>
-            <button
-              className="btn btn-primary"
-              type="button"
-              onClick={this.handleClickCancel}
-            >
-              CANCEL
-            </button>
-          </div>
-        </form>
+              <div className="physician-form__action">
+                <Button value="Save" type="primary" />
+
+                <Button
+                  value="Cancel"
+                  type="secondary"
+                  onClick={this.handleClickCancel}
+                />
+              </div>
+            </form>
+          </Card>
+        </div>
       </SidebarAndCard>
     );
   }

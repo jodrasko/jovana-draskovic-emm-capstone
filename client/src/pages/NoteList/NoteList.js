@@ -42,7 +42,7 @@ class NoteList extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    this.props.history.push("/add-physician");
+    this.props.history.push("/add-note");
   };
 
   componentDidMount() {

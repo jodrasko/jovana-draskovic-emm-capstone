@@ -3,6 +3,8 @@ import { Component } from "react";
 import { Redirect } from "react-router";
 import getFormattedDate from "../../util/helpers";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
 import "./EditNote.scss";
 
 class EditNote extends Component {
@@ -152,76 +154,84 @@ class EditNote extends Component {
       <h1>Loading...</h1>
     ) : (
       <SidebarAndCard>
-        <h1> {isAdd ? "Add" : "Edit"} Note</h1>
-        <label style={{ color: "blue" }}>All fields are mandatory.</label>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="physicianId">Physician:</label>{" "}
-            <select
-              name="physicianId"
-              id="physicianId"
-              value={this.state.physicianId}
-              onChange={this.handleChange}
-              required
-            >
-              <option className="inventory-form__option" value="">
-                Please select
-              </option>
-              {this.state.physicians.map((physician, i) => {
-                return (
-                  <option
-                    className="inventory-form__option"
-                    key={i}
-                    value={physician.physicianId}
-                  >
-                    {physician.name}
+        <div className="edit-note">
+          <h1 className="edit-note__heading"> {isAdd ? "Add" : "Edit"} Note</h1>
+          <Card>
+            <div className="edit-note__message">
+              <span>All fields are mandatory.</span>
+            </div>
+            <form onSubmit={this.handleSubmit} className="note-form">
+              <div className="note-form__item">
+                <label htmlFor="physicianId" className="note-form__label">
+                  Physician:
+                </label>{" "}
+                <select
+                  name="physicianId"
+                  className="note-form__input"
+                  id="physicianId"
+                  value={this.state.physicianId}
+                  onChange={this.handleChange}
+                  required
+                >
+                  <option className="inventory-form__option" value="">
+                    Please select
                   </option>
-                );
-              })}
-            </select>
-            <br></br>
-            <label htmlFor="appointmentDate">Appointment Date:</label>{" "}
-            <input
-              type="date"
-              value={this.state.appointmentDate}
-              name="appointmentDate"
-              onChange={this.handleChange}
-              required
-            />
-            <label htmlFor="complaintRemark">Complaint:</label>
-            <textarea
-              className="publish-form__description"
-              value={this.state.complaintRemark}
-              name="complaintRemark"
-              id="complaintRemark"
-              placeholder="Add a complaint note"
-              onChange={this.handleChange}
-            ></textarea>
-            <label htmlFor="consultRemark">Consult:</label>
-            <textarea
-              className="publish-form__description"
-              value={this.state.consultRemark}
-              name="consultRemark"
-              id="consultRemark"
-              placeholder="Add a consult note"
-              onChange={this.handleChange}
-            ></textarea>
-          </div>
+                  {this.state.physicians.map((physician, i) => {
+                    return (
+                      <option
+                        className="inventory-form__option"
+                        key={i}
+                        value={physician.physicianId}
+                      >
+                        {physician.name}
+                      </option>
+                    );
+                  })}
+                </select>
+                <br></br>
+                <label htmlFor="appointmentDate" className="note-form__label">
+                  Appointment Date:
+                </label>{" "}
+                <input
+                  type="date"
+                  className="note-form__input"
+                  value={this.state.appointmentDate}
+                  name="appointmentDate"
+                  onChange={this.handleChange}
+                  required
+                />
+                <label htmlFor="complaintRemark">Complaint:</label>
+                <textarea
+                  className="note-form__input"
+                  value={this.state.complaintRemark}
+                  name="complaintRemark"
+                  id="complaintRemark"
+                  placeholder="Add a complaint note"
+                  onChange={this.handleChange}
+                ></textarea>
+                <label htmlFor="consultRemark">Consult:</label>
+                <textarea
+                  className="note-form__input"
+                  value={this.state.consultRemark}
+                  name="consultRemark"
+                  id="consultRemark"
+                  placeholder="Add a consult note"
+                  onChange={this.handleChange}
+                ></textarea>
+              </div>
 
-          <br></br>
-          <div>
-            <button className="btn btn-primary" type="submit">
-              SAVE
-            </button>
-            <button
-              className="btn btn-primary"
-              type="button"
-              onClick={this.handleClickCancel}
-            >
-              CANCEL
-            </button>
-          </div>
-        </form>
+              <div className="note-form__action">
+                <Button value="Save" type="primary" />
+
+                <Button
+                  value="Cancel"
+                  type="secondary"
+                  onClick={this.handleClickCancel}
+                />
+              </div>
+            </form>
+          </Card>
+        </div>
       </SidebarAndCard>
     );
   }

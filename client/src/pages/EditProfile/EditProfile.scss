@@ -82,15 +82,19 @@
     justify-content: space-between;
     align-items: center;
   }
+
+  &__action > * {
+    width: 40%;
+    margin: 0;
+  }
 }
 
-.button {
-  &__primary {
-    width: 40%;
-    margin: 0;
-  }
-  &__secondary {
-    width: 40%;
-    margin: 0;
-  }
-}
+// .button {
+// //   &__primary {
+// //     width: 40%;
+// //     margin: 0;
+// //   }
+// //   &__secondary {
+// //     width: 40%;
+// //     margin: 0;
+// //   }

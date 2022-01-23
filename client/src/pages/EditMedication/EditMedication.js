@@ -3,6 +3,8 @@ import { Component } from "react";
 import { Redirect } from "react-router";
 import getFormattedDate from "../../util/helpers";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
 import "./EditMedication.scss";
 
 class EditMedication extends Component {
@@ -150,78 +152,87 @@ class EditMedication extends Component {
       <h1>Loading...</h1>
     ) : (
       <SidebarAndCard>
-        <h1> {isAdd ? "Add" : "Edit"} Medication</h1>
-        <label style={{ color: "blue" }}>All fields are mandatory.</label>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <label htmlFor="name">Medication:</label>
-            <input
-              type="text"
-              value={this.state.name}
-              name="name"
-              onChange={this.handleChange}
-              required
-            />
-            <br></br>
-            <label htmlFor="dosage">Dosage:</label>
-            <input
-              type="text"
-              value={this.state.dosage}
-              name="dosage"
-              onChange={this.handleChange}
-              required
-            />
-            <br></br>
-            <label htmlFor="refillExpireDate">
-              Refill Expiration Date:
-            </label>{" "}
-            <input
-              type="date"
-              value={this.state.refillExpireDate}
-              name="refillExpireDate"
-              onChange={this.handleChange}
-              required
-            />
-            <br></br>
-            <label htmlFor="physicianId">Physician:</label>{" "}
-            <select
-              name="physicianId"
-              id="physicianId"
-              value={this.state.physicianId}
-              onChange={this.handleChange}
-              required
-            >
-              <option className="inventory-form__option" value="">
-                Please select
-              </option>
-              {this.state.physicians.map((physician, i) => {
-                return (
-                  <option
-                    className="inventory-form__option"
-                    key={i}
-                    value={physician.physicianId}
-                  >
-                    {physician.name}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
+        <div className="edit-medication">
+          <h1 className="edit-medication__heading">
+            {" "}
+            {isAdd ? "Add" : "Edit"} Medication
+          </h1>
+          <Card>
+            <div className="edit-medication__message">
+              <span>All fields are mandatory.</span>
+            </div>
+            <form onSubmit={this.handleSubmit} className="medication-form">
+              <div className="medication-form__item">
+                <label htmlFor="name" className="medication-form__label">
+                  Medication:
+                </label>
+                <input
+                  type="text"
+                  className="medication-form__input"
+                  value={this.state.name}
+                  name="name"
+                  onChange={this.handleChange}
+                  required
+                />
+                <label htmlFor="dosage" className="medication-form__label">
+                  Dosage:
+                </label>
+                <input
+                  type="text"
+                  className="medication-form__input"
+                  value={this.state.dosage}
+                  name="dosage"
+                  onChange={this.handleChange}
+                  required
+                />
+                <label
+                  htmlFor="refillExpireDate"
+                  className="medication-form__label"
+                >
+                  Refill Expiration Date:
+                </label>{" "}
+                <input
+                  type="date"
+                  className="medication-form__input"
+                  value={this.state.refillExpireDate}
+                  name="refillExpireDate"
+                  onChange={this.handleChange}
+                  required
+                />
+                <label htmlFor="physicianId" className="medication-form__label">
+                  Physician:
+                </label>{" "}
+                <select
+                  name="physicianId"
+                  className="medication-form__input medication-form__select "
+                  id="physicianId"
+                  value={this.state.physicianId}
+                  onChange={this.handleChange}
+                  required
+                >
+                  <option value="">Please select</option>
+                  {this.state.physicians.map((physician, i) => {
+                    return (
+                      <option key={i} value={physician.physicianId}>
+                        {physician.name}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
 
-          <br></br>
-          <div>
-            <button className="btn btn-primary" type="submit">
-              SAVE
-            </button>
-            <button
-              className="btn btn-primary"
-              type="button"
-              onClick={this.handleClickCancel}
-            >
-              CANCEL
-            </button>
-          </div>
-        </form>
+              <div className="medication-form__action">
+                <Button value="Save" type="primary" />
+
+                <Button
+                  value="Cancel"
+                  type="secondary"
+                  onClick={this.handleClickCancel}
+                />
+              </div>
+            </form>
+          </Card>
+        </div>
       </SidebarAndCard>
     );
   }

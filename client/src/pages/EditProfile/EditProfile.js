@@ -222,17 +222,6 @@ class EditProfile extends Component {
                   type="secondary"
                   onClick={this.handleClickCancel}
                 />
-
-                {/* <button className="btn btn-primary" type="submit">
-                  SAVE
-                </button>
-                <button
-                  className="btn btn-primary"
-                  type="button"
-                  onClick={this.handleClickCancel}
-                >
-                  CANCEL
-                </button> */}
               </div>
             </form>
           </Card>
