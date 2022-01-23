@@ -3,6 +3,7 @@ import { Component } from "react";
 import PhysicianItem from "../../components/PhysicianItem/PhysicianItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import PageTitle from "../../components/PageTitle/PageTitle";
 import { Link } from "react-router-dom";
 import "../PhysicianList/PhysicianList.scss";
 
@@ -30,6 +31,12 @@ class PhysicianList extends Component {
       })
       .catch((err) => console.log(err));
   }
+
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.history.push("/add-physician");
+  };
+
   componentDidMount() {
     // here grab token from sessionStorage
     this.getAllPhysicians();
@@ -70,9 +77,15 @@ class PhysicianList extends Component {
           />
         )}
         <section>
-          <h1>Physician List Page</h1>
-          <Link to="/add-physician">Add</Link>
-          <ul className="next-video__list">
+          <PageTitle
+            title="Physicians"
+            type="primary"
+            onClick={this.handleClick}
+            buttonValue="+ Add Physician"
+          />
+          {/* <h1>Physician List Page</h1>
+          <Link to="/add-physician">Add</Link> */}
+          <ul className="physician-list">
             {this.state.physicians.map((physician) => {
               return (
                 <PhysicianItem

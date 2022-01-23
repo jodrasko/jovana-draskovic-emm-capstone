@@ -2,6 +2,9 @@ import axios from "axios";
 import { Component } from "react";
 import { Redirect } from "react-router";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
+import "../EditProfile/EditProfile.scss";
 
 class EditProfile extends Component {
   state = {
@@ -109,83 +112,131 @@ class EditProfile extends Component {
       <h1>Loading...</h1>
     ) : (
       <SidebarAndCard>
-        <h1>Edit Profile</h1>
-        <label style={{ color: "blue" }}>All fields are mandatory.</label>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <h2>Family Doctor:</h2>
-            <label htmlFor="familyDoctorName">G.P. Name:</label>
-            <input
-              type="text"
-              value={this.state.familyDoctorName}
-              name="familyDoctorName"
-              onChange={this.handleChange}
-              required
-            />
-            <br></br>
-            <label htmlFor="familyDoctorPhone">Phone Number:</label>
-            <input
-              type="text"
-              value={this.state.familyDoctorPhone}
-              name="familyDoctorPhone"
-              onChange={this.handleChange}
-              required
-            />
-          </div>
-          <div>
-            <h2>Emergency Contact:</h2>
-            <label htmlFor="emergencyContactName">Name:</label>{" "}
-            <input
-              type="text"
-              value={this.state.emergencyContactName}
-              name="emergencyContactName"
-              onChange={this.handleChange}
-              required
-            />
-            <br></br>
-            <label htmlFor="emergencyContactPhone">Phone Number:</label>{" "}
-            <input
-              type="text"
-              value={this.state.emergencyContactPhone}
-              name="emergencyContactPhone"
-              onChange={this.handleChange}
-              required
-            />
-          </div>
-          <div>
-            <h2>Pharmacy Information:</h2>
-            <label htmlFor="pharmacyInfoName">Name:</label>{" "}
-            <input
-              type="text"
-              value={this.state.pharmacyInfoName}
-              name="pharmacyInfoName"
-              onChange={this.handleChange}
-              required
-            />
-            <br></br>
-            <label htmlFor="pharmacyInfoPhone">Phone Number:</label>
-            <input
-              type="text"
-              value={this.state.pharmacyInfoPhone}
-              name="pharmacyInfoPhone"
-              onChange={this.handleChange}
-              required
-            />
-          </div>
-          <br></br>
-          <div>
-            <button className="btn btn-primary" type="submit">
-              SAVE
-            </button>
-            <button
-              className="btn btn-primary"
-              type="button"
-              onClick={this.handleClickCancel}
-            >
-              CANCEL
-            </button>
-          </div>
-        </form>
+        <div className="edit-profile">
+          <h1 className="edit-profile__heading">Edit Profile</h1>
+          <Card>
+            <div className="edit-profile__message">
+              <span>All fields are mandatory.</span>
+            </div>
+            <form onSubmit={this.handleSubmit} className="profile-form">
+              <div className="profile-form__item">
+                <h2 className="profile-form__heading">Family Doctor</h2>
+                <label
+                  htmlFor="familyDoctorName"
+                  className="profile-form__label"
+                >
+                  Name:
+                </label>
+                <input
+                  type="text"
+                  className="profile-form__input"
+                  value={this.state.familyDoctorName}
+                  name="familyDoctorName"
+                  onChange={this.handleChange}
+                  required
+                />
+
+                <label
+                  htmlFor="familyDoctorPhone"
+                  className="profile-form__label"
+                >
+                  Phone Number:
+                </label>
+                <input
+                  type="text"
+                  className="profile-form__input"
+                  value={this.state.familyDoctorPhone}
+                  name="familyDoctorPhone"
+                  onChange={this.handleChange}
+                  required
+                />
+              </div>
+              <div className="profile-form__item">
+                <h2 className="profile-form__heading">Emergency Contact</h2>
+                <label
+                  htmlFor="emergencyContactName"
+                  className="profile-form__label"
+                >
+                  Name:
+                </label>{" "}
+                <input
+                  type="text"
+                  className="profile-form__input"
+                  value={this.state.emergencyContactName}
+                  name="emergencyContactName"
+                  onChange={this.handleChange}
+                  required
+                />
+                <label
+                  htmlFor="emergencyContactPhone"
+                  className="profile-form__label"
+                >
+                  Phone Number:
+                </label>{" "}
+                <input
+                  type="text"
+                  className="profile-form__input"
+                  value={this.state.emergencyContactPhone}
+                  name="emergencyContactPhone"
+                  onChange={this.handleChange}
+                  required
+                />
+              </div>
+              <div className="profile-form__item">
+                <h2 className="profile-form__heading">Pharmacy Information</h2>
+                <label
+                  htmlFor="pharmacyInfoName"
+                  className="profile-form__label"
+                >
+                  Name:
+                </label>{" "}
+                <input
+                  type="text"
+                  className="profile-form__input"
+                  value={this.state.pharmacyInfoName}
+                  name="pharmacyInfoName"
+                  onChange={this.handleChange}
+                  required
+                />
+                <label
+                  htmlFor="pharmacyInfoPhone"
+                  className="profile-form__label"
+                >
+                  Phone Number:
+                </label>
+                <input
+                  type="text"
+                  className="profile-form__input"
+                  value={this.state.pharmacyInfoPhone}
+                  name="pharmacyInfoPhone"
+                  onChange={this.handleChange}
+                  required
+                />
+              </div>
+
+              <div className="profile-form__action">
+                <Button value="Save" type="primary" />
+
+                <Button
+                  value="Cancel"
+                  type="secondary"
+                  onClick={this.handleClickCancel}
+                />
+
+                {/* <button className="btn btn-primary" type="submit">
+                  SAVE
+                </button>
+                <button
+                  className="btn btn-primary"
+                  type="button"
+                  onClick={this.handleClickCancel}
+                >
+                  CANCEL
+                </button> */}
+              </div>
+            </form>
+          </Card>
+        </div>
       </SidebarAndCard>
     );
   }

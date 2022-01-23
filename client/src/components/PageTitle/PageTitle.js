@@ -7,15 +7,21 @@ const PageTitle = (props) => {
   return (
     <div className="page-title-container">
       <h1 className="page-title-container__heading">{props.title}</h1>
-      {/* <Link to="/edit-profile">Edit</Link> */}
-      {props.type === "edit" ? (
-        <Button type="edit" value="Edit" onClick={props.onClick} />
+      {props.type ? (
+        <div className="page-title-container__button">
+          {/* <Link to="/edit-profile">Edit</Link> */}
+          {props.type === "edit" ? (
+            <Button type="edit" value="Edit" onClick={props.onClick} />
+          ) : (
+            <Button
+              type={props.type}
+              value={props.buttonValue}
+              onClick={props.onClick}
+            />
+          )}
+        </div>
       ) : (
-        <Button
-          type="primary"
-          value={props.buttonValue}
-          onClick={props.onClick}
-        />
+        ""
       )}
     </div>
   );

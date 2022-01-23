@@ -5,6 +5,7 @@ import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 import { Link } from "react-router-dom";
 import "../MedicationList/MedicationList.scss";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 class MedicationList extends Component {
   state = {
@@ -34,6 +35,11 @@ class MedicationList extends Component {
       })
       .catch((err) => console.log(err));
   }
+
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.history.push("/add-medication");
+  };
 
   componentDidMount() {
     // here grab token from sessionStorage
@@ -75,9 +81,15 @@ class MedicationList extends Component {
           />
         )}
         <section>
-          <h1>Medication List Page</h1>
-          <Link to="/add-medication">Add</Link>
-          <ul className="next-video__list">
+          <PageTitle
+            title="Medications"
+            type="primary"
+            onClick={this.handleClick}
+            buttonValue="+ Add Medication"
+          />
+          {/* <h1>Medication List Page</h1>
+          <Link to="/add-medication">Add</Link> */}
+          <ul className="medication-list">
             {this.state.medications.map((medication) => {
               return (
                 <MedicationItem

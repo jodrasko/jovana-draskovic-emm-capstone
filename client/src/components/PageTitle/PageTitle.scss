@@ -13,11 +13,17 @@
     // @include font-stack-m-h1;
     font-style: normal;
     font-family: "Serif";
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 2.25rem;
 
-    color: $emm-denim;
+    color: $emm-new-denim;
     margin: 0;
+  }
+
+  &__button {
+    @include tablet {
+      // width: 100px;
+    }
   }
 }

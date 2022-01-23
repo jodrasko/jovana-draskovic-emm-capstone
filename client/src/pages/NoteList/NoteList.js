@@ -5,6 +5,7 @@ import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 import { Link } from "react-router-dom";
 import "../NoteList/NoteList.scss";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 class NoteList extends Component {
   state = {
@@ -38,6 +39,11 @@ class NoteList extends Component {
       })
       .catch((err) => console.log(err));
   }
+
+  handleClick = (e) => {
+    e.preventDefault();
+    this.props.history.push("/add-physician");
+  };
 
   componentDidMount() {
     // here grab token from sessionStorage
@@ -88,9 +94,15 @@ class NoteList extends Component {
           />
         )}
         <section>
-          <h1>Note List Page</h1>
-          <Link to="/add-note">Add</Link>
-          <ul className="next-video__list">
+          <PageTitle
+            title="Notes"
+            type="primary"
+            onClick={this.handleClick}
+            buttonValue="+ Add Note"
+          />
+          {/* <h1>Note List Page</h1>
+          <Link to="/add-note">Add</Link> */}
+          <ul className="note-list">
             {this.state.notes.map((note) => {
               return (
                 <NoteItem

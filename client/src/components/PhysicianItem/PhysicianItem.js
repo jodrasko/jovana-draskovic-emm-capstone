@@ -11,10 +11,14 @@ class PhysicianItem extends Component {
     return (
       <>
         <Card>
-          <div>
-            <h3>Physician Name:</h3> <span>{this.props.physician.name}</span>
-            <h3>Specialty:</h3> <span>{this.props.physician.specialty}</span>
-            <h3>Phone Number:</h3> <span>{this.props.physician.phone}</span>
+          <div className="physician-item">
+            <h3>{this.props.physician.name}</h3>
+
+            {/* <p>{this.props.physician.name}</p> */}
+            {/* <h3>Specialty:</h3>  */}
+            <p>{this.props.physician.specialty}</p>
+            {/* <h3>Phone Number:</h3>  */}
+            <p>{this.props.physician.phone}</p>
           </div>
           <Link to={`/edit-physician/${this.props.physician.physicianId}`}>
             <img className="warehouse__icon" src={editIcon} alt="edit icon" />

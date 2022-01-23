@@ -24,13 +24,13 @@ li {
 }
 
 .sidebar-box {
-  background-color: $emm-denim;
+  background-color: $emm-new-denim;
   width: 100%;
   padding: 0.5rem 1rem 0.5rem 0.7rem;
   position: relative;
 
   @include tablet {
-    width: 300px;
+    width: 280px;
   }
 
   &__heading {
@@ -41,7 +41,7 @@ li {
 
   &__logo {
     display: flex;
-    background-color: $emm-denim;
+    background-color: $emm-new-denim;
     width: 115px;
     height: 52px;
     // border: 2px solid $logo-blue;
@@ -80,7 +80,7 @@ li {
     list-style-type: none;
     //height: 24px;
     text-align: center;
-    background-color: $emm-denim;
+    background-color: $emm-new-denim;
     padding: 0;
     position: absolute;
     top: 52px;
@@ -101,6 +101,14 @@ li {
     width: 150px;
     padding-left: 3rem;
     text-align: left;
+
+    @include tablet {
+      padding-left: 1rem;
+    }
+
+    @include desktop {
+      padding-left: 1rem;
+    }
   }
 
   &__symbol {
@@ -115,6 +123,10 @@ li {
     border-radius: 1.25rem;
     border: 5px solid $emm-grey;
     background-color: $emm-grey;
+
+    @include tablet {
+      padding: 0 1rem 0 1rem;
+    }
 
     &:last-child {
       margin: 0.5rem 1rem 1.2rem 1rem;
