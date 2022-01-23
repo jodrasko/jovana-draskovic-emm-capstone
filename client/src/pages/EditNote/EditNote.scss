@@ -3,6 +3,21 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/colors" as *;
 
+@mixin formfieldSelect {
+  outline: none;
+  border-radius: 1.25rem;
+  border: 1px solid $instock-black;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 0px $white inset;
+  appearance: none;
+  @include font-stack-m-p2;
+  color: $instock-black;
+  @include tablet {
+    @include font-stack-tab-desc-p2;
+    color: $instock-black;
+  }
+}
+
 .edit-note {
   padding: 0;
   &__heading {
@@ -46,6 +61,29 @@
     }
   }
 
+  &__select-option {
+    color: $instock-black;
+    height: 2.25rem;
+    width: 100%;
+    margin-bottom: 0.25rem;
+    @include formfieldSelect;
+    background-image: url("../../assets/images/Icons/arrow_drop_down-24px.svg");
+    background-repeat: no-repeat;
+    background-position: 98%;
+    background-color: white;
+    @include tablet {
+      height: 2.375rem;
+    }
+
+    &:focus {
+      border: 1px solid $instock-black;
+    }
+
+    // &:invalid {
+    //   color: $slate;
+    // }
+  }
+
   &__input {
     color: $instock-black;
     height: 2.25rem;
@@ -77,6 +115,10 @@
     }
   }
 
+  &__remark {
+    height: 5rem;
+  }
+
   &__action {
     display: flex;
     justify-content: space-between;
@@ -88,12 +130,12 @@
     margin: 0;
   }
 
-  &__select {
-    background-image: url("../../assets/images/Icons/arrow_drop_down-24px.svg");
-    background-repeat: no-repeat;
-    background-position: 98%;
-    background-color: red;
-  }
+  //   &__select {
+  //     background-image: url("../../assets/images/Icons/arrow_drop_down-24px.svg");
+  //     background-repeat: no-repeat;
+  //     background-position: 98%;
+  //     background-color: red;
+  //   }
 }
 
 // .button {

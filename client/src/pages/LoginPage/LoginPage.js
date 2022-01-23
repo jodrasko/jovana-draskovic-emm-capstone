@@ -2,6 +2,10 @@ import axios from "axios";
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
+import CustomHeader from "../../components/CustomHeader/CustomHeader";
+import Footer from "../../components/Footer/Footer";
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
 import "./LoginPage.scss";
 
 const loginUrl = `${process.env.REACT_APP_API_URL}/login`;
@@ -44,25 +48,75 @@ class LoginPage extends Component {
       });
   };
 
+  handleClickSignup = (e) => {
+    e.preventDefault();
+    this.props.history.push("/signup");
+  };
+
   renderLogin = () => {
     const { isLoginError, errorMessage } = this.state;
     return (
-      <div>
-        <h1>Login</h1>
-        {isLoginError && <label style={{ color: "red" }}>{errorMessage}</label>}
-        <form ref={(form) => (this.loginForm = form)} onSubmit={this.login}>
-          <div className="form-group">
-            Username: <input type="text" name="username" />
+      <>
+        <CustomHeader />
+        <Card>
+          <div>
+            <h1 className="login__heading">Login</h1>
+            {isLoginError && (
+              <label style={{ color: "red" }}>{errorMessage}</label>
+            )}
+            <form
+              // ref={(form) => (this.loginForm = form)}
+              onSubmit={this.login}
+            >
+              <label htmlFor="username" className="login-form__label">
+                Username:
+              </label>
+              <input
+                type="text"
+                className="login-form__input"
+                name="username"
+                required
+              />
+              <label htmlFor="password" className="login-form__label">
+                Password:
+              </label>
+              <input
+                type="password"
+                className="login-form__input"
+                name="password"
+                required
+              />
+              <div className="medication-form__action">
+                <Button value="Login" type="primary" />
+
+                <Button
+                  value="Sign Up"
+                  type="secondary"
+                  onClick={this.handleClickSignup}
+                />
+              </div>
+            </form>
+            {/* <Link to="/signup">Sign Up</Link> */}
           </div>
-          <div className="form-group">
-            Password: <input type="password" name="password" />
-          </div>
-          <button className="btn btn-primary" type="submit">
-            Login
-          </button>
-        </form>
-        <Link to="/signup">Sign Up</Link>
-      </div>
+        </Card>
+        <Footer />
+      </>
+      // <div>
+      //   <h1>Login</h1>
+      //   {isLoginError && <label style={{ color: "red" }}>{errorMessage}</label>}
+      //   <form ref={(form) => (this.loginForm = form)} onSubmit={this.login}>
+      //     <div className="form-group">
+      //       Username: <input type="text" name="username" />
+      //     </div>
+      //     <div className="form-group">
+      //       Password: <input type="password" name="password" />
+      //     </div>
+      //     <button className="btn btn-primary" type="submit">
+      //       Login
+      //     </button>
+      //   </form>
+      //   <Link to="/signup">Sign Up</Link>
+      // </div>
     );
   };
 

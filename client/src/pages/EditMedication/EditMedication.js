@@ -204,16 +204,22 @@ class EditMedication extends Component {
                 </label>{" "}
                 <select
                   name="physicianId"
-                  className="medication-form__input medication-form__select "
+                  className="medication-form__select-option"
                   id="physicianId"
                   value={this.state.physicianId}
                   onChange={this.handleChange}
                   required
                 >
-                  <option value="">Please select</option>
+                  <option value="" className="medication-form__option">
+                    Please select
+                  </option>
                   {this.state.physicians.map((physician, i) => {
                     return (
-                      <option key={i} value={physician.physicianId}>
+                      <option
+                        key={i}
+                        value={physician.physicianId}
+                        className="medication-form__option"
+                      >
                         {physician.name}
                       </option>
                     );

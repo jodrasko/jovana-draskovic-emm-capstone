@@ -1,0 +1,71 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.signup {
+  &__heading {
+    // @include font-stack-m-h1;
+    font-style: normal;
+    font-family: "Serif";
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+
+    color: $emm-new-denim;
+    margin: 0 0 1rem 0;
+  }
+}
+.signup-form {
+  &__label {
+    @include font-stack-m-h3;
+    padding: 1rem 0 0.25rem 0;
+    @include tablet {
+      @include font-stack-tab-desc-h3;
+      padding: 1.5rem 0 0.25rem 0;
+    }
+  }
+
+  &__input {
+    color: $instock-black;
+    height: 2.25rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    @include formfield;
+    @include tablet {
+      height: 2.375rem;
+    }
+
+    &::placeholder {
+      @include font-stack-m-p2;
+      @include tablet {
+        @include font-stack-tab-desc-p2;
+      }
+    }
+
+    &[type="text"] {
+      @include font-stack-m-p2;
+      color: $instock-black;
+      @include tablet {
+        @include font-stack-tab-desc-p2;
+        color: $instock-black;
+      }
+    }
+
+    &:focus {
+      border: 1px solid $instock-indigo;
+    }
+  }
+
+  //   display: flex;
+  //   flex-direction: column;
+  //   padding: 0;
+  //   margin-top: 0;
+  //   @include tablet {
+  //     flex-direction: row;
+  //   }
+
+  //   @include desktop {
+  //     flex-direction: row;
+  //   }
+}

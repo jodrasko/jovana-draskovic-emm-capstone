@@ -167,22 +167,16 @@ class EditNote extends Component {
                 </label>{" "}
                 <select
                   name="physicianId"
-                  className="note-form__input"
+                  className="note-form__select-option"
                   id="physicianId"
                   value={this.state.physicianId}
                   onChange={this.handleChange}
                   required
                 >
-                  <option className="inventory-form__option" value="">
-                    Please select
-                  </option>
+                  <option value="">Please select</option>
                   {this.state.physicians.map((physician, i) => {
                     return (
-                      <option
-                        className="inventory-form__option"
-                        key={i}
-                        value={physician.physicianId}
-                      >
+                      <option key={i} value={physician.physicianId}>
                         {physician.name}
                       </option>
                     );
@@ -200,18 +194,22 @@ class EditNote extends Component {
                   onChange={this.handleChange}
                   required
                 />
-                <label htmlFor="complaintRemark">Complaint:</label>
+                <label htmlFor="complaintRemark" className="note-form__label">
+                  Complaint:
+                </label>
                 <textarea
-                  className="note-form__input"
+                  className="note-form__input note-form__remark"
                   value={this.state.complaintRemark}
                   name="complaintRemark"
                   id="complaintRemark"
                   placeholder="Add a complaint note"
                   onChange={this.handleChange}
                 ></textarea>
-                <label htmlFor="consultRemark">Consult:</label>
+                <label htmlFor="consultRemark" className="note-form__label">
+                  Consult:
+                </label>
                 <textarea
-                  className="note-form__input"
+                  className="note-form__input note-form__remark"
                   value={this.state.consultRemark}
                   name="consultRemark"
                   id="consultRemark"

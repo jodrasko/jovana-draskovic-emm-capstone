@@ -9,7 +9,7 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="header__box">
-          <Link to="/" className="header__link">
+          <Link to="/profile" className="header__link">
             <img src={EmmLogo} alt="eMM logo" className="header__logo" />
           </Link>
           {/* 

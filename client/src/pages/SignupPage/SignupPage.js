@@ -1,6 +1,10 @@
 import axios from "axios";
 import { Component } from "react";
 import { Redirect } from "react-router";
+import CustomHeader from "../../components/CustomHeader/CustomHeader";
+import Footer from "../../components/Footer/Footer";
+import Card from "../../components/Card/Card";
+import Button from "../../components/Button/Button";
 import "./SignupPage.scss";
 
 const signupUrl = `${process.env.REACT_APP_API_URL}/signup`;
@@ -31,24 +35,48 @@ class SignupPage extends Component {
 
   renderSignUp() {
     return (
-      <div>
-        <h1>SignUp</h1>
-        <form ref={(form) => (this.signUpForm = form)} onSubmit={this.signup}>
-          <div className="form-group">
-            Username: <input type="text" name="username" />
+      <>
+        <CustomHeader />
+        <Card>
+          <div>
+            <h1 className="signup__heading">Sign Up</h1>
+            <form
+              ref={(form) => (this.signUpForm = form)}
+              onSubmit={this.signup}
+            >
+              <label htmlFor="username" className="signup-form__label">
+                Username:
+              </label>
+              <input
+                type="text"
+                className="signup-form__input"
+                name="username"
+                required
+              />
+              <label htmlFor="preferredName" className="signup-form__label">
+                Preferred Name:
+              </label>
+              <input
+                type="text"
+                className="signup-form__input"
+                name="preferredName"
+                required
+              />
+              <label htmlFor="password" className="signup-form__label">
+                Password:
+              </label>
+              <input
+                type="password"
+                className="signup-form__input"
+                name="password"
+                required
+              />
+              <Button value="Sign Up" type="primary" />
+            </form>
           </div>
-          <div className="form-group">
-            Name: <input type="text" name="preferredName" />
-          </div>
-          <div className="form-group">
-            Password:{" "}
-            <input type="password" name="password" autoComplete="true" />
-          </div>
-          <button className="btn btn-primary" type="submit">
-            Signup
-          </button>
-        </form>
-      </div>
+        </Card>
+        <Footer />
+      </>
     );
   }
 

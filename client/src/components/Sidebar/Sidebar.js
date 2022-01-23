@@ -15,14 +15,14 @@ class Sidebar extends Component {
     expand: false,
     isRedirectToProfile: false
   };
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     expand: false
-  //   };
 
-  //   this.toggleHide = this.toggleHide.bind(this);
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.isRedirectToProfile !== prevState.isRedirectToProfile) {
+      this.setState((prevState) => ({
+        isRedirectToProfile: false
+      }));
+    }
+  }
 
   handleClick = (e) => {
     e.preventDefault();
@@ -33,15 +33,24 @@ class Sidebar extends Component {
   handleLogoClick = (e) => {
     e.preventDefault();
     // this.props.history.push("/profile");
-    this.setState({ isRedirectToProfile: true });
+    // this.setState({ isRedirectToProfile: true });
+    this.setState((prevState) => ({
+      isRedirectToProfile: true
+    }));
   };
 
-  toggleHide() {
-    this.setState({ expand: !this.state.expand });
-  }
+  // toggleHide() {
+  //   this.setState({ expand: !this.state.expand });
+  // }
+  toggleHide = () => {
+    this.setState((prevState) => ({
+      expand: !prevState.expand
+    }));
+  };
 
   render() {
     console.log("expand", this.state.expand);
+    console.log("isRedirectToProfile", this.state.isRedirectToProfile);
     if (this.state.isRedirectToProfile) {
       return <Redirect to="/profile" />;
     }
