@@ -1,19 +1,16 @@
 import axios from "axios";
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import "./ProfilePage.scss";
-import Sidebar from "../../components/Sidebar/Sidebar";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
-import Header from "../../components/Header/Header";
-import Card from "../../components/Card/Card";
-import LabelValue from "../../components/LabelValue/LabelValue";
 import ProfileItem from "../../components/ProfileItem/ProfileItem";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
 class ProfilePage extends Component {
   state = {
     isLoading: true,
-    profile: {}
+    profile: {},
+    errorMessage: null,
+    isLogoutError: false
   };
 
   handleClick = (e) => {
@@ -24,6 +21,7 @@ class ProfilePage extends Component {
   componentDidMount() {
     // here grab token from sessionStorage
     const token = sessionStorage.getItem("token");
+    console.log("[ProfilePage] token=", token);
     const profileId = sessionStorage.getItem("profileId");
     const profileUrl = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;
     axios
@@ -37,14 +35,36 @@ class ProfilePage extends Component {
           profile: response.data
         });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log("err=", err);
+        let message = "";
+        if (err.response && err.response.data) {
+          console.log("err.response.data=", err.response.data);
+          message = err.response.data.error;
+        } else {
+          console.log("err.message=", err.message);
+          message = err.message;
+        }
+        this.setState({
+          isLoading: false,
+          isLogoutError: true,
+          errorMessage: message
+        });
+      });
   }
 
   render() {
     console.log("render");
 
-    const { isLoading, profile } = this.state;
+    const { isLoading, isLogoutError, errorMessage, profile } = this.state;
 
+    if (isLogoutError) {
+      return (
+        <SidebarAndCard>
+          <label style={{ color: "red" }}>{errorMessage}</label>
+        </SidebarAndCard>
+      );
+    }
     return isLoading ? (
       <h1>Loading...</h1>
     ) : (
@@ -55,6 +75,9 @@ class ProfilePage extends Component {
           onClick={this.handleClick}
           buttonValue=""
         />
+        {isLogoutError && (
+          <label style={{ color: "red" }}>{errorMessage}</label>
+        )}
         {/* <div></div>
         <h1>{profile.preferredName}'s Profile</h1>
         <Link to="/edit-profile">Edit</Link> */}

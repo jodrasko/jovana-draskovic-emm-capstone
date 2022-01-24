@@ -48,19 +48,26 @@ class EditNote extends Component {
     e.preventDefault();
     const d = this.parseDate(this.state.appointmentDate);
     console.log(this.state.appointmentDate);
+    const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     if (this.state.isAdd) {
       const url = `${process.env.REACT_APP_API_URL}/note`;
       axios
-        .post(url, {
-          remark: {
-            complaint: this.state.complaintRemark,
-            consult: this.state.consultRemark
+        .post(
+          url,
+          {
+            remark: {
+              complaint: this.state.complaintRemark,
+              consult: this.state.consultRemark
+            },
+            date: d.getTime(),
+            physicianId: this.state.physicianId,
+            profileId: profileId
           },
-          date: d.getTime(),
-          physicianId: this.state.physicianId,
-          profileId: profileId
-        })
+          {
+            headers: { authorization: `Bearer ${token}` }
+          }
+        )
         .then((res) => {
           this.setState({
             isSavedNote: true
@@ -74,15 +81,21 @@ class EditNote extends Component {
       const url = `${process.env.REACT_APP_API_URL}/note/${this.props.match.params.noteId}`;
       // using input required attributes and default browser field validations
       axios
-        .put(url, {
-          remark: {
-            complaint: this.state.complaintRemark,
-            consult: this.state.consultRemark
+        .put(
+          url,
+          {
+            remark: {
+              complaint: this.state.complaintRemark,
+              consult: this.state.consultRemark
+            },
+            date: d.getTime(),
+            physicianId: this.state.physicianId,
+            profileId: profileId
           },
-          date: d.getTime(),
-          physicianId: this.state.physicianId,
-          profileId: profileId
-        })
+          {
+            headers: { authorization: `Bearer ${token}` }
+          }
+        )
         .then((res) => {
           this.setState({
             isSavedNote: true
@@ -98,11 +111,12 @@ class EditNote extends Component {
 
   getAllPhysicians() {
     const token = sessionStorage.getItem("token");
-    const profileId = sessionStorage.getItem("profileId");
     const url = `${process.env.REACT_APP_API_URL}/physician`;
 
     axios
-      .get(url)
+      .get(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((response) => {
         console.log(response);
         this.setState({
@@ -115,13 +129,15 @@ class EditNote extends Component {
 
   componentDidMount() {
     // here grab token from sessionStorage
-    // const token = sessionStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     // const profileId = sessionStorage.getItem("profileId");
     if (this.props.match.params.noteId) {
       const url = `${process.env.REACT_APP_API_URL}/note/${this.props.match.params.noteId}`;
 
       axios
-        .get(url)
+        .get(url, {
+          headers: { authorization: `Bearer ${token}` }
+        })
         .then((response) => {
           console.log(response);
           this.setState({

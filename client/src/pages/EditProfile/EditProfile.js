@@ -35,25 +35,31 @@ class EditProfile extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state.familyDoctorName);
-
+    const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     const url = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;
     // using input required attributes and default browser field validations
     axios
-      .put(url, {
-        familyDoctor: {
-          name: this.state.familyDoctorName,
-          phone: this.state.familyDoctorPhone
+      .put(
+        url,
+        {
+          familyDoctor: {
+            name: this.state.familyDoctorName,
+            phone: this.state.familyDoctorPhone
+          },
+          emergencyContact: {
+            name: this.state.emergencyContactName,
+            phone: this.state.emergencyContactPhone
+          },
+          pharmacyInfo: {
+            name: this.state.pharmacyInfoName,
+            phone: this.state.pharmacyInfoPhone
+          }
         },
-        emergencyContact: {
-          name: this.state.emergencyContactName,
-          phone: this.state.emergencyContactPhone
-        },
-        pharmacyInfo: {
-          name: this.state.pharmacyInfoName,
-          phone: this.state.pharmacyInfoPhone
+        {
+          headers: { authorization: `Bearer ${token}` }
         }
-      })
+      )
       .then((res) => {
         this.setState({
           isSavedProfile: true

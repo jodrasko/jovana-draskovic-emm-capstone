@@ -33,14 +33,21 @@ class EditPhysician extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     console.log(this.state.name);
+    const token = sessionStorage.getItem("token");
     if (this.state.isAdd) {
       const url = `${process.env.REACT_APP_API_URL}/physician`;
       axios
-        .post(url, {
-          name: this.state.name,
-          phone: this.state.phone,
-          specialty: this.state.specialty
-        })
+        .post(
+          url,
+          {
+            name: this.state.name,
+            phone: this.state.phone,
+            specialty: this.state.specialty
+          },
+          {
+            headers: { authorization: `Bearer ${token}` }
+          }
+        )
         .then((res) => {
           this.setState({
             isSavedPhysician: true
@@ -54,11 +61,17 @@ class EditPhysician extends Component {
       const url = `${process.env.REACT_APP_API_URL}/physician/${this.props.match.params.physicianId}`;
       // using input required attributes and default browser field validations
       axios
-        .put(url, {
-          name: this.state.name,
-          phone: this.state.phone,
-          specialty: this.state.specialty
-        })
+        .put(
+          url,
+          {
+            name: this.state.name,
+            phone: this.state.phone,
+            specialty: this.state.specialty
+          },
+          {
+            headers: { authorization: `Bearer ${token}` }
+          }
+        )
         .then((res) => {
           this.setState({
             isSavedPhysician: true
@@ -74,13 +87,15 @@ class EditPhysician extends Component {
 
   componentDidMount() {
     // here grab token from sessionStorage
-    // const token = sessionStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     // const profileId = sessionStorage.getItem("profileId");
     if (this.props.match.params.physicianId) {
       const url = `${process.env.REACT_APP_API_URL}/physician/${this.props.match.params.physicianId}`;
 
       axios
-        .get(url)
+        .get(url, {
+          headers: { authorization: `Bearer ${token}` }
+        })
         .then((response) => {
           console.log(response);
           this.setState({

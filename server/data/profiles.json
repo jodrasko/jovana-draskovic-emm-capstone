@@ -2,7 +2,7 @@
   {
     "profileId": "10",
     "username": "a@b.com",
-    "password": "123",
+    "password": "$2b$08$LHXoAyF9Ioxp8T7s3zJLjeS7VazCIrVuAQ5HXullDVbS7XyILbflq",
     "preferredName": "Arnold",
     "familyDoctor": {
       "name": "qw3",
@@ -20,7 +20,7 @@
   {
     "profileId": "11",
     "username": "c@d.com",
-    "password": "456",
+    "password": "$2b$08$b6WEriqUNtD1Ct1c/DDlhOQdhkp2Mkg//Eo8vMsXmJnDrXNGEMGNe",
     "preferredName": "John",
     "familyDoctor": {
       "name": "Dr. Douglas Choo",
@@ -38,7 +38,7 @@
   {
     "profileId": "12",
     "username": "e@f.com",
-    "password": "789",
+    "password": "$2b$08$DqyZqN2WblXoGwdRWKe2GeOjC8PhmX/7hlurhn1NUzW4svKZOzRCy",
     "preferredName": "Veronica",
     "familyDoctor": {
       "name": "Dr. Lora Anderson",
@@ -54,54 +54,12 @@
     }
   },
   {
-    "profileId": "68cc0a81-2896-41c6-a6eb-e1aa2fa8347c",
-    "username": "lala",
-    "preferredName": "lala",
-    "password": "12"
-  },
-  {
-    "profileId": "68cc0a81-2896-41c6-a6eb-e1aa2fa8347c",
-    "username": "lala",
-    "password": "12",
-    "preferredName": "lala",
-    "familyDoctor": {
-      "name": "Dr. Lora Boo",
-      "phone": "6047772555"
-    },
-    "emergencyContact": {
-      "name": "Mark Apple",
-      "phone": "6041225559"
-    },
-    "pharmacyInfo": {
-      "name": "London Drugs Pharmacy",
-      "phone": "6046607700"
-    }
-  },
-  {
-    "profileId": "8b4abb3e-b9e4-4b51-b71c-f0b9fdcb3e65",
-    "username": "loo",
-    "password": "123",
-    "preferredName": "loo",
-    "familyDoctor": {
-      "name": "Dr. Dan Boo",
-      "phone": "6049992555"
-    },
-    "emergencyContact": {
-      "name": "Zoran Apple",
-      "phone": "6041235559"
-    },
-    "pharmacyInfo": {
-      "name": "Apple Pharmacy",
-      "phone": "6045557700"
-    }
-  },
-  {
     "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
     "username": "Ana123",
-    "password": "123",
+    "password": "$2b$08$4ai1eBElnURFv.qcO83jluyPtDPBZCnnJ52rPuaYQKuG/rRnD7352",
     "preferredName": "Ana",
     "familyDoctor": {
-      "name": "Dr. John Boo",
+      "name": "Dr. John Boo5",
       "phone": "604-111-1112"
     },
     "emergencyContact": {
@@ -114,21 +72,9 @@
     }
   },
   {
-    "profileId": "ae26bd03-65b3-422e-8f28-590e16ef1d91",
-    "username": "John2",
-    "preferredName": "John",
-    "password": "123"
-  },
-  {
-    "profileId": "1436b01e-7e89-4d3f-a48d-dd5f7e9928fd",
-    "username": "Zoka1",
-    "preferredName": "Zoran",
-    "password": "123"
-  },
-  {
-    "profileId": "4267dfea-0bcc-4dc7-8018-30006e9d7f8f",
-    "username": "Lara1",
-    "preferredName": "Lara",
-    "password": "123"
+    "profileId": "42d45028-778c-477f-92a3-c1d352af5730",
+    "username": "Z1",
+    "preferredName": "Z1",
+    "password": "$2b$08$oKFmfHGcYKvcnxbZjfjiIuZYFaqUOkkXUuZAMrY40APjK6Tu5hSpO"
   }
 ]

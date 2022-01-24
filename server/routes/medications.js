@@ -39,7 +39,7 @@ medicationsRouter.get("/:medicationId", (req, res) => {
 //create medication information
 medicationsRouter.post("/", (req, res) => {
   const medicationsData = readData();
-  console.log("medication data=", req.body);
+  //console.log("medication data=", req.body);
   // Validate request details
   if (
     !req.body ||
@@ -108,7 +108,7 @@ medicationsRouter.put("/:medicationId", (req, res) => {
     refillExpireDate: refillExpireDate
   };
 
-  console.log("update meds=", updatedMedication);
+  //console.log("update meds=", updatedMedication);
 
   medicationsData.splice(index, 1, updatedMedication);
   writeData(medicationsData);

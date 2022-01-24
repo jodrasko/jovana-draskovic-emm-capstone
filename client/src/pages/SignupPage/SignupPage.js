@@ -12,7 +12,7 @@ const signupUrl = `${process.env.REACT_APP_API_URL}/signup`;
 class SignupPage extends Component {
   state = {
     isSignedUp: false,
-    isLoginError: false,
+    isSignupError: false,
     errorMessage: ""
   };
 
@@ -26,20 +26,37 @@ class SignupPage extends Component {
       })
       .then((response) => {
         console.log(response);
-        this.setState({
-          isSignedUp: true
-        });
+        if (response.data.error) {
+          this.setState({
+            isSignupError: true,
+            errorMessage: response.data.error.message
+          });
+        } else {
+          this.setState({
+            isSignedUp: true
+          });
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log("err=", err);
+        this.setState({
+          isSignupError: true,
+          errorMessage: err.response.data.message
+        });
+      });
   };
 
   renderSignUp() {
+    const { isSignupError, errorMessage } = this.state;
     return (
       <>
         <CustomHeader />
         <Card>
           <div>
             <h1 className="signup__heading">Sign Up</h1>
+            {isSignupError && (
+              <label style={{ color: "red" }}>{errorMessage}</label>
+            )}
             <form
               ref={(form) => (this.signUpForm = form)}
               onSubmit={this.signup}

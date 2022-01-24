@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Component } from "react";
-import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import CustomHeader from "../../components/CustomHeader/CustomHeader";
 import Footer from "../../components/Footer/Footer";
@@ -44,7 +43,11 @@ class LoginPage extends Component {
         }
       })
       .catch((err) => {
-        console.log(err);
+        console.log("err=", err);
+        this.setState({
+          isLoginError: true,
+          errorMessage: err.response.data.message
+        });
       });
   };
 

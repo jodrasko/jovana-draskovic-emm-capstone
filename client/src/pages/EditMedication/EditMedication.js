@@ -48,17 +48,24 @@ class EditMedication extends Component {
     e.preventDefault();
     const d = this.parseDate(this.state.refillExpireDate);
     console.log(this.state.name);
+    const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     if (this.state.isAdd) {
       const url = `${process.env.REACT_APP_API_URL}/medication`;
       axios
-        .post(url, {
-          name: this.state.name,
-          dosage: this.state.dosage,
-          refillExpireDate: d.getTime(),
-          physicianId: this.state.physicianId,
-          profileId: profileId
-        })
+        .post(
+          url,
+          {
+            name: this.state.name,
+            dosage: this.state.dosage,
+            refillExpireDate: d.getTime(),
+            physicianId: this.state.physicianId,
+            profileId: profileId
+          },
+          {
+            headers: { authorization: `Bearer ${token}` }
+          }
+        )
         .then((res) => {
           this.setState({
             isSavedMedication: true
@@ -72,13 +79,19 @@ class EditMedication extends Component {
       const url = `${process.env.REACT_APP_API_URL}/medication/${this.props.match.params.medicationId}`;
       // using input required attributes and default browser field validations
       axios
-        .put(url, {
-          name: this.state.name,
-          dosage: this.state.dosage,
-          refillExpireDate: d.getTime(),
-          physicianId: this.state.physicianId,
-          profileId: profileId
-        })
+        .put(
+          url,
+          {
+            name: this.state.name,
+            dosage: this.state.dosage,
+            refillExpireDate: d.getTime(),
+            physicianId: this.state.physicianId,
+            profileId: profileId
+          },
+          {
+            headers: { authorization: `Bearer ${token}` }
+          }
+        )
         .then((res) => {
           this.setState({
             isSavedMedication: true
@@ -94,11 +107,12 @@ class EditMedication extends Component {
 
   getAllPhysicians() {
     const token = sessionStorage.getItem("token");
-    const profileId = sessionStorage.getItem("profileId");
     const url = `${process.env.REACT_APP_API_URL}/physician`;
 
     axios
-      .get(url)
+      .get(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((response) => {
         console.log(response);
         this.setState({
@@ -111,13 +125,15 @@ class EditMedication extends Component {
 
   componentDidMount() {
     // here grab token from sessionStorage
-    // const token = sessionStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     // const profileId = sessionStorage.getItem("profileId");
     if (this.props.match.params.medicationId) {
       const url = `${process.env.REACT_APP_API_URL}/medication/${this.props.match.params.medicationId}`;
 
       axios
-        .get(url)
+        .get(url, {
+          headers: { authorization: `Bearer ${token}` }
+        })
         .then((response) => {
           console.log(response);
           this.setState({

@@ -1,7 +1,4 @@
-import axios from "axios";
 import { Component } from "react";
-import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
 import CustomHeader from "../../components/CustomHeader/CustomHeader";
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card/Card";

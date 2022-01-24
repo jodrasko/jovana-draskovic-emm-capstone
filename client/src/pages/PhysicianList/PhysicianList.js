@@ -4,7 +4,6 @@ import PhysicianItem from "../../components/PhysicianItem/PhysicianItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
 import PageTitle from "../../components/PageTitle/PageTitle";
-import { Link } from "react-router-dom";
 import "../PhysicianList/PhysicianList.scss";
 
 class PhysicianList extends Component {
@@ -17,11 +16,12 @@ class PhysicianList extends Component {
   };
   getAllPhysicians() {
     const token = sessionStorage.getItem("token");
-    const profileId = sessionStorage.getItem("profileId");
     const url = `${process.env.REACT_APP_API_URL}/physician`;
 
     axios
-      .get(url)
+      .get(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((response) => {
         console.log(response);
         this.setState({
@@ -54,13 +54,15 @@ class PhysicianList extends Component {
   };
 
   deletePhysician = () => {
+    const token = sessionStorage.getItem("token");
     const url = `${process.env.REACT_APP_API_URL}/physician/${this.state.physicianId}`;
     axios
-      .delete(url)
+      .delete(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((res) => {
         this.hideModal();
         this.getAllPhysicians();
-        // this.hideModal();
       })
       .catch((err) => console.log(err));
   };

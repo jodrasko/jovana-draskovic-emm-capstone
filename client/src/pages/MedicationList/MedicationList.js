@@ -3,7 +3,6 @@ import { Component } from "react";
 import MedicationItem from "../../components/MedicationItem/MedicationItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
-import { Link } from "react-router-dom";
 import "../MedicationList/MedicationList.scss";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
@@ -22,7 +21,9 @@ class MedicationList extends Component {
     const url = `${process.env.REACT_APP_API_URL}/medication`;
 
     axios
-      .get(url)
+      .get(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((response) => {
         console.log(response);
         const filterMedication = response.data.filter(
@@ -58,9 +59,12 @@ class MedicationList extends Component {
   };
 
   deleteMedication = () => {
+    const token = sessionStorage.getItem("token");
     const url = `${process.env.REACT_APP_API_URL}/medication/${this.state.medicationId}`;
     axios
-      .delete(url)
+      .delete(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((res) => {
         this.hideModal();
         this.getAllMedications();

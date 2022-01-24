@@ -38,5 +38,13 @@
     "name": "Levothyroxine",
     "dosage": "100 mg orally 3 times a day for 10 to 12 days",
     "refillExpireDate": 1652857200000
+  },
+  {
+    "medicationId": "3badbd10-5ccf-4f03-91ac-cc92b5d9cdb4",
+    "physicianId": "3",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "name": "ggdgdfg",
+    "dosage": "dfgdfgfg",
+    "refillExpireDate": 1642579200000
   }
 ]

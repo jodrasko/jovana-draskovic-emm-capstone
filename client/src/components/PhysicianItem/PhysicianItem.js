@@ -4,7 +4,6 @@ import Card from "../Card/Card";
 import "../PhysicianItem/PhysicianItem.scss";
 import deleteIcon from "../../assets/images/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/images/Icons/edit-24px.svg";
-import Button from "../Button/Button";
 
 class PhysicianItem extends Component {
   handleClickEdit = (e) => {

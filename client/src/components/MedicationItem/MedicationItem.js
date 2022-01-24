@@ -14,13 +14,15 @@ class MedicationItem extends Component {
 
   componentDidMount() {
     // here grab token from sessionStorage
-    // const token = sessionStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     // const profileId = sessionStorage.getItem("profileId");
 
     const url = `${process.env.REACT_APP_API_URL}/physician/${this.props.medication.physicianId}`;
 
     axios
-      .get(url)
+      .get(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((response) => {
         console.log(response);
         this.setState({

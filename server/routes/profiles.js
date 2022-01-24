@@ -107,7 +107,7 @@ const profileValidation = (req, res, next) => {
 
 profilesRouter.put("/:profileId", profileValidation, (req, res) => {
   const profilesData = readData();
-  console.log("req body=", req.body);
+  //console.log("req body=", req.body);
   const index = profilesData.findIndex(
     (profile) => profile.profileId === req.params.profileId
   );

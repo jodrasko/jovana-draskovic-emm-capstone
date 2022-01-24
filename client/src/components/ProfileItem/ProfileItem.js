@@ -1,6 +1,5 @@
 import "../ProfileItem/ProfileItem.scss";
 import Card from "../Card/Card";
-import LabelValue from "../LabelValue/LabelValue";
 
 import React from "react";
 

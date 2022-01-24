@@ -1,7 +1,6 @@
 import EmmLogo from "../../assets/images/Icons/logo.svg";
 import "../CustomHeader/CustomHeader.scss";
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class CustomHeader extends Component {
   render() {

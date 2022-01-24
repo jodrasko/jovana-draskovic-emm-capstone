@@ -34,7 +34,7 @@ notesRouter.get("/:noteId", (req, res) => {
 //create note
 notesRouter.post("/", (req, res) => {
   const notesData = readData();
-  console.log("note data=", req.body);
+  //console.log("note data=", req.body);
   // Validate request details
   if (
     !req.body ||

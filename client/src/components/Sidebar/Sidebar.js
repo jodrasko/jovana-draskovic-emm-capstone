@@ -25,6 +25,17 @@ class Sidebar extends Component {
     }
   }
 
+  handleClickLogout = (e) => {
+    e.preventDefault();
+    console.log("handleClickLogout");
+    this.toggleHide();
+    sessionStorage.setItem("token", "");
+    sessionStorage.setItem("profileId", "");
+    this.setState((prevState) => ({
+      isRedirectToProfile: true
+    }));
+  };
+
   handleClick = (e) => {
     e.preventDefault();
     console.log("handleClick");
@@ -53,7 +64,7 @@ class Sidebar extends Component {
     console.log("expand", this.state.expand);
     console.log("isRedirectToProfile", this.state.isRedirectToProfile);
     if (this.state.isRedirectToProfile) {
-      return <Redirect to="/profile" />;
+      return <Redirect to="/" />;
     }
     return (
       <>
@@ -119,12 +130,15 @@ class Sidebar extends Component {
                 </Link>
               </li>
               <li className="sidebar-box__item">
-                <Link to="/" className="sidebar-box__link">
+                <Link
+                  to="/"
+                  className="sidebar-box__link"
+                  onClick={this.handleClickLogout}
+                >
                   <img
                     src={LogoutIcon}
                     className="sidebar-box__symbol"
                     alt="logout icon"
-                    onClick={this.handleClick}
                   />
                   <span className="sidebar-box__menu-item">Logout</span>
                 </Link>

@@ -3,7 +3,6 @@ import { Component } from "react";
 import NoteItem from "../../components/NoteItem/NoteItem";
 import DeleteModal from "../../components/DeleteModal/DeleteModal";
 import SidebarAndCard from "../../layouts/SidebarAndCard/SidebarAndCard";
-import { Link } from "react-router-dom";
 import "../NoteList/NoteList.scss";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
@@ -26,7 +25,9 @@ class NoteList extends Component {
     const url = `${process.env.REACT_APP_API_URL}/note`;
 
     axios
-      .get(url)
+      .get(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((response) => {
         console.log(response);
         const filterNote = response.data.filter(
@@ -63,9 +64,12 @@ class NoteList extends Component {
   };
 
   deleteNote = () => {
+    const token = sessionStorage.getItem("token");
     const url = `${process.env.REACT_APP_API_URL}/note/${this.state.noteId}`;
     axios
-      .delete(url)
+      .delete(url, {
+        headers: { authorization: `Bearer ${token}` }
+      })
       .then((res) => {
         this.hideModal();
         this.getAllNotes();
