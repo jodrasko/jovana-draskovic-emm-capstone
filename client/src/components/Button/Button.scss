@@ -108,16 +108,15 @@
     }
   }
 }
-
-.edit-btn-container {
+.delete-btn-container {
   @include flex(center, center, row);
-  color: $white;
-  background-color: $emm-orange;
+  color: $red;
+  background-color: $white;
 
   height: 2.25rem;
-  width: 2.25rem;
-  border: 1px solid $emm-orange;
-  border-radius: 50%;
+  width: 100%;
+  border: 1px solid red;
+  border-radius: 1.25rem;
   margin: 0;
 
   @include tablet {
@@ -144,18 +143,68 @@
   }
 
   &__text {
-    display: none;
     padding: 0 0 0 0.25rem;
 
     @include tablet {
-      display: flex;
       font-family: "Titillium Web";
       font-size: 1rem;
       line-height: 1.375rem;
     }
 
     @include desktop {
-      display: flex;
+      font-family: "Titillium Web";
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+}
+
+.edit-btn-container {
+  @include flex(center, center, row);
+  color: $white;
+  background-color: $emm-orange;
+
+  height: 2.25rem;
+  //width: 2.25rem;
+  width: 100%;
+  border: 1px solid $emm-orange;
+  border-radius: 1.25rem;
+  margin: 0;
+  padding: 0 1.5rem 0 1.5rem;
+
+  @include tablet {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1.25rem;
+    padding: 0 1.5rem 0 1.5rem;
+  }
+
+  @include desktop {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1.25rem;
+  }
+
+  &:hover {
+    background-color: $emm-brown;
+    border: 1px solid $emm-brown;
+  }
+
+  &:active {
+    background-color: $emm-brown;
+    border: 1px solid $emm-brown;
+  }
+
+  &__text {
+    padding: 0 0 0 0.25rem;
+
+    @include tablet {
+      font-family: "Titillium Web";
+      font-size: 1rem;
+      line-height: 1.375rem;
+    }
+
+    @include desktop {
       font-family: "Titillium Web";
       font-size: 0.875rem;
       line-height: 1.375rem;

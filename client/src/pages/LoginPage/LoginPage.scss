@@ -26,6 +26,30 @@
     }
   }
 
+  &__action {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1rem;
+    width: 100%;
+    @include tablet {
+      width: 50%;
+      //max-width: 200px;
+    }
+  }
+
+  &__action > * {
+    width: 100%;
+    margin: 1rem;
+    @include tablet {
+      width: 30%;
+      //max-width: 200px;
+    }
+
+    @include desktop {
+    }
+  }
+
   &__input {
     color: $instock-black;
     height: 2.25rem;
@@ -33,6 +57,10 @@
     margin-bottom: 1rem;
     @include formfield;
     @include tablet {
+      display: flex;
+      flex-direction: column;
+
+      max-width: 50%;
       height: 2.375rem;
     }
 

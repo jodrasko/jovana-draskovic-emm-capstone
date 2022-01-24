@@ -118,5 +118,17 @@
     "username": "John2",
     "preferredName": "John",
     "password": "123"
+  },
+  {
+    "profileId": "1436b01e-7e89-4d3f-a48d-dd5f7e9928fd",
+    "username": "Zoka1",
+    "preferredName": "Zoran",
+    "password": "123"
+  },
+  {
+    "profileId": "4267dfea-0bcc-4dc7-8018-30006e9d7f8f",
+    "username": "Lara1",
+    "preferredName": "Lara",
+    "password": "123"
   }
 ]

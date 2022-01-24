@@ -86,7 +86,7 @@ class LoginPage extends Component {
                 name="password"
                 required
               />
-              <div className="medication-form__action">
+              <div className="login-form__action">
                 <Button value="Login" type="primary" />
 
                 <Button

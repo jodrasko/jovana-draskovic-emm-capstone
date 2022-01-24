@@ -5,8 +5,42 @@
 
 .physician-item {
   &__heading {
-    @include font-stack-m-h2;
+    @include font-stack-m-h3;
     margin: 0;
     padding-bottom: 0.3rem;
+
+    @include tablet {
+      @include font-stack-tab-desc-h3;
+    }
+  }
+
+  //   &__action {
+  //     display: flex;
+  //     flex-direction: row;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //     // @include tablet {
+  //     //   flex-direction: row;
+  //     // }
+  //     // @include desktop {
+  //     //   flex-direction: row;
+  //     // }
+  //   }
+
+  //   &__action > * {
+  //     width: 40%;
+  //     margin: 0;
+  //   }
+}
+
+.physician-action {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
+
+  &__link {
+    height: 24px;
+    margin-right: 1rem;
   }
 }

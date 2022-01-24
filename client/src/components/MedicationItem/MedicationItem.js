@@ -36,31 +36,42 @@ class MedicationItem extends Component {
     return (
       <>
         <Card>
-          <div>
-            <h3>Physician:</h3> <span>{this.state.physicianName}</span>
-            <h3>Medication:</h3> <span>{this.props.medication.name}</span>
-            <h3>Dosage:</h3> <span>{this.props.medication.dosage}</span>
-            <h3>Refill Expiration Date:</h3>
-            <span className="comment__value">
+          <div className="medication-item">
+            <h3 className="medication-item__heading">Physician:</h3>{" "}
+            <p className="medication-item__value">{this.state.physicianName}</p>
+            <h3 className="medication-item__heading">Medication:</h3>{" "}
+            <p className="medication-item__value">
+              {this.props.medication.name}
+            </p>
+            <h3 className="medication-item__heading">Dosage:</h3>{" "}
+            <p className="medication-item__value">
+              {this.props.medication.dosage}
+            </p>
+            <h3 className="medication-item__heading">
+              Refill Expiration Date:
+            </h3>
+            <p className="medication-item__value">
               {getFormattedDate(
                 new Date(this.props.medication.refillExpireDate)
               )}
-            </span>
+            </p>
           </div>
-          <Link to={`/edit-medication/${this.props.medication.medicationId}`}>
-            <img className="warehouse__icon" src={editIcon} alt="edit icon" />
-          </Link>
-          <img
-            className="warehouse__icon"
-            src={deleteIcon}
-            alt="delete icon"
-            onClick={() =>
-              this.props.onClick(
-                this.props.medication.medicationId,
-                this.props.medication.name
-              )
-            }
-          />
+
+          <div className="medication-action">
+            <Link to={`/edit-medication/${this.props.medication.medicationId}`}>
+              <img src={editIcon} alt="edit icon" />
+            </Link>
+            <img
+              src={deleteIcon}
+              alt="delete icon"
+              onClick={() =>
+                this.props.onClick(
+                  this.props.medication.medicationId,
+                  this.props.medication.name
+                )
+              }
+            />
+          </div>
         </Card>
       </>
     );

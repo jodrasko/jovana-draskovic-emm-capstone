@@ -1,0 +1,32 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.medication-item {
+  &__heading {
+    @include font-stack-m-h3;
+    margin: 0;
+    // padding-bottom: 0.3rem;
+
+    @include tablet {
+      @include font-stack-tab-desc-h3;
+    }
+  }
+
+  &__value {
+    margin: 0.5rem 0 1rem 0;
+  }
+}
+
+.medication-action {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1rem;
+
+  &__link {
+    height: 24px;
+    margin-right: 1rem;
+  }
+}

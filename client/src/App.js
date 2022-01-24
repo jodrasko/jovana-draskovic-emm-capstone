@@ -11,6 +11,7 @@ import MedicationList from "./pages/MedicationList/MedicationList";
 import EditMedication from "./pages/EditMedication/EditMedication";
 import NoteList from "./pages/NoteList/NoteList";
 import EditNote from "./pages/EditNote/EditNote";
+import MainPage from "./pages/MainPage/MainPage";
 
 import MainList from "./pages/MainList/MainList";
 
@@ -21,7 +22,7 @@ class App extends Component {
       <>
         <BrowserRouter>
           <Switch>
-            <Route path="/" exact={true} component={LoginPage} />
+            <Route path="/" exact={true} component={MainPage} />
             <Route path="/login" component={LoginPage} />
             <Route path="/signup" component={SignupPage} />
             <Route path="/profile" component={ProfilePage} />

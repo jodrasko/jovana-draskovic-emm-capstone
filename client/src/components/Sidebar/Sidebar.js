@@ -8,6 +8,7 @@ import MedicationIcon from "../../assets/images/Icons/medicines.svg";
 import ProfileIcon from "../../assets/images/Icons/ui_user_profile.svg";
 import PhysicianIcon from "../../assets/images/Icons/doctor.svg";
 import NoteIcon from "../../assets/images/Icons/notes.svg";
+import LogoutIcon from "../../assets/images/Icons/log-out-2.svg";
 import EmmLogo from "../../assets/images/Icons/logo.svg";
 
 class Sidebar extends Component {
@@ -115,6 +116,17 @@ class Sidebar extends Component {
                     onClick={this.handleClick}
                   />
                   <span className="sidebar-box__menu-item">Notes</span>
+                </Link>
+              </li>
+              <li className="sidebar-box__item">
+                <Link to="/" className="sidebar-box__link">
+                  <img
+                    src={LogoutIcon}
+                    className="sidebar-box__symbol"
+                    alt="logout icon"
+                    onClick={this.handleClick}
+                  />
+                  <span className="sidebar-box__menu-item">Logout</span>
                 </Link>
               </li>
             </ul>

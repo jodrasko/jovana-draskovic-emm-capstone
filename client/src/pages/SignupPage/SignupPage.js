@@ -71,7 +71,9 @@ class SignupPage extends Component {
                 name="password"
                 required
               />
-              <Button value="Sign Up" type="primary" />
+              <div className="signup-form__action">
+                <Button value="Sign Up" type="primary" />
+              </div>
             </form>
           </div>
         </Card>
@@ -82,7 +84,7 @@ class SignupPage extends Component {
 
   render() {
     if (this.state.isSignedUp) {
-      return <Redirect to="/" />;
+      return <Redirect to="/login" />;
     }
     return this.renderSignUp();
   }

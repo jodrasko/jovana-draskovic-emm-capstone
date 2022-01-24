@@ -36,30 +36,38 @@ class NoteItem extends Component {
     return (
       <>
         <Card>
-          <div>
-            <h3>Physician:</h3> <span>{this.state.physicianName}</span>
-            <h3>Complaint:</h3> <span>{this.props.note.remark.complaint}</span>
-            <h3>Consult:</h3> <span>{this.props.note.remark.consult}</span>
-            <h3>Appointment Date:</h3>
-            <span className="comment__value">
+          <div className="note-item">
+            <h3 className="note-item__heading">Physician:</h3>{" "}
+            <p className="note-item__value">{this.state.physicianName}</p>
+            <h3 className="note-item__heading">Complaint:</h3>{" "}
+            <p className="note-item__value">
+              {this.props.note.remark.complaint}
+            </p>
+            <h3 className="note-item__heading">Consult:</h3>{" "}
+            <p className="note-item__value">{this.props.note.remark.consult}</p>
+            <h3 className="note-item__heading">Appointment Date:</h3>
+            <p className="note-item__value">
               {getFormattedDate(new Date(this.props.note.date))}
-            </span>
+            </p>
           </div>
-          <Link to={`/edit-note/${this.props.note.noteId}`}>
-            <img className="warehouse__icon" src={editIcon} alt="edit icon" />
-          </Link>
-          <img
-            className="warehouse__icon"
-            src={deleteIcon}
-            alt="delete icon"
-            onClick={() =>
-              this.props.onClick(
-                this.props.note.noteId,
-                this.state.physicianName,
-                this.props.note.remark
-              )
-            }
-          />
+
+          <div className="note-action">
+            <Link to={`/edit-note/${this.props.note.noteId}`}>
+              <img className="warehouse__icon" src={editIcon} alt="edit icon" />
+            </Link>
+            <img
+              className="warehouse__icon"
+              src={deleteIcon}
+              alt="delete icon"
+              onClick={() =>
+                this.props.onClick(
+                  this.props.note.noteId,
+                  this.state.physicianName,
+                  this.props.note.remark
+                )
+              }
+            />
+          </div>
         </Card>
       </>
     );
