@@ -44,9 +44,17 @@ class LoginPage extends Component {
       })
       .catch((err) => {
         console.log("err=", err);
+        let message = "";
+        if (err.response && err.response.data) {
+          console.log("err.response.data=", err.response.data);
+          message = err.response.data.error;
+        } else {
+          console.log("err.message=", err.message);
+          message = err.message;
+        }
         this.setState({
           isLoginError: true,
-          errorMessage: err.response.data.message
+          errorMessage: message
         });
       });
   };
@@ -64,9 +72,7 @@ class LoginPage extends Component {
         <Card>
           <div>
             <h1 className="login__heading">Login</h1>
-            {isLoginError && (
-              <label style={{ color: "red" }}>{errorMessage}</label>
-            )}
+            {isLoginError && <p className="login__error">{errorMessage}</p>}
             <form
               // ref={(form) => (this.loginForm = form)}
               onSubmit={this.login}
@@ -92,11 +98,11 @@ class LoginPage extends Component {
               <div className="login-form__action">
                 <Button value="Login" type="primary" />
 
-                <Button
+                {/* <Button
                   value="Sign Up"
                   type="secondary"
                   onClick={this.handleClickSignup}
-                />
+                /> */}
               </div>
             </form>
             {/* <Link to="/signup">Sign Up</Link> */}

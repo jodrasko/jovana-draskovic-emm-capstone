@@ -5,6 +5,17 @@ import PropTypes from "prop-types";
 import Button from "../Button/Button";
 
 const DeleteModal = (props) => {
+  function truncateText(s) {
+    const maxLength = 100;
+    let result = "";
+    if (s.length > maxLength) {
+      result = s.substring(0, maxLength) + "...";
+    } else {
+      result = s;
+    }
+    return result;
+  }
+
   return (
     <div className="backdrop">
       <section className="modal">
@@ -21,20 +32,24 @@ const DeleteModal = (props) => {
             {props.remark.consult && (
               <>
                 <h3>Consult:</h3>
-                <p className="modal__message">{props.remark.consult}</p>
+                <p className="modal__message">
+                  {truncateText(props.remark.consult)}
+                </p>
               </>
             )}
             {props.remark.complaint && (
               <>
                 <h3>Complaint:</h3>
-                <p className="modal__message">{props.remark.complaint}</p>
+                <p className="modal__message">
+                  {truncateText(props.remark.complaint)}
+                </p>
               </>
             )}
           </div>
         )}
 
         {props.postMessage && (
-          <p className="modal__message">{props.postMessage}</p>
+          <p className="modal__post-message">{props.postMessage}</p>
         )}
 
         <div className="modal__footer">

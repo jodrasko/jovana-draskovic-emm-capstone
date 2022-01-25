@@ -54,9 +54,7 @@ class SignupPage extends Component {
         <Card>
           <div>
             <h1 className="signup__heading">Sign Up</h1>
-            {isSignupError && (
-              <label style={{ color: "red" }}>{errorMessage}</label>
-            )}
+            {isSignupError && <p className="signup__error">{errorMessage}</p>}
             <form
               ref={(form) => (this.signUpForm = form)}
               onSubmit={this.signup}

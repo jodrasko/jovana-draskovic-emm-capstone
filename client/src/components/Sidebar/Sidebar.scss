@@ -146,6 +146,10 @@ li {
       background-color: $white;
       border: 5px solid $white;
       border-radius: 1.25rem;
+
+      @include tablet {
+        padding: 0 1rem 0 1rem;
+      }
     }
 
     // &:first-child {

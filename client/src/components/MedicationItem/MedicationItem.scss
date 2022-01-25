@@ -4,6 +4,16 @@
 @use "../../styles/partials/colors" as *;
 
 .medication-item {
+  @include tablet {
+    min-width: 210px;
+    max-width: 210px;
+  }
+
+  @include desktop {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
   &__heading {
     @include font-stack-m-h3;
     margin: 0;

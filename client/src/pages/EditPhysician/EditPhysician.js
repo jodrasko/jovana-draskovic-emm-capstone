@@ -146,7 +146,6 @@ class EditPhysician extends Component {
                   onChange={this.handleChange}
                   required
                 />
-                <br></br>
                 <label htmlFor="phone" className="physician-form__label">
                   Phone Number:
                 </label>

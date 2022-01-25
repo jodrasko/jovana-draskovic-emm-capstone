@@ -198,7 +198,6 @@ class EditNote extends Component {
                     );
                   })}
                 </select>
-                <br></br>
                 <label htmlFor="appointmentDate" className="note-form__label">
                   Appointment Date:
                 </label>{" "}

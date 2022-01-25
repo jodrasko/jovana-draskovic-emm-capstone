@@ -39,11 +39,13 @@ class NoteItem extends Component {
             <h3 className="note-item__heading">Physician:</h3>{" "}
             <p className="note-item__value">{this.state.physicianName}</p>
             <h3 className="note-item__heading">Complaint:</h3>{" "}
-            <p className="note-item__value">
+            <p className="note-item__value note-item__remark">
               {this.props.note.remark.complaint}
             </p>
             <h3 className="note-item__heading">Consult:</h3>{" "}
-            <p className="note-item__value">{this.props.note.remark.consult}</p>
+            <p className="note-item__value note-item__remark">
+              {this.props.note.remark.consult}
+            </p>
             <h3 className="note-item__heading">Appointment Date:</h3>
             <p className="note-item__value">
               {getFormattedDate(new Date(this.props.note.date))}

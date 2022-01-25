@@ -117,12 +117,22 @@ app.post("/login", (req, res) => {
 
   const user = profilesData.find((profile) => profile.username === username);
   //console.log("user", user);
+  if (!user) {
+    return res.status(200).json({
+      token: "",
+      error: {
+        message: "Error logging in. Invalid username/password combination."
+      }
+    });
+  }
 
   bcrypt.compare(password, user.password, (err, success) => {
     console.log("error message:", err);
     console.log("success:", success);
     if (err) {
-      return res.status(500).json({ message: "Couldn't decrypt the password" });
+      return res
+        .status(403)
+        .json({ error: { message: "Couldn't decrypt the password" } });
     }
 
     // If password stored in DB doesn't match user login password, throw error

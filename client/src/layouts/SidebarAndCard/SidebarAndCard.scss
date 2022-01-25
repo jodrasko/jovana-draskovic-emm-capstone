@@ -21,6 +21,10 @@
 
   @include tablet {
     width: 100%;
+    margin-bottom: 2rem;
+  }
+  @include desktop {
+    margin-bottom: 2rem;
   }
 }
 

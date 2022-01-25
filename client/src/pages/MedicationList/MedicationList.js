@@ -89,7 +89,7 @@ class MedicationList extends Component {
             title="Medications"
             type="primary"
             onClick={this.handleClick}
-            buttonValue="+ Add Medication"
+            buttonValue="+ Add"
           />
           {/* <h1>Medication List Page</h1>
           <Link to="/add-medication">Add</Link> */}

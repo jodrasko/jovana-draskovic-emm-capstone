@@ -5,8 +5,8 @@
 
 .main {
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
 
   //   &:nth-child(5) {
   //     color: lime;
@@ -20,7 +20,13 @@
   //   }
 
   &__content {
-    flex: 2;
+    // flex: 2;
+    @include desktop {
+      width: 60%;
+      // display: flex;
+      // justify-content: center;
+      //width: 600px;
+    }
   }
 
   &__heading {
@@ -50,6 +56,7 @@
     @include tablet {
       //   justify-content: flex-start;
       align-items: flex-start;
+      flex-direction: row;
     }
   }
 
@@ -62,6 +69,7 @@
     }
 
     @include desktop {
+      width: 7.5rem;
     }
   }
 

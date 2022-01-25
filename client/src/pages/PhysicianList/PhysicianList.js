@@ -83,7 +83,7 @@ class PhysicianList extends Component {
             title="Physicians"
             type="primary"
             onClick={this.handleClick}
-            buttonValue="+ Add Physician"
+            buttonValue="+ Add"
           />
           {/* <h1>Physician List Page</h1>
           <Link to="/add-physician">Add</Link> */}

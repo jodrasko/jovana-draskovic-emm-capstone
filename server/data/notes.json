@@ -48,5 +48,35 @@
       "consult": "Doctor recommended Tylenol for a few days. If nothing improves come back to the office or go to the ER."
     },
     "date": 1644480000000
+  },
+  {
+    "noteId": "f793dc33-dcfc-4995-98b4-cef8f1be0942",
+    "physicianId": "3",
+    "profileId": "a4fd6e94-baf0-492f-8069-84a96b54395f",
+    "remark": {
+      "complaint": "My back has been hurting for 5 days straight. The pain has gotten worse. In most cases you should declare the functions outside of the component function so you declare them only once and always reuse the same reference. When you declare the function inside, every time the component is rendered the function will be defined again.",
+      "consult": "Doctor advised to go get an x-ray done. The componentDidCatch() method works like a JavaScript catch {} block, but for components. Only class components can be error boundaries. In practice, most of the time you’ll want to declare an error boundary component once and use it throughout your application.\n\nNote that error boundaries only catch errors in the components below them in the tree. An error boundary can’t catch an error within itself. If an error boundary fails trying to render the error message, the error will propagate to the closest error boundary above it. This, too, is similar to how catch {} block works in JavaScript."
+    },
+    "date": 1648796400000
+  },
+  {
+    "noteId": "3871e311-24fd-43ea-abad-5770cd5f6102",
+    "physicianId": "3",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "remark": {
+      "complaint": "In most cases you should declare the functions outside of the component function so you declare them only once and always reuse the same reference. When you declare the function inside, every time the component is rendered the function will be defined again.There are cases in which you will need to define a function inside the component to, for example, assign it as an event handler that behaves differently based on the properties of the component. But still you could define the function outside Ball and bind it with the properties, making the code much cleaner and making the update or draw functions reusable.",
+      "consult": "There are cases in which you will need to define a function inside the component to, for example, assign it as an event handler that behaves differently based on the properties of the component. But still you could define the function outside Ball and bind it with the properties, making the code much cleaner and making the update or draw functions reusable."
+    },
+    "date": 1642752000000
+  },
+  {
+    "noteId": "84a3cae4-05ad-40f5-9694-86fe5eab1c47",
+    "physicianId": "1",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "remark": {
+      "complaint": "My shoulders have been hurting for 2 days after my last workout session. ",
+      "consult": "Doctor advised to try tylenol. If the pain doesn't go away to go to get an x-ray done and book an appointment."
+    },
+    "date": 1643270400000
   }
 ]

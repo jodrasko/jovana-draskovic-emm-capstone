@@ -4,6 +4,16 @@
 @use "../../styles/partials/colors" as *;
 
 .note-item {
+  @include tablet {
+    min-width: 210px;
+    max-width: 210px;
+  }
+
+  @include desktop {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
   &__heading {
     @include font-stack-m-h3;
     margin: 0;
@@ -16,6 +26,20 @@
 
   &__value {
     margin: 0.5rem 0 1rem 0;
+  }
+
+  &__remark {
+    overflow-y: auto;
+    height: 64px;
+    border: 1px solid $instock-black;
+    background-color: $white;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+
+    @include tablet {
+      height: 86px;
+      padding: 0.3rem;
+    }
   }
 }
 

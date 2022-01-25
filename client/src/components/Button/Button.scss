@@ -38,7 +38,7 @@
 
     &:hover {
       background-color: $emm-brown;
-      border: 1px solid $emm-brown;
+      //border: 0 solid $emm-brown;
     }
 
     &:active {
@@ -100,7 +100,7 @@
     }
 
     &:hover {
-      background-color: $instock-black;
+      background-color: $emm-brown;
     }
 
     &:active {
@@ -170,7 +170,7 @@
   border: 1px solid $emm-orange;
   border-radius: 1.25rem;
   margin: 0;
-  padding: 0 1.5rem 0 1.5rem;
+  padding: 0 1rem 0 1rem;
 
   @include tablet {
     width: 100%;
@@ -196,6 +196,9 @@
   }
 
   &__text {
+    font-family: "Titillium Web";
+    font-size: 0.813rem;
+    line-height: 1.25rem;
     padding: 0 0 0 0.25rem;
 
     @include tablet {

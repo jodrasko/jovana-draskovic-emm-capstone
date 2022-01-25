@@ -21,7 +21,7 @@ class ProfilePage extends Component {
   componentDidMount() {
     // here grab token from sessionStorage
     const token = sessionStorage.getItem("token");
-    console.log("[ProfilePage] token=", token);
+    // console.log("[ProfilePage] token=", token);
     const profileId = sessionStorage.getItem("profileId");
     const profileUrl = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;
     axios
@@ -61,7 +61,7 @@ class ProfilePage extends Component {
     if (isLogoutError) {
       return (
         <SidebarAndCard>
-          <label style={{ color: "red" }}>{errorMessage}</label>
+          <p className="profile__error">{errorMessage}</p>
         </SidebarAndCard>
       );
     }
@@ -75,9 +75,7 @@ class ProfilePage extends Component {
           onClick={this.handleClick}
           buttonValue=""
         />
-        {isLogoutError && (
-          <label style={{ color: "red" }}>{errorMessage}</label>
-        )}
+        {isLogoutError && <p className="profile__error">{errorMessage}</p>}
         {/* <div></div>
         <h1>{profile.preferredName}'s Profile</h1>
         <Link to="/edit-profile">Edit</Link> */}

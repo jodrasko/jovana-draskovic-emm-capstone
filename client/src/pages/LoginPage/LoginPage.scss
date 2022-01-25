@@ -15,6 +15,10 @@
     color: $emm-new-denim;
     margin: 0 0 1rem 0;
   }
+
+  &__error {
+    color: red;
+  }
 }
 .login-form {
   &__label {
@@ -27,9 +31,9 @@
   }
 
   &__action {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-around;
+    // align-items: center;
     padding-top: 1rem;
     width: 100%;
     @include tablet {
@@ -39,7 +43,7 @@
   }
 
   &__action > * {
-    width: 100%;
+    width: 40%;
     margin: 1rem;
     @include tablet {
       width: 30%;

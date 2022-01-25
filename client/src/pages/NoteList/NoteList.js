@@ -102,7 +102,7 @@ class NoteList extends Component {
             title="Notes"
             type="primary"
             onClick={this.handleClick}
-            buttonValue="+ Add Note"
+            buttonValue="+ Add"
           />
           {/* <h1>Note List Page</h1>
           <Link to="/add-note">Add</Link> */}

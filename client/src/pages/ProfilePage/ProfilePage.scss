@@ -15,6 +15,11 @@
   }
 }
 
+.profile {
+  &__error {
+    color: red;
+  }
+}
 // .left-box {
 //   @include tablet {
 //   }

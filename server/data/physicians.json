@@ -1,26 +1,44 @@
 [
   {
     "physicianId": "2",
-    "name": "Dr. Denzel Windsor7",
-    "phone": "6047126205",
+    "name": "Dr. Denzel Windsor",
+    "phone": "604-712-6205",
     "specialty": "Family Doctor/G.P."
   },
   {
     "physicianId": "3",
     "name": "Dr. Rosalind Wood",
-    "phone": "6041003456",
+    "phone": "604-100-3456",
     "specialty": "Chiropractor"
   },
   {
     "physicianId": "1",
     "name": "Dr. Andrew Seabrook",
-    "phone": "6041116201",
+    "phone": "604-111-6201",
     "specialty": "Endocrinology"
   },
   {
     "physicianId": "4ce17e91-b1de-4ff7-ae40-339b306d5852",
-    "name": "hi",
-    "phone": "434t",
-    "specialty": "ufhow"
+    "name": "Dr. Fun Boo Jango",
+    "phone": "604-000-0005",
+    "specialty": "Otorhinolaryngology"
+  },
+  {
+    "physicianId": "584bdfd0-4c66-4109-90da-237f50e5f987",
+    "name": "Dr. White Rabbit",
+    "phone": "604-222-3456",
+    "specialty": "General Surgery"
+  },
+  {
+    "physicianId": "135d4f13-f278-440b-917a-2490484c51ba",
+    "name": "Dr. Frodo Baggins",
+    "phone": "604-333-4567",
+    "specialty": "Cardiology"
+  },
+  {
+    "physicianId": "40d20b8d-958d-42f8-930e-64ded410ea2e",
+    "name": "Dr. Rubeus Hagrid",
+    "phone": "604-444-2341",
+    "specialty": "Dermatology"
   }
 ]

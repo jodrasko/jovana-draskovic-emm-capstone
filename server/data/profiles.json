@@ -59,7 +59,7 @@
     "password": "$2b$08$4ai1eBElnURFv.qcO83jluyPtDPBZCnnJ52rPuaYQKuG/rRnD7352",
     "preferredName": "Ana",
     "familyDoctor": {
-      "name": "Dr. John Boo5",
+      "name": "Dr. John Boo",
       "phone": "604-111-1112"
     },
     "emergencyContact": {
@@ -76,5 +76,23 @@
     "username": "Z1",
     "preferredName": "Z1",
     "password": "$2b$08$oKFmfHGcYKvcnxbZjfjiIuZYFaqUOkkXUuZAMrY40APjK6Tu5hSpO"
+  },
+  {
+    "profileId": "a4fd6e94-baf0-492f-8069-84a96b54395f",
+    "username": "z2",
+    "password": "$2b$08$9DU9wib7I9QQ7SUXi5CuhujWxck37MD2GkLptS5MT9M3a/bPKadWe",
+    "preferredName": "z2",
+    "familyDoctor": {
+      "name": "Dr. Zoo Peterson",
+      "phone": "604-000-0002"
+    },
+    "emergencyContact": {
+      "name": "Ariel",
+      "phone": "604-000-0003"
+    },
+    "pharmacyInfo": {
+      "name": "Pharmacy Z",
+      "phone": "604-000-0004"
+    }
   }
 ]
