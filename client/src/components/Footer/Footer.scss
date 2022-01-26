@@ -16,17 +16,17 @@
     color: $white;
   }
 
-  @include desktop {
-    // position: absolute;
-    // bottom: 0;
-  }
-
   &__text {
     @include font-stack-m-p3;
     color: $white;
     text-align: center;
     @include tablet {
-      @include font-stack-tab-desc-p3;
+      font-style: normal;
+      font-family: "Avenir-Next";
+      font-size: 0.75rem;
+      font-weight: 400;
+      line-height: 1.125rem;
+      color: $instock-black;
       color: $white;
     }
   }

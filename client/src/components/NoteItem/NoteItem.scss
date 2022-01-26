@@ -17,7 +17,6 @@
   &__heading {
     @include font-stack-m-h3;
     margin: 0;
-    // margin-bottom: 0.3rem;
 
     @include tablet {
       @include font-stack-tab-desc-h3;
@@ -30,7 +29,7 @@
 
   &__remark {
     overflow-y: auto;
-    height: 64px;
+    height: 67px;
     border: 1px solid $instock-black;
     background-color: $white;
     border-radius: 0.5rem;

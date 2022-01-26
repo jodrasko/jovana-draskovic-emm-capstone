@@ -43,7 +43,6 @@ class MedicationList extends Component {
   };
 
   componentDidMount() {
-    // here grab token from sessionStorage
     this.getAllMedications();
   }
 
@@ -68,7 +67,6 @@ class MedicationList extends Component {
       .then((res) => {
         this.hideModal();
         this.getAllMedications();
-        // this.hideModal();
       })
       .catch((err) => console.log(err));
   };
@@ -91,8 +89,7 @@ class MedicationList extends Component {
             onClick={this.handleClick}
             buttonValue="+ Add"
           />
-          {/* <h1>Medication List Page</h1>
-          <Link to="/add-medication">Add</Link> */}
+
           <ul className="medication-list">
             {this.state.medications.map((medication) => {
               return (

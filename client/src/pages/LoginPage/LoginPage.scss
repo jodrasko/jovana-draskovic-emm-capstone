@@ -5,7 +5,6 @@
 
 .login {
   &__heading {
-    // @include font-stack-m-h1;
     font-style: normal;
     font-family: "Serif";
     font-size: 2rem;
@@ -31,14 +30,10 @@
   }
 
   &__action {
-    // display: flex;
-    // justify-content: space-around;
-    // align-items: center;
     padding-top: 1rem;
     width: 100%;
     @include tablet {
       width: 50%;
-      //max-width: 200px;
     }
   }
 
@@ -47,7 +42,6 @@
     margin: 1rem;
     @include tablet {
       width: 30%;
-      //max-width: 200px;
     }
 
     @include desktop {
@@ -88,16 +82,4 @@
       border: 1px solid $instock-indigo;
     }
   }
-
-  //   display: flex;
-  //   flex-direction: column;
-  //   padding: 0;
-  //   margin-top: 0;
-  //   @include tablet {
-  //     flex-direction: row;
-  //   }
-
-  //   @include desktop {
-  //     flex-direction: row;
-  //   }
 }

@@ -38,7 +38,7 @@ class EditProfile extends Component {
     const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     const url = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;
-    // using input required attributes and default browser field validations
+    // using input required attributes and built-in browser field validations
     axios
       .put(
         url,
@@ -73,7 +73,7 @@ class EditProfile extends Component {
   };
 
   componentDidMount() {
-    // here grab token from sessionStorage
+    // take token from sessionStorage
     const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     const profileUrl = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;

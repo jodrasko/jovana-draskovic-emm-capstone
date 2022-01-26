@@ -10,7 +10,6 @@
   padding: 1rem;
 
   &__heading {
-    // @include font-stack-m-h1;
     font-style: normal;
     font-family: "Serif";
     font-size: 2rem;
@@ -19,11 +18,5 @@
 
     color: $emm-new-denim;
     margin: 0;
-  }
-
-  &__button {
-    @include tablet {
-      // width: 100px;
-    }
   }
 }

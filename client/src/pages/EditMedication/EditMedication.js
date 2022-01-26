@@ -77,7 +77,7 @@ class EditMedication extends Component {
         });
     } else {
       const url = `${process.env.REACT_APP_API_URL}/medication/${this.props.match.params.medicationId}`;
-      // using input required attributes and default browser field validations
+      // using input required attributes and built-in browser field validations
       axios
         .put(
           url,
@@ -124,9 +124,8 @@ class EditMedication extends Component {
   }
 
   componentDidMount() {
-    // here grab token from sessionStorage
+    // take token from sessionStorage
     const token = sessionStorage.getItem("token");
-    // const profileId = sessionStorage.getItem("profileId");
     if (this.props.match.params.medicationId) {
       const url = `${process.env.REACT_APP_API_URL}/medication/${this.props.match.params.medicationId}`;
 

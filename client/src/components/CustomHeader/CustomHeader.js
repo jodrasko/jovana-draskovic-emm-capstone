@@ -7,9 +7,7 @@ class CustomHeader extends Component {
     return (
       <header className="custom-header">
         <div className="custom-header__box">
-          {/* <Link to="/" className="custom-header__link"> */}
           <img src={EmmLogo} alt="eMM logo" className="custom-header__logo" />
-          {/* </Link> */}
         </div>
       </header>
     );

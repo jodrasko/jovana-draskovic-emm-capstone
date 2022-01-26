@@ -62,5 +62,21 @@
     "name": "Lexapro",
     "dosage": "once daily, in the morning or evening, with or without food.",
     "refillExpireDate": 1645776000000
+  },
+  {
+    "medicationId": "fcafefdf-b4d0-4b72-b2f1-d14ed56f42af",
+    "physicianId": "3",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "name": "Metformin",
+    "dosage": "Take only once daily with the evening meal.",
+    "refillExpireDate": 1643702400000
+  },
+  {
+    "medicationId": "bcb7975c-709c-42c6-b3f3-175d71344bc5",
+    "physicianId": "3",
+    "profileId": "a7af1fe4-085b-4477-942e-fd03e0ee22ca",
+    "name": "Losartan",
+    "dosage": "Take 50 mg orally once a day.",
+    "refillExpireDate": 1669363200000
   }
 ]

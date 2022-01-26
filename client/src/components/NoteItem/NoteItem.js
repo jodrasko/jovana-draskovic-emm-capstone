@@ -13,7 +13,7 @@ class NoteItem extends Component {
   };
 
   componentDidMount() {
-    // here grab token from sessionStorage
+    // take token from sessionStorage
     const token = sessionStorage.getItem("token");
     const url = `${process.env.REACT_APP_API_URL}/physician/${this.props.note.physicianId}`;
     axios

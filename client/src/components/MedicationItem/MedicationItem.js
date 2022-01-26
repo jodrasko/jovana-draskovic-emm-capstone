@@ -12,10 +12,20 @@ class MedicationItem extends Component {
     physicianName: ""
   };
 
+  isRefillAlert(timestamp) {
+    const expirationDate = new Date(timestamp);
+
+    // add 7 days from current date
+    let date = new Date();
+    date.setDate(date.getDate() + 7);
+
+    const result = expirationDate < date;
+    return result;
+  }
+
   componentDidMount() {
-    // here grab token from sessionStorage
+    // take token from sessionStorage
     const token = sessionStorage.getItem("token");
-    // const profileId = sessionStorage.getItem("profileId");
 
     const url = `${process.env.REACT_APP_API_URL}/physician/${this.props.medication.physicianId}`;
 
@@ -34,7 +44,6 @@ class MedicationItem extends Component {
   }
 
   render() {
-    console.log("medication=", this.props.medication);
     return (
       <>
         <Card>
@@ -52,7 +61,13 @@ class MedicationItem extends Component {
             <h3 className="medication-item__heading">
               Refill Expiration Date:
             </h3>
-            <p className="medication-item__value">
+            <p
+              className={
+                this.isRefillAlert(this.props.medication.refillExpireDate)
+                  ? "medication-item__value medication-item__alert"
+                  : "medication-item__value"
+              }
+            >
               {getFormattedDate(
                 new Date(this.props.medication.refillExpireDate)
               )}

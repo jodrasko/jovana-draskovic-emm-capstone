@@ -9,7 +9,6 @@ const PageTitle = (props) => {
       <h1 className="page-title-container__heading">{props.title}</h1>
       {props.type ? (
         <div className="page-title-container__button">
-          {/* <Link to="/edit-profile">Edit</Link> */}
           {props.type === "edit" ? (
             <Button type="edit" value="Edit" onClick={props.onClick} />
           ) : (

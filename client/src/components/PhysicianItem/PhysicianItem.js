@@ -22,29 +22,9 @@ class PhysicianItem extends Component {
             <h3 className="physician-item__heading">
               {this.props.physician.name}
             </h3>
-
-            {/* <p>{this.props.physician.name}</p> */}
-            {/* <h3>Specialty:</h3>  */}
             <p>{this.props.physician.specialty}</p>
-            {/* <h3>Phone Number:</h3>  */}
             <p>{this.props.physician.phone}</p>
           </div>
-
-          {/* <div className="physician-item__action">
-            <Button type="edit" value="Edit" onClick={this.handleClickEdit} />
-
-            <Button
-              type="icon-delete"
-              value=""
-              onClick={() =>
-                this.props.onClick(
-                  this.props.physician.physicianId,
-                  this.props.physician.name
-                )
-              }
-            />
-          </div> */}
-
           <div className="physician-action">
             <Link
               to={`/edit-physician/${this.props.physician.physicianId}`}

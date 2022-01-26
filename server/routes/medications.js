@@ -15,7 +15,7 @@ const writeData = (medicationsData) => {
   );
 };
 
-// full url: /medication/
+// full url: /medication
 medicationsRouter.get("/", (req, res) => {
   const medicationsData = readData();
   res.status(200).json(medicationsData);
@@ -39,7 +39,7 @@ medicationsRouter.get("/:medicationId", (req, res) => {
 //create medication information
 medicationsRouter.post("/", (req, res) => {
   const medicationsData = readData();
-  //console.log("medication data=", req.body);
+
   // Validate request details
   if (
     !req.body ||
@@ -78,7 +78,7 @@ medicationsRouter.put("/:medicationId", (req, res) => {
     (medication) => medication.medicationId === req.params.medicationId
   );
   console.log("index=", index);
-  if (!index) {
+  if (index < 0) {
     return res
       .status(404)
       .send({ message: "Medication Information not found" });
@@ -107,8 +107,6 @@ medicationsRouter.put("/:medicationId", (req, res) => {
     dosage: dosage,
     refillExpireDate: refillExpireDate
   };
-
-  //console.log("update meds=", updatedMedication);
 
   medicationsData.splice(index, 1, updatedMedication);
   writeData(medicationsData);

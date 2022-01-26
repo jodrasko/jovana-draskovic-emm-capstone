@@ -12,7 +12,7 @@ const writeData = (notesData) => {
   fs.writeFileSync("./data/notes.json", JSON.stringify(notesData, null, 2));
 };
 
-// full url: /note/
+// full url: /note
 notesRouter.get("/", (req, res) => {
   const notesData = readData();
   res.status(200).json(notesData);
@@ -34,15 +34,13 @@ notesRouter.get("/:noteId", (req, res) => {
 //create note
 notesRouter.post("/", (req, res) => {
   const notesData = readData();
-  //console.log("note data=", req.body);
+
   // Validate request details
   if (
     !req.body ||
     !req.body.physicianId ||
     !req.body.profileId ||
     !req.body.remark ||
-    // !req.body.remark.complaint ||
-    // !req.body.remark.consult ||
     !req.body.date
   ) {
     // Send back error message
@@ -72,8 +70,8 @@ notesRouter.put("/:noteId", (req, res) => {
   const index = notesData.findIndex(
     (note) => note.noteId === req.params.noteId
   );
-  console.log("index=", index);
-  if (!index) {
+
+  if (index < 0) {
     return res.status(404).send({ message: "Note not found" });
   }
 
@@ -83,8 +81,6 @@ notesRouter.put("/:noteId", (req, res) => {
     !req.body.physicianId ||
     !req.body.profileId ||
     !req.body.remark ||
-    // !req.body.remark.complaint ||
-    // !req.body.remark.consult ||
     !req.body.date
   ) {
     // Send back error message
@@ -100,8 +96,6 @@ notesRouter.put("/:noteId", (req, res) => {
     remark: remark,
     date: date
   };
-
-  console.log("update notes=", updatedNote);
 
   notesData.splice(index, 1, updatedNote);
   writeData(notesData);

@@ -19,9 +19,8 @@ class ProfilePage extends Component {
   };
 
   componentDidMount() {
-    // here grab token from sessionStorage
+    // take token from sessionStorage
     const token = sessionStorage.getItem("token");
-    // console.log("[ProfilePage] token=", token);
     const profileId = sessionStorage.getItem("profileId");
     const profileUrl = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;
     axios
@@ -76,9 +75,6 @@ class ProfilePage extends Component {
           buttonValue=""
         />
         {isLogoutError && <p className="profile__error">{errorMessage}</p>}
-        {/* <div></div>
-        <h1>{profile.preferredName}'s Profile</h1>
-        <Link to="/edit-profile">Edit</Link> */}
 
         <ProfileItem
           heading="Family Doctor"

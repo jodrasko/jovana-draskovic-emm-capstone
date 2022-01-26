@@ -38,7 +38,6 @@ class PhysicianList extends Component {
   };
 
   componentDidMount() {
-    // here grab token from sessionStorage
     this.getAllPhysicians();
   }
 
@@ -85,8 +84,7 @@ class PhysicianList extends Component {
             onClick={this.handleClick}
             buttonValue="+ Add"
           />
-          {/* <h1>Physician List Page</h1>
-          <Link to="/add-physician">Add</Link> */}
+
           <ul className="physician-list">
             {this.state.physicians.map((physician) => {
               return (

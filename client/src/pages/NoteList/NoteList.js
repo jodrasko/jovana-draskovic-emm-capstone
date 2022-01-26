@@ -47,7 +47,6 @@ class NoteList extends Component {
   };
 
   componentDidMount() {
-    // here grab token from sessionStorage
     this.getAllNotes();
   }
 
@@ -59,6 +58,7 @@ class NoteList extends Component {
       remark
     });
   };
+
   hideModal = () => {
     this.setState({ showModal: false });
   };
@@ -104,8 +104,7 @@ class NoteList extends Component {
             onClick={this.handleClick}
             buttonValue="+ Add"
           />
-          {/* <h1>Note List Page</h1>
-          <Link to="/add-note">Add</Link> */}
+
           <ul className="note-list">
             {this.state.notes.map((note) => {
               return (

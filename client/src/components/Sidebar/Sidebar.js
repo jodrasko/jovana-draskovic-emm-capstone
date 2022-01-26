@@ -19,9 +19,9 @@ class Sidebar extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.isRedirectToProfile !== prevState.isRedirectToProfile) {
-      this.setState((prevState) => ({
+      this.setState({
         isRedirectToProfile: false
-      }));
+      });
     }
   }
 
@@ -31,9 +31,9 @@ class Sidebar extends Component {
     this.toggleHide();
     sessionStorage.setItem("token", "");
     sessionStorage.setItem("profileId", "");
-    this.setState((prevState) => ({
+    this.setState({
       isRedirectToProfile: true
-    }));
+    });
   };
 
   handleClick = (e) => {
@@ -44,16 +44,11 @@ class Sidebar extends Component {
 
   handleLogoClick = (e) => {
     e.preventDefault();
-    // this.props.history.push("/profile");
-    // this.setState({ isRedirectToProfile: true });
-    this.setState((prevState) => ({
+    this.setState({
       isRedirectToProfile: true
-    }));
+    });
   };
 
-  // toggleHide() {
-  //   this.setState({ expand: !this.state.expand });
-  // }
   toggleHide = () => {
     this.setState((prevState) => ({
       expand: !prevState.expand

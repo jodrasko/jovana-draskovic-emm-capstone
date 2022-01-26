@@ -5,7 +5,6 @@
 
 .signup {
   &__heading {
-    // @include font-stack-m-h1;
     font-style: normal;
     font-family: "Serif";
     font-size: 2rem;
@@ -32,10 +31,9 @@
 
   &__action > * {
     width: 40%;
-    //margin: 1rem;
+
     @include tablet {
       width: 7.5rem;
-      //max-width: 200px;
     }
 
     @include desktop {
@@ -74,16 +72,4 @@
       border: 1px solid $instock-indigo;
     }
   }
-
-  //   display: flex;
-  //   flex-direction: column;
-  //   padding: 0;
-  //   margin-top: 0;
-  //   @include tablet {
-  //     flex-direction: row;
-  //   }
-
-  //   @include desktop {
-  //     flex-direction: row;
-  //   }
 }

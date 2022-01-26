@@ -29,9 +29,9 @@ class MainPage extends Component {
 
               <div className="main__details">
                 <p className="main__phrase">
-                  A electronic medical management website to help you store your
-                  medical information, keep track of your medication and
-                  appointments.
+                  An electronic medical management web application that allows
+                  users to store their medical information, keep track of their
+                  medications, physicians, and consult notes.
                 </p>
               </div>
             </div>

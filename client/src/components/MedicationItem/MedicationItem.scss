@@ -17,7 +17,6 @@
   &__heading {
     @include font-stack-m-h3;
     margin: 0;
-    // padding-bottom: 0.3rem;
 
     @include tablet {
       @include font-stack-tab-desc-h3;
@@ -26,6 +25,10 @@
 
   &__value {
     margin: 0.5rem 0 1rem 0;
+  }
+
+  &__alert {
+    color: red;
   }
 }
 

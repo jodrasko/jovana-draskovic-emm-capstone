@@ -11,13 +11,6 @@ const ProfileItem = (props) => {
       <p className="profile-item__value">{props.name}</p>
       <h3 className="profile-item__heading">Phone Number:</h3>{" "}
       <p className="profile-item__value">{props.phone}</p>
-      {/* <LabelValue label="Name:" value={props.name} />
-      {/* <h3>G.P. Name:</h3>{" "} */}
-      {/* <LabelValue label="Phone Number:" value={props.phone} /> */}
-      {/* <h3>Phone Number:</h3>
-    <span>
-      {profile.familyDoctor ? profile.familyDoctor.phone : ""}
-    </span> */}
     </Card>
   );
 };

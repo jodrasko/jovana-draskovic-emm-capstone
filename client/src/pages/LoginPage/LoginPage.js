@@ -73,10 +73,7 @@ class LoginPage extends Component {
           <div>
             <h1 className="login__heading">Login</h1>
             {isLoginError && <p className="login__error">{errorMessage}</p>}
-            <form
-              // ref={(form) => (this.loginForm = form)}
-              onSubmit={this.login}
-            >
+            <form onSubmit={this.login}>
               <label htmlFor="username" className="login-form__label">
                 Username:
               </label>
@@ -97,35 +94,12 @@ class LoginPage extends Component {
               />
               <div className="login-form__action">
                 <Button value="Login" type="primary" />
-
-                {/* <Button
-                  value="Sign Up"
-                  type="secondary"
-                  onClick={this.handleClickSignup}
-                /> */}
               </div>
             </form>
-            {/* <Link to="/signup">Sign Up</Link> */}
           </div>
         </Card>
         <Footer />
       </>
-      // <div>
-      //   <h1>Login</h1>
-      //   {isLoginError && <label style={{ color: "red" }}>{errorMessage}</label>}
-      //   <form ref={(form) => (this.loginForm = form)} onSubmit={this.login}>
-      //     <div className="form-group">
-      //       Username: <input type="text" name="username" />
-      //     </div>
-      //     <div className="form-group">
-      //       Password: <input type="password" name="password" />
-      //     </div>
-      //     <button className="btn btn-primary" type="submit">
-      //       Login
-      //     </button>
-      //   </form>
-      //   <Link to="/signup">Sign Up</Link>
-      // </div>
     );
   };
 

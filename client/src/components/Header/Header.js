@@ -12,13 +12,6 @@ class Header extends Component {
           <Link to="/profile" className="header__link">
             <img src={EmmLogo} alt="eMM logo" className="header__logo" />
           </Link>
-          {/* 
-          <img
-              src={EmmLogo}
-              className="sidebar-box__logo"
-              alt="emm logo"
-              onClick={this.handleClick}
-            /> */}
         </div>
       </header>
     );

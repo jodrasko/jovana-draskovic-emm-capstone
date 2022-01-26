@@ -15,7 +15,7 @@ const writeData = (physiciansData) => {
   );
 };
 
-// full url: /physician/
+// full url: /physician
 physiciansRouter.get("/", (req, res) => {
   const physiciansData = readData();
   res.status(200).json(physiciansData);
@@ -39,7 +39,7 @@ physiciansRouter.get("/:physicianId", (req, res) => {
 //create physican information
 physiciansRouter.post("/", (req, res) => {
   const physiciansData = readData();
-  //console.log("physican data=", req.body);
+
   // Validate request details
   if (!req.body || !req.body.name || !req.body.phone || !req.body.specialty) {
     // Send back error message
