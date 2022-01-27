@@ -21,9 +21,9 @@
   overflow: hidden;
   background-color: white;
   padding: 1.2rem;
-  max-width: 750px;
+  max-width: 47rem;
   position: relative;
-  min-height: 250px;
+  min-height: 16rem;
 
   @include tablet() {
     height: 40%;
@@ -42,11 +42,11 @@
   }
 
   &__message {
-    max-width: 475px;
+    max-width: 30rem;
   }
 
   &__post-message {
-    max-width: 475px;
+    max-width: 30rem;
     margin-top: 1.5rem;
   }
 

@@ -5,13 +5,13 @@
 
 .note-item {
   @include tablet {
-    min-width: 210px;
-    max-width: 210px;
+    min-width: 13rem;
+    max-width: 13rem;
   }
 
   @include desktop {
-    min-width: 280px;
-    max-width: 280px;
+    min-width: 17.5rem;
+    max-width: 17.5rem;
   }
 
   &__heading {
@@ -29,14 +29,14 @@
 
   &__remark {
     overflow-y: auto;
-    height: 67px;
-    border: 1px solid $instock-black;
+    height: 4.188rem;
+    border: 1px solid $emm-black;
     background-color: $white;
     border-radius: 0.5rem;
     padding: 0.3rem;
 
     @include tablet {
-      height: 86px;
+      height: 5.375rem;
       padding: 0.3rem;
     }
   }
@@ -49,7 +49,7 @@
   padding-top: 1rem;
 
   &__link {
-    height: 24px;
+    height: 1.5rem;
     margin-right: 1rem;
   }
 }

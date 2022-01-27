@@ -24,9 +24,11 @@ medications, physicians, and consult notes.
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file for the client and server
+To run this project, you will need to add the following environment variables to your .env file for the client
 
 `REACT_APP_API_URL`
+
+and server
 
 `PORT`
 
@@ -71,6 +73,7 @@ To start client run:
 ### `npm start`
 
 A browser tab will open [http://localhost:3000](http://localhost:3000) with the eMM web application running.
+Click Signup button to create a profile.
 
 ## Lessons Learned
 

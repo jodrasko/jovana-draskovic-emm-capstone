@@ -28,20 +28,16 @@ class ProfilePage extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           isLoading: false,
           profile: response.data
         });
       })
       .catch((err) => {
-        console.log("err=", err);
         let message = "";
         if (err.response && err.response.data) {
-          console.log("err.response.data=", err.response.data);
           message = err.response.data.error;
         } else {
-          console.log("err.message=", err.message);
           message = err.message;
         }
         this.setState({
@@ -53,8 +49,6 @@ class ProfilePage extends Component {
   }
 
   render() {
-    console.log("render");
-
     const { isLoading, isLogoutError, errorMessage, profile } = this.state;
 
     if (isLogoutError) {
@@ -75,24 +69,27 @@ class ProfilePage extends Component {
           buttonValue=""
         />
         {isLogoutError && <p className="profile__error">{errorMessage}</p>}
+        <div className="profile-list">
+          <ProfileItem
+            heading="Family Doctor"
+            name={profile.familyDoctor ? profile.familyDoctor.name : ""}
+            phone={profile.familyDoctor ? profile.familyDoctor.phone : ""}
+          />
 
-        <ProfileItem
-          heading="Family Doctor"
-          name={profile.familyDoctor ? profile.familyDoctor.name : ""}
-          phone={profile.familyDoctor ? profile.familyDoctor.phone : ""}
-        />
+          <ProfileItem
+            heading="Emergency Contact"
+            name={profile.emergencyContact ? profile.emergencyContact.name : ""}
+            phone={
+              profile.emergencyContact ? profile.emergencyContact.phone : ""
+            }
+          />
 
-        <ProfileItem
-          heading="Emergency Contact"
-          name={profile.emergencyContact ? profile.emergencyContact.name : ""}
-          phone={profile.emergencyContact ? profile.emergencyContact.phone : ""}
-        />
-
-        <ProfileItem
-          heading="Pharmacy Information"
-          name={profile.pharmacyInfo ? profile.pharmacyInfo.name : ""}
-          phone={profile.pharmacyInfo ? profile.pharmacyInfo.phone : ""}
-        />
+          <ProfileItem
+            heading="Pharmacy Information"
+            name={profile.pharmacyInfo ? profile.pharmacyInfo.name : ""}
+            phone={profile.pharmacyInfo ? profile.pharmacyInfo.phone : ""}
+          />
+        </div>
       </SidebarAndCard>
     );
   }

@@ -76,7 +76,7 @@ app.post("/signup", (req, res) => {
     });
   }
 
-  // Encrypt our raw password and store encrypted password along with the user info
+  // Encrypt raw password and store encrypted password along with the user info
   bcrypt.hash(password, SALT_ROUNDS, (err, hashedPassword) => {
     if (err) {
       return res.status(500).json({ message: "Couldn't encrypt the password" });
@@ -113,8 +113,6 @@ app.post("/login", (req, res) => {
   }
 
   bcrypt.compare(password, user.password, (err, success) => {
-    console.log("error message:", err);
-    console.log("success:", success);
     if (err) {
       return res
         .status(403)

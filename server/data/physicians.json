@@ -2,7 +2,7 @@
   {
     "physicianId": "2",
     "name": "Dr. Denzel Windsor",
-    "phone": "604-712-6205",
+    "phone": "604-712-6204",
     "specialty": "Family Doctor/G.P."
   },
   {
@@ -27,18 +27,12 @@
     "physicianId": "584bdfd0-4c66-4109-90da-237f50e5f987",
     "name": "Dr. White Rabbit",
     "phone": "604-222-3456",
-    "specialty": "General Surgery"
+    "specialty": "Oncology"
   },
   {
     "physicianId": "135d4f13-f278-440b-917a-2490484c51ba",
     "name": "Dr. Frodo Baggins",
     "phone": "604-333-4567",
     "specialty": "Cardiology"
-  },
-  {
-    "physicianId": "40d20b8d-958d-42f8-930e-64ded410ea2e",
-    "name": "Dr. Rubeus Hagrid",
-    "phone": "604-444-2342",
-    "specialty": "Dermatology"
   }
 ]

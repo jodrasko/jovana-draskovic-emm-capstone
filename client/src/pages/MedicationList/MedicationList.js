@@ -25,7 +25,6 @@ class MedicationList extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         const filterMedication = response.data.filter(
           (medication) => medication.profileId === profileId
         );

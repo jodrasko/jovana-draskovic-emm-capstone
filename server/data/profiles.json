@@ -94,5 +94,23 @@
       "name": "Pharmacy Z",
       "phone": "604-000-0004"
     }
+  },
+  {
+    "profileId": "4a418078-7585-4cf1-be60-b01db095249d",
+    "username": "jo1",
+    "password": "$2b$08$bAvKnYTSTVMBN7OnGfQ9yepOis9nNb3E6FOComIJgRvQ/bgbjBiaK",
+    "preferredName": "jo1",
+    "familyDoctor": {
+      "name": "Dr. John Boo",
+      "phone": "604-000-0003"
+    },
+    "emergencyContact": {
+      "name": "Amy Boo",
+      "phone": "604-000-0003"
+    },
+    "pharmacyInfo": {
+      "name": "Pharmacy Z",
+      "phone": "604-000-0003"
+    }
   }
 ]

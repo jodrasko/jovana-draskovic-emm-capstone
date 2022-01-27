@@ -25,7 +25,6 @@ class EditMedication extends Component {
   };
 
   handleChange = (e) => {
-    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value // property name, value
     });
@@ -33,7 +32,6 @@ class EditMedication extends Component {
 
   parseDate(dateStr) {
     const arr = dateStr.split("-");
-    console.log("arr=", arr);
 
     const d = new Date(
       parseInt(arr[0]),
@@ -47,7 +45,6 @@ class EditMedication extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const d = this.parseDate(this.state.refillExpireDate);
-    console.log(this.state.name);
     const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     if (this.state.isAdd) {
@@ -114,7 +111,6 @@ class EditMedication extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           isLoading: false,
           physicians: response.data
@@ -134,7 +130,6 @@ class EditMedication extends Component {
           headers: { authorization: `Bearer ${token}` }
         })
         .then((response) => {
-          console.log(response);
           this.setState({
             isLoading: false,
             name: response.data.name,
@@ -159,7 +154,6 @@ class EditMedication extends Component {
 
   render() {
     const { isAdd, isLoading, isSavedMedication } = this.state;
-    console.log("render state=", this.state);
     if (isSavedMedication) {
       return <Redirect to="/medications" />;
     }

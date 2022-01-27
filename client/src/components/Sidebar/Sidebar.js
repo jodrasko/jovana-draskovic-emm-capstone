@@ -8,7 +8,7 @@ import MedicationIcon from "../../assets/images/Icons/medicines.svg";
 import ProfileIcon from "../../assets/images/Icons/ui_user_profile.svg";
 import PhysicianIcon from "../../assets/images/Icons/doctor.svg";
 import NoteIcon from "../../assets/images/Icons/notes.svg";
-import LogoutIcon from "../../assets/images/Icons/log-out-2.svg";
+import LogoutIcon from "../../assets/images/Icons/logout.svg";
 import EmmLogo from "../../assets/images/Icons/logo.svg";
 
 class Sidebar extends Component {
@@ -27,7 +27,6 @@ class Sidebar extends Component {
 
   handleClickLogout = (e) => {
     e.preventDefault();
-    console.log("handleClickLogout");
     this.toggleHide();
     sessionStorage.setItem("token", "");
     sessionStorage.setItem("profileId", "");
@@ -38,7 +37,6 @@ class Sidebar extends Component {
 
   handleClick = (e) => {
     e.preventDefault();
-    console.log("handleClick");
     this.toggleHide();
   };
 
@@ -56,8 +54,6 @@ class Sidebar extends Component {
   };
 
   render() {
-    console.log("expand", this.state.expand);
-    console.log("isRedirectToProfile", this.state.isRedirectToProfile);
     if (this.state.isRedirectToProfile) {
       return <Redirect to="/" />;
     }

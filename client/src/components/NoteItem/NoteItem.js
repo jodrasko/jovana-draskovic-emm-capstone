@@ -21,7 +21,6 @@ class NoteItem extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           isLoading: false,
           physicianName: response.data.name
@@ -31,7 +30,6 @@ class NoteItem extends Component {
   }
 
   render() {
-    console.log("note=", this.props.note);
     return (
       <>
         <Card>

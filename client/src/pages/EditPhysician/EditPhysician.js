@@ -23,7 +23,6 @@ class EditPhysician extends Component {
   };
 
   handleChange = (e) => {
-    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value // property name, value
     });
@@ -32,7 +31,6 @@ class EditPhysician extends Component {
   // submit form
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.name);
     const token = sessionStorage.getItem("token");
     if (this.state.isAdd) {
       const url = `${process.env.REACT_APP_API_URL}/physician`;
@@ -96,7 +94,6 @@ class EditPhysician extends Component {
           headers: { authorization: `Bearer ${token}` }
         })
         .then((response) => {
-          console.log(response);
           this.setState({
             isLoading: false,
             name: response.data.name,
@@ -115,7 +112,6 @@ class EditPhysician extends Component {
 
   render() {
     const { isAdd, isLoading, isSavedPhysician } = this.state;
-    console.log("render state=", this.state);
     if (isSavedPhysician) {
       return <Redirect to="/physicians" />;
     }

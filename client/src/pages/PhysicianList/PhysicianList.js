@@ -23,7 +23,6 @@ class PhysicianList extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           isLoading: false,
           physicians: response.data

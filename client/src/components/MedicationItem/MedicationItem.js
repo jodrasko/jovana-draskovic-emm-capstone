@@ -34,7 +34,6 @@ class MedicationItem extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           isLoading: false,
           physicianName: response.data.name

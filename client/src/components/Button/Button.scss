@@ -48,11 +48,11 @@
   }
 
   &__secondary {
-    color: $instock-black;
+    color: $emm-black;
     background-color: $white;
 
     @include common;
-    border: 1px solid $instock-black;
+    border: 1px solid $emm-black;
 
     @include tablet {
       font-size: 0.875rem;
@@ -81,7 +81,7 @@
 
   &__delete {
     color: $white;
-    background-color: $red;
+    background-color: $emm-red;
 
     @include common;
 
@@ -104,13 +104,13 @@
     }
 
     &:active {
-      background-color: $red;
+      background-color: $emm-red;
     }
   }
 }
 .delete-btn-container {
   @include flex(center, center, row);
-  color: $red;
+  color: $emm-red;
   background-color: $white;
 
   height: 2.25rem;

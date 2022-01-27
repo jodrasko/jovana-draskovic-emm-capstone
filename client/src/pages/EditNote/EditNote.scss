@@ -6,15 +6,15 @@
 @mixin formfieldSelect {
   outline: none;
   border-radius: 1.25rem;
-  border: 1px solid $instock-black;
+  border: 1px solid $emm-black;
   padding: 0.5rem 1rem;
   box-shadow: 0 0 0px $white inset;
   appearance: none;
   @include font-stack-m-p2;
-  color: $instock-black;
+  color: $emm-black;
   @include tablet {
     @include font-stack-tab-desc-p2;
-    color: $instock-black;
+    color: $emm-black;
   }
 }
 
@@ -57,7 +57,7 @@
   }
 
   &__select-option {
-    color: $instock-black;
+    color: $emm-black;
     height: 2.25rem;
     width: 100%;
     margin-bottom: 0.25rem;
@@ -77,12 +77,12 @@
       width: 50%;
     }
     &:focus {
-      border: 1px solid $instock-black;
+      border: 1px solid $emm-black;
     }
   }
 
   &__input {
-    color: $instock-black;
+    color: $emm-black;
     height: 2.25rem;
     width: 100%;
     margin-bottom: 1rem;
@@ -106,15 +106,15 @@
 
     &[type="text"] {
       @include font-stack-m-p2;
-      color: $instock-black;
+      color: $emm-black;
       @include tablet {
         @include font-stack-tab-desc-p2;
-        color: $instock-black;
+        color: $emm-black;
       }
     }
 
     &:focus {
-      border: 1px solid $instock-indigo;
+      border: 1px solid $emm-indigo;
     }
   }
 

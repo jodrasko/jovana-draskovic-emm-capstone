@@ -68,7 +68,6 @@ physiciansRouter.put("/:physicianId", (req, res) => {
   const index = physiciansData.findIndex(
     (physician) => physician.physicianId === req.params.physicianId
   );
-  console.log("index=", index);
   if (index < 0) {
     return res.status(404).send({ message: "Physician Information not found" });
   }

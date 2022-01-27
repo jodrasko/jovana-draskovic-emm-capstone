@@ -3,16 +3,27 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/colors" as *;
 
-.container {
-  display: flex;
-  flex-direction: column;
+.profile-list {
+  min-width: 20rem;
+  max-width: 28rem;
   @include tablet {
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    min-width: 35rem;
+    max-width: 35rem;
   }
 
   @include desktop {
-    flex-direction: row;
+    min-width: 35rem;
+    max-width: 35rem;
   }
+  // @include tablet {
+  //   flex-direction: row;
+  // }
+
+  // @include desktop {
+  //   flex-direction: row;
+  // }
 }
 
 .profile {

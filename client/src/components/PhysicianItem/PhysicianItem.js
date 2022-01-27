@@ -14,7 +14,6 @@ class PhysicianItem extends Component {
   };
 
   render() {
-    console.log("physician=", this.props.physician);
     return (
       <>
         <Card>

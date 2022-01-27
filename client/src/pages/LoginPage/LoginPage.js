@@ -21,14 +21,12 @@ class LoginPage extends Component {
 
   login = (e) => {
     e.preventDefault();
-    console.log(e);
     axios
       .post(loginUrl, {
         username: e.target.username.value,
         password: e.target.password.value
       })
       .then((response) => {
-        console.log(response);
         if (response.data.error) {
           this.setState({
             isLoginError: true,
@@ -43,13 +41,10 @@ class LoginPage extends Component {
         }
       })
       .catch((err) => {
-        console.log("err=", err);
         let message = "";
         if (err.response && err.response.data) {
-          console.log("err.response.data=", err.response.data);
           message = err.response.data.error;
         } else {
-          console.log("err.message=", err.message);
           message = err.message;
         }
         this.setState({
@@ -104,7 +99,6 @@ class LoginPage extends Component {
   };
 
   render() {
-    console.log("render login");
     if (this.state.isLoggedIn) {
       return <Redirect to="/profile" />;
     }

@@ -25,7 +25,6 @@ class SignupPage extends Component {
         password: e.target.password.value
       })
       .then((response) => {
-        console.log(response);
         if (response.data.error) {
           this.setState({
             isSignupError: true,
@@ -38,7 +37,6 @@ class SignupPage extends Component {
         }
       })
       .catch((err) => {
-        console.log("err=", err);
         this.setState({
           isSignupError: true,
           errorMessage: err.response.data.message

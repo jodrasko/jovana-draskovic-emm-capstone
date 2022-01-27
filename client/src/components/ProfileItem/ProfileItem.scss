@@ -4,6 +4,8 @@
 @use "../../styles/partials/colors" as *;
 
 .profile-item {
+  margin: 0;
+
   &__title {
     @include font-stack-m-h2;
     margin: 0;

@@ -78,5 +78,13 @@
     "name": "Losartan",
     "dosage": "Take 50 mg orally once a day.",
     "refillExpireDate": 1669363200000
+  },
+  {
+    "medicationId": "68ba968c-3324-4586-bbb3-0757cca1ccf8",
+    "physicianId": "584bdfd0-4c66-4109-90da-237f50e5f987",
+    "profileId": "4a418078-7585-4cf1-be60-b01db095249d",
+    "name": "Tylenol",
+    "dosage": "1 tablet every 6 hours",
+    "refillExpireDate": 1707206400000
   }
 ]

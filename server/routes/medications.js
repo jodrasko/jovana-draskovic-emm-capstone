@@ -77,7 +77,6 @@ medicationsRouter.put("/:medicationId", (req, res) => {
   const index = medicationsData.findIndex(
     (medication) => medication.medicationId === req.params.medicationId
   );
-  console.log("index=", index);
   if (index < 0) {
     return res
       .status(404)

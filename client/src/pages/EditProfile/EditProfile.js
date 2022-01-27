@@ -25,7 +25,6 @@ class EditProfile extends Component {
   };
 
   handleChange = (e) => {
-    console.log(e.target.name, e.target.value);
     this.setState({
       [e.target.name]: e.target.value // property name, value
     });
@@ -34,7 +33,6 @@ class EditProfile extends Component {
   // submit form
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.familyDoctorName);
     const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     const url = `${process.env.REACT_APP_API_URL}/profile/${profileId}`;
@@ -82,7 +80,6 @@ class EditProfile extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         this.setState({
           isLoading: false,
           familyDoctorName: response.data.familyDoctor
@@ -110,7 +107,6 @@ class EditProfile extends Component {
 
   render() {
     const { isLoading, isSavedProfile } = this.state;
-    console.log("render state=", this.state);
     if (isSavedProfile) {
       return <Redirect to="/profile" />;
     }

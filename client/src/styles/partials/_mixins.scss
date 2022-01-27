@@ -16,14 +16,6 @@
   }
 }
 
-@mixin position($position, $top: 0%, $right: 0%, $bottom: 0%, $left: 0%) {
-  position: $position;
-  top: $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-}
-
 @mixin flex($justify-content, $align-items, $flex-direction) {
   display: flex;
   justify-content: $justify-content;
@@ -34,7 +26,7 @@
 @mixin formfield {
   outline: none;
   border-radius: 1.25rem;
-  border: 1px solid $instock-black;
+  border: 1px solid $emm-black;
   padding: 0.5rem 1rem;
   background-color: $white;
   box-shadow: 0 0 0px 1000px $white inset;

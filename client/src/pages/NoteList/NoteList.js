@@ -29,7 +29,6 @@ class NoteList extends Component {
         headers: { authorization: `Bearer ${token}` }
       })
       .then((response) => {
-        console.log(response);
         const filterNote = response.data.filter(
           (note) => note.profileId === profileId
         );

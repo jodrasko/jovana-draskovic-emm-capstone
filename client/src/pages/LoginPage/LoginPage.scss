@@ -49,7 +49,7 @@
   }
 
   &__input {
-    color: $instock-black;
+    color: $emm-black;
     height: 2.25rem;
     width: 100%;
     margin-bottom: 1rem;
@@ -71,15 +71,15 @@
 
     &[type="text"] {
       @include font-stack-m-p2;
-      color: $instock-black;
+      color: $emm-black;
       @include tablet {
         @include font-stack-tab-desc-p2;
-        color: $instock-black;
+        color: $emm-black;
       }
     }
 
     &:focus {
-      border: 1px solid $instock-indigo;
+      border: 1px solid $emm-indigo;
     }
   }
 }
