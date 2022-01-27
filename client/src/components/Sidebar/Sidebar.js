@@ -62,86 +62,84 @@ class Sidebar extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <>
-        <div className="sidebar-box">
-          <div className="sidebar-box__heading">
-            <img
-              src={EmmLogo}
-              className="sidebar-box__logo"
-              alt="emm logo"
-              onClick={this.handleLogoClick}
-            />
-            <img
-              src={MenuIcon}
-              className="sidebar-box__icon"
-              alt="menu icon"
-              onClick={this.handleClick}
-            />
-          </div>
-          <div className={this.state.expand ? "" : "hide"}>
-            <ul className="sidebar-box__list">
-              <li className="sidebar-box__item">
-                <Link to="/profile" className="sidebar-box__link">
-                  <img
-                    src={ProfileIcon}
-                    className="sidebar-box__symbol"
-                    alt="profile icon"
-                    onClick={this.handleClick}
-                  />
-                  <span className="sidebar-box__menu-item">Profile</span>
-                </Link>
-              </li>
-              <li className="sidebar-box__item">
-                <Link to="/physicians" className="sidebar-box__link">
-                  <img
-                    src={PhysicianIcon}
-                    className="sidebar-box__symbol"
-                    alt="physician icon"
-                    onClick={this.handleClick}
-                  />
-                  <span className="sidebar-box__menu-item">Physicians</span>
-                </Link>
-              </li>
-              <li className="sidebar-box__item">
-                <Link to="/medications" className="sidebar-box__link">
-                  <img
-                    src={MedicationIcon}
-                    className="sidebar-box__symbol"
-                    alt="medicine icon"
-                    onClick={this.handleClick}
-                  />
-                  <span className="sidebar-box__menu-item">Medications</span>
-                </Link>
-              </li>
-              <li className="sidebar-box__item">
-                <Link to="/notes" className="sidebar-box__link">
-                  <img
-                    src={NoteIcon}
-                    className="sidebar-box__symbol"
-                    alt="note icon"
-                    onClick={this.handleClick}
-                  />
-                  <span className="sidebar-box__menu-item">Notes</span>
-                </Link>
-              </li>
-              <li className="sidebar-box__item">
-                <Link
-                  to="/"
-                  className="sidebar-box__link"
-                  onClick={this.handleClickLogout}
-                >
-                  <img
-                    src={LogoutIcon}
-                    className="sidebar-box__symbol"
-                    alt="logout icon"
-                  />
-                  <span className="sidebar-box__menu-item">Logout</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
+      <div className="sidebar-box">
+        <div className="sidebar-box__heading">
+          <img
+            src={EmmLogo}
+            className="sidebar-box__logo"
+            alt="emm logo"
+            onClick={this.handleLogoClick}
+          />
+          <img
+            src={MenuIcon}
+            className="sidebar-box__icon"
+            alt="menu icon"
+            onClick={this.handleClick}
+          />
         </div>
-      </>
+        <div className={this.state.expand ? "" : "hide"}>
+          <ul className="sidebar-box__list">
+            <li className="sidebar-box__item">
+              <Link to="/profile" className="sidebar-box__link">
+                <img
+                  src={ProfileIcon}
+                  className="sidebar-box__symbol"
+                  alt="profile icon"
+                  onClick={this.handleClick}
+                />
+                <span className="sidebar-box__menu-item">Profile</span>
+              </Link>
+            </li>
+            <li className="sidebar-box__item">
+              <Link to="/physicians" className="sidebar-box__link">
+                <img
+                  src={PhysicianIcon}
+                  className="sidebar-box__symbol"
+                  alt="physician icon"
+                  onClick={this.handleClick}
+                />
+                <span className="sidebar-box__menu-item">Physicians</span>
+              </Link>
+            </li>
+            <li className="sidebar-box__item">
+              <Link to="/medications" className="sidebar-box__link">
+                <img
+                  src={MedicationIcon}
+                  className="sidebar-box__symbol"
+                  alt="medicine icon"
+                  onClick={this.handleClick}
+                />
+                <span className="sidebar-box__menu-item">Medications</span>
+              </Link>
+            </li>
+            <li className="sidebar-box__item">
+              <Link to="/notes" className="sidebar-box__link">
+                <img
+                  src={NoteIcon}
+                  className="sidebar-box__symbol"
+                  alt="note icon"
+                  onClick={this.handleClick}
+                />
+                <span className="sidebar-box__menu-item">Notes</span>
+              </Link>
+            </li>
+            <li className="sidebar-box__item">
+              <Link
+                to="/"
+                className="sidebar-box__link"
+                onClick={this.handleClickLogout}
+              >
+                <img
+                  src={LogoutIcon}
+                  className="sidebar-box__symbol"
+                  alt="logout icon"
+                />
+                <span className="sidebar-box__menu-item">Logout</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
     );
   }
 }
