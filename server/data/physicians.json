@@ -1,8 +1,8 @@
 [
   {
     "physicianId": "2",
-    "name": "Dr. Denzel Windsor",
-    "phone": "604-712-6204",
+    "name": "Dr. Denzel Windsor2",
+    "phone": "604-712-6205",
     "specialty": "Family Doctor/G.P."
   },
   {
@@ -34,5 +34,11 @@
     "name": "Dr. Frodo Baggins",
     "phone": "604-333-4567",
     "specialty": "Cardiology"
+  },
+  {
+    "physicianId": "dab29f06-d3c5-417d-bb50-8562019af852",
+    "name": "Dr. Moo",
+    "phone": "6041111111",
+    "specialty": "Neurology"
   }
 ]

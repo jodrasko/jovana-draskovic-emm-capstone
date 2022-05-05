@@ -6,7 +6,7 @@ import SignupPage from "./pages/SignupPage/SignupPage";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import EditProfile from "./pages/EditProfile/EditProfile";
 import PhysicianList from "./pages/PhysicianList/PhysicianList";
-import EditPhysician from "./pages/EditPhysician/EditPhysician";
+import EditPhysician from "./pages/EditPhysician/EditPhysicianOld";
 import MedicationList from "./pages/MedicationList/MedicationList";
 import EditMedication from "./pages/EditMedication/EditMedication";
 import NoteList from "./pages/NoteList/NoteList";
