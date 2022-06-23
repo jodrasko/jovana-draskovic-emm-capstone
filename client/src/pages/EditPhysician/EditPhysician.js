@@ -7,7 +7,7 @@ import Card from "../../components/Card/Card";
 import "./EditPhysician.scss";
 import { useParams, useHistory } from "react-router-dom";
 
-function EditPhysician() {
+const EditPhysician = () => {
   const params = useParams();
   const { physicianId } = params;
   const history = useHistory();
@@ -18,17 +18,17 @@ function EditPhysician() {
   const [isSavedPhysician, setSavedPhysician] = useState(false);
   const [isAdd, setAdd] = useState(false);
 
-  function handleClickCancel(e) {
+  const handleClickCancel = (e) => {
     e.preventDefault();
     history.push("/physicians");
-  }
+  };
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     setName(e.target.value);
-  }
+  };
 
   // submit form
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const token = sessionStorage.getItem("token");
     if (isAdd) {
@@ -68,7 +68,7 @@ function EditPhysician() {
         });
     }
     e.target.reset();
-  }
+  };
 
   useEffect(() => {
     const token = sessionStorage.getItem("token");
@@ -159,6 +159,6 @@ function EditPhysician() {
       </div>
     </SidebarAndCard>
   );
-}
+};
 
 export default EditPhysician;

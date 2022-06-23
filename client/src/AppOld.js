@@ -8,7 +8,7 @@ import EditProfile from "./pages/EditProfile/EditProfile";
 import PhysicianList from "./pages/PhysicianList/PhysicianList";
 import EditPhysician from "./pages/EditPhysician/EditPhysicianOld";
 import MedicationList from "./pages/MedicationList/MedicationList";
-import EditMedication from "./pages/EditMedication/EditMedication";
+import EditMedication from "./pages/EditMedication/EditMedicationOld";
 import NoteList from "./pages/NoteList/NoteList";
 import EditNote from "./pages/EditNote/EditNote";
 import MainPage from "./pages/MainPage/MainPage";

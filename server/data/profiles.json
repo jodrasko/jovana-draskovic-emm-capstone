@@ -59,7 +59,7 @@
     "password": "$2b$08$4ai1eBElnURFv.qcO83jluyPtDPBZCnnJ52rPuaYQKuG/rRnD7352",
     "preferredName": "Ana",
     "familyDoctor": {
-      "name": "Dr. John Boo",
+      "name": "Dr. John Boo2",
       "phone": "604-111-1112"
     },
     "emergencyContact": {
@@ -68,7 +68,7 @@
     },
     "pharmacyInfo": {
       "name": "Pharmacy M",
-      "phone": "604-000-0001"
+      "phone": "604-000-0002"
     }
   },
   {
