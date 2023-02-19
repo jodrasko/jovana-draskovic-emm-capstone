@@ -1,0 +1,28 @@
+/* $mobile-breakpoint: 320px; $tablet-breakpoint: 768px; $desktop-breakpoint: 1280px;
+*/
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+.custom-header {
+  background-color: #1257a5;
+  padding: 0.5rem 0 0.5rem 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .custom-header {
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    border-bottom: 1px solid white;
+  }
+}
+.custom-header__logo {
+  width: 7.5rem;
+  height: 4.375rem;
+}/*# sourceMappingURL=CustomHeader.css.map */

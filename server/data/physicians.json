@@ -40,5 +40,11 @@
     "name": "Dr. Moo",
     "phone": "6041111111",
     "specialty": "Neurology"
+  },
+  {
+    "physicianId": "c9724307-1282-4a0d-83ea-6e17023d96a9",
+    "name": "Dr. John Doe",
+    "phone": "604-000-000",
+    "specialty": "Surgery"
   }
 ]

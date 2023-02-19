@@ -1,0 +1,36 @@
+/* $mobile-breakpoint: 320px; $tablet-breakpoint: 768px; $desktop-breakpoint: 1280px;
+*/
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+.profile-list {
+  min-width: 20rem;
+  max-width: 28rem;
+}
+@media screen and (min-width: 48rem) {
+  .profile-list {
+    display: flex;
+    flex-direction: column;
+    min-width: 35rem;
+    max-width: 35rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .profile-list {
+    min-width: 35rem;
+    max-width: 35rem;
+  }
+}
+
+.profile__error {
+  color: red;
+}/*# sourceMappingURL=ProfilePage.css.map */

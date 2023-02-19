@@ -1,0 +1,51 @@
+/* $mobile-breakpoint: 320px; $tablet-breakpoint: 768px; $desktop-breakpoint: 1280px;
+*/
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+.page-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-card {
+  background-color: white;
+  color: #13182c;
+}
+@media screen and (min-width: 48rem) {
+  .page-card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .page-card {
+    margin-bottom: 2rem;
+  }
+}
+
+.page-middle {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 48rem) {
+  .page-middle {
+    flex-grow: 2;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .page-middle {
+    flex-direction: row;
+  }
+}/*# sourceMappingURL=SidebarAndCard.css.map */

@@ -40,6 +40,8 @@ profilesRouter.get("/", (req, res) => {
 });
 
 profilesRouter.get("/:profileId", (req, res) => {
+  const pId = req.params.profileId;
+  console.log("pId=", pId);
   const profilesData = readData();
 
   const profile = profilesData.find(
@@ -89,6 +91,8 @@ const profileValidation = (req, res, next) => {
 };
 
 profilesRouter.put("/:profileId", profileValidation, (req, res) => {
+  console.log("req.body= ", req.body);
+  console.log("profileid=", req.params.profileId);
   const profilesData = readData();
 
   const index = profilesData.findIndex(

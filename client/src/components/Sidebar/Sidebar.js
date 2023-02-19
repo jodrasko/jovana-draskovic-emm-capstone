@@ -1,5 +1,5 @@
 // import axios from "axios";
-import { Component } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import "./Sidebar.scss";
@@ -11,133 +11,120 @@ import NoteIcon from "../../assets/images/Icons/notes.svg";
 import LogoutIcon from "../../assets/images/Icons/logout.svg";
 import EmmLogo from "../../assets/images/Icons/logo.svg";
 
-class Sidebar extends Component {
-  state = {
-    expand: false,
-    isRedirectToProfile: false
-  };
+const Sidebar = () => {
+  const [expand, setExpand] = useState(false);
+  const [isRedirectToProfile, setIsRedirectToProfile] = useState(false);
 
-  componentDidUpdate(prevProps, prevState) {
-    if (this.state.isRedirectToProfile !== prevState.isRedirectToProfile) {
-      this.setState({
-        isRedirectToProfile: false
-      });
-    }
-  }
-
-  handleClickLogout = (e) => {
+  const handleClickLogout = (e) => {
     e.preventDefault();
-    this.toggleHide();
+    toggleHide();
     sessionStorage.setItem("token", "");
     sessionStorage.setItem("profileId", "");
-    this.setState({
-      isRedirectToProfile: true
-    });
+    setIsRedirectToProfile(true);
   };
 
-  handleClick = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
-    this.toggleHide();
+    toggleHide();
   };
 
-  handleLogoClick = (e) => {
+  const handleLogoClick = (e) => {
     e.preventDefault();
-    this.setState({
-      isRedirectToProfile: true
-    });
+    setIsRedirectToProfile(true);
   };
 
-  toggleHide = () => {
-    this.setState((prevState) => ({
-      expand: !prevState.expand
-    }));
+  const toggleHide = () => {
+    setExpand(!expand);
   };
 
-  render() {
-    if (this.state.isRedirectToProfile) {
-      return <Redirect to="/" />;
-    }
-    return (
-      <div className="sidebar-box">
-        <div className="sidebar-box__heading">
-          <img
-            src={EmmLogo}
-            className="sidebar-box__logo"
-            alt="emm logo"
-            onClick={this.handleLogoClick}
-          />
-          <img
-            src={MenuIcon}
-            className="sidebar-box__icon"
-            alt="menu icon"
-            onClick={this.handleClick}
-          />
-        </div>
-        <div className={this.state.expand ? "" : "hide"}>
-          <ul className="sidebar-box__list">
-            <li className="sidebar-box__item">
-              <Link to="/profile" className="sidebar-box__link">
-                <img
-                  src={ProfileIcon}
-                  className="sidebar-box__symbol"
-                  alt="profile icon"
-                  onClick={this.handleClick}
-                />
-                <span className="sidebar-box__menu-item">Profile</span>
-              </Link>
-            </li>
-            <li className="sidebar-box__item">
-              <Link to="/physicians" className="sidebar-box__link">
-                <img
-                  src={PhysicianIcon}
-                  className="sidebar-box__symbol"
-                  alt="physician icon"
-                  onClick={this.handleClick}
-                />
-                <span className="sidebar-box__menu-item">Physicians</span>
-              </Link>
-            </li>
-            <li className="sidebar-box__item">
-              <Link to="/medications" className="sidebar-box__link">
-                <img
-                  src={MedicationIcon}
-                  className="sidebar-box__symbol"
-                  alt="medicine icon"
-                  onClick={this.handleClick}
-                />
-                <span className="sidebar-box__menu-item">Medications</span>
-              </Link>
-            </li>
-            <li className="sidebar-box__item">
-              <Link to="/notes" className="sidebar-box__link">
-                <img
-                  src={NoteIcon}
-                  className="sidebar-box__symbol"
-                  alt="note icon"
-                  onClick={this.handleClick}
-                />
-                <span className="sidebar-box__menu-item">Notes</span>
-              </Link>
-            </li>
-            <li className="sidebar-box__item">
-              <Link
-                to="/"
-                className="sidebar-box__link"
-                onClick={this.handleClickLogout}
-              >
-                <img
-                  src={LogoutIcon}
-                  className="sidebar-box__symbol"
-                  alt="logout icon"
-                />
-                <span className="sidebar-box__menu-item">Logout</span>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    );
+  useEffect(() => {
+    setIsRedirectToProfile(false);
+  }, [isRedirectToProfile]);
+
+  if (isRedirectToProfile) {
+    return <Redirect to="/" />;
   }
-}
+
+  return (
+    <div className="sidebar-box">
+      <div className="sidebar-box__heading">
+        <img
+          src={EmmLogo}
+          className="sidebar-box__logo"
+          alt="emm logo"
+          onClick={handleLogoClick}
+        />
+        <img
+          src={MenuIcon}
+          className="sidebar-box__icon"
+          alt="menu icon"
+          onClick={handleClick}
+        />
+      </div>
+      <div className={expand ? "" : "hide"}>
+        <ul className="sidebar-box__list">
+          <li className="sidebar-box__item">
+            <Link to="/profile" className="sidebar-box__link">
+              <img
+                src={ProfileIcon}
+                className="sidebar-box__symbol"
+                alt="profile icon"
+                onClick={handleClick}
+              />
+              <span className="sidebar-box__menu-item">Profile</span>
+            </Link>
+          </li>
+          <li className="sidebar-box__item">
+            <Link to="/physicians" className="sidebar-box__link">
+              <img
+                src={PhysicianIcon}
+                className="sidebar-box__symbol"
+                alt="physician icon"
+                onClick={handleClick}
+              />
+              <span className="sidebar-box__menu-item">Physicians</span>
+            </Link>
+          </li>
+          <li className="sidebar-box__item">
+            <Link to="/medications" className="sidebar-box__link">
+              <img
+                src={MedicationIcon}
+                className="sidebar-box__symbol"
+                alt="medicine icon"
+                onClick={handleClick}
+              />
+              <span className="sidebar-box__menu-item">Medications</span>
+            </Link>
+          </li>
+          <li className="sidebar-box__item">
+            <Link to="/notes" className="sidebar-box__link">
+              <img
+                src={NoteIcon}
+                className="sidebar-box__symbol"
+                alt="note icon"
+                onClick={handleClick}
+              />
+              <span className="sidebar-box__menu-item">Notes</span>
+            </Link>
+          </li>
+          <li className="sidebar-box__item">
+            <Link
+              to="/"
+              className="sidebar-box__link"
+              onClick={handleClickLogout}
+            >
+              <img
+                src={LogoutIcon}
+                className="sidebar-box__symbol"
+                alt="logout icon"
+              />
+              <span className="sidebar-box__menu-item">Logout</span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 export default Sidebar;

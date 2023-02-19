@@ -1,6 +1,7 @@
 import axios from "axios";
 import { Component } from "react";
 import { Redirect } from "react-router";
+import { withRouter } from "react-router-dom";
 import CustomHeader from "../../components/CustomHeader/CustomHeader";
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card/Card";
@@ -21,6 +22,7 @@ class LoginPage extends Component {
 
   login = (e) => {
     e.preventDefault();
+    console.log("[LoginPage] login");
     axios
       .post(loginUrl, {
         username: e.target.username.value,
@@ -35,6 +37,10 @@ class LoginPage extends Component {
         } else {
           sessionStorage.setItem("token", response.data.token);
           sessionStorage.setItem("profileId", response.data.profileId);
+          console.log(
+            "[LoginPage] profileId=",
+            sessionStorage.getItem("profileId")
+          );
           this.setState({
             isLoggedIn: true
           });
@@ -99,6 +105,7 @@ class LoginPage extends Component {
   };
 
   render() {
+    console.log("[LoginPage] isLoggedIn=", this.state.isLoggedIn);
     if (this.state.isLoggedIn) {
       return <Redirect to="/profile" />;
     }
@@ -106,4 +113,4 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);

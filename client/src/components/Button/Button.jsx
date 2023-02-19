@@ -1,11 +1,11 @@
 import "../Button/Button.scss";
 
 // Button Component
-function Button(props) {
+const Button = (props) => {
   // The props.type="edit" button is differently implemented.
   // The other buttons are normal HTML buttons.
 
-  function editButton(onClickFn) {
+  const editButton = (onClickFn) => {
     return (
       <div className="edit-btn-container" onClick={onClickFn}>
         <svg
@@ -23,9 +23,9 @@ function Button(props) {
         <span className="edit-btn-container__text">Edit</span>
       </div>
     );
-  }
+  };
 
-  function deleteButton(onClickFn) {
+  const deleteButton = (onClickFn) => {
     return (
       <div className="delete-btn-container" onClick={onClickFn}>
         <svg
@@ -44,15 +44,15 @@ function Button(props) {
         <span className="delete-btn-container__text">Delete</span>
       </div>
     );
-  }
+  };
 
-  function button(p, cssClassName) {
+  const button = (p, cssClassName) => {
     return (
       <button type="submit" className={cssClassName} onClick={p.onClick}>
         <span>{p.value}</span>
       </button>
     );
-  }
+  };
 
   let btnDesign;
   switch (props.type) {
@@ -77,6 +77,6 @@ function Button(props) {
   }
 
   return <>{btnDesign}</>;
-}
+};
 
 export default Button;

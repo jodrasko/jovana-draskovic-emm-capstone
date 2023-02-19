@@ -1,0 +1,232 @@
+/* $mobile-breakpoint: 320px; $tablet-breakpoint: 768px; $desktop-breakpoint: 1280px;
+*/
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+.button__primary {
+  color: white;
+  background-color: #ff8000;
+  font-family: "Avenir-Next";
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: none;
+  padding: 0 1rem;
+  margin: 0;
+}
+@media screen and (min-width: 48rem) {
+  .button__primary {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    height: 2.375rem;
+    padding: 0 1rem 0 1rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .button__primary {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    height: 2.375rem;
+    padding: 0 1rem 0 1rem;
+  }
+}
+.button__primary:hover {
+  background-color: #784d42;
+}
+.button__primary:active {
+  background-color: #784d42;
+  border: 1px solid #784d42;
+}
+.button__secondary {
+  color: #13182c;
+  background-color: white;
+  font-family: "Avenir-Next";
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: none;
+  padding: 0 1rem;
+  margin: 0;
+  border: 1px solid #13182c;
+}
+@media screen and (min-width: 48rem) {
+  .button__secondary {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    height: 2.375rem;
+    padding: 0 1rem 0 1rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .button__secondary {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    height: 2.375rem;
+    padding: 0 1rem 0 1rem;
+  }
+}
+.button__secondary:hover {
+  color: white;
+  border: 1px solid #784d42;
+  background-color: #784d42;
+}
+.button__secondary:active {
+  background-color: white;
+}
+.button__delete {
+  color: white;
+  background-color: #c94515;
+  font-family: "Avenir-Next";
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  border: none;
+  padding: 0 1rem;
+  margin: 0;
+}
+@media screen and (min-width: 48rem) {
+  .button__delete {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    height: 2.375rem;
+    padding: 0 1rem 0 1rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .button__delete {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    height: 2.375rem;
+    padding: 0 1rem 0 1rem;
+  }
+}
+.button__delete:hover {
+  background-color: #784d42;
+}
+.button__delete:active {
+  background-color: #c94515;
+}
+
+.delete-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: #c94515;
+  background-color: white;
+  height: 2.25rem;
+  width: 100%;
+  border: 1px solid red;
+  border-radius: 1.25rem;
+  margin: 0;
+}
+@media screen and (min-width: 48rem) {
+  .delete-btn-container {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1.25rem;
+    padding: 0 1.5rem 0 1.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .delete-btn-container {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1.25rem;
+  }
+}
+.delete-btn-container:hover {
+  background-color: #784d42;
+  border: 1px solid #784d42;
+}
+.delete-btn-container:active {
+  background-color: #784d42;
+  border: 1px solid #784d42;
+}
+.delete-btn-container__text {
+  padding: 0 0 0 0.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .delete-btn-container__text {
+    font-family: "Avenir-Next";
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .delete-btn-container__text {
+    font-family: "Avenir-Next";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+.edit-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: white;
+  background-color: #ff8000;
+  height: 2.25rem;
+  width: 100%;
+  border: 1px solid #ff8000;
+  border-radius: 1.25rem;
+  margin: 0;
+  padding: 0 1rem 0 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .edit-btn-container {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1.25rem;
+    padding: 0 1.5rem 0 1.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .edit-btn-container {
+    width: 100%;
+    height: 2rem;
+    border-radius: 1.25rem;
+  }
+}
+.edit-btn-container:hover {
+  background-color: #784d42;
+  border: 1px solid #784d42;
+}
+.edit-btn-container:active {
+  background-color: #784d42;
+  border: 1px solid #784d42;
+}
+.edit-btn-container__text {
+  font-family: "Avenir-Next";
+  font-size: 0.813rem;
+  line-height: 1.25rem;
+  padding: 0 0 0 0.25rem;
+}
+@media screen and (min-width: 48rem) {
+  .edit-btn-container__text {
+    font-family: "Avenir-Next";
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .edit-btn-container__text {
+    font-family: "Avenir-Next";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}/*# sourceMappingURL=Button.css.map */

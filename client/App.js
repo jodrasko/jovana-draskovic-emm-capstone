@@ -17,55 +17,50 @@ import MainPage from "./pages/MainPage/MainPage";
 // eMM Web Application
 function App() {
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route exact path="/">
-            <MainPage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <Route path="/signup">
-            <SignupPage />
-          </Route>
-          <Route path="/profile">
-            <ProfilePage />
-          </Route>
-          <Route path="/edit-profile">
-            <EditProfile />
-          </Route>
-          <Route path="/physicians">
-            <PhysicianList />
-          </Route>
-          <Route path="/edit-physician/:physicianId">
-            <EditPhysician />
-          </Route>
-          <Route path="/add-physician">
-            <EditPhysician />
-          </Route>
-          <Route path="/medications">
-            <MedicationList />
-          </Route>
-          <Route path="/add-medication">
-            <EditMedication />
-          </Route>
-          <Route path="/edit-medication/:medicationId">
-            <EditMedication />
-          </Route>
+    <Router>
+      {/* <Switch> */}
+      <Route exact path="/">
+        <MainPage />
+      </Route>
+      <Route path="/login" component={LoginPage} />
 
-          <Route path="/notes">
-            <NoteList />
-          </Route>
-          <Route path="/add-note">
-            <EditNote />
-          </Route>
-          <Route path="/edit-note/:noteId">
-            <EditNote />
-          </Route>
-        </Switch>
-      </Router>
-    </>
+      <Route path="/signup">
+        <SignupPage />
+      </Route>
+      <Route path="/profile" component={ProfilePage} />
+
+      <Route path="/edit-profile/:profileId" component={EditProfile} />
+
+      <Route path="/physicians">
+        <PhysicianList />
+      </Route>
+      <Route path="/edit-physician/:physicianId">
+        <EditPhysician />
+      </Route>
+      <Route path="/add-physician">
+        <EditPhysician />
+      </Route>
+      <Route path="/medications">
+        <MedicationList />
+      </Route>
+      <Route path="/add-medication">
+        <EditMedication />
+      </Route>
+      <Route path="/edit-medication/:medicationId">
+        <EditMedication />
+      </Route>
+
+      <Route path="/notes">
+        <NoteList />
+      </Route>
+      <Route path="/add-note">
+        <EditNote />
+      </Route>
+      <Route path="/edit-note/:noteId">
+        <EditNote />
+      </Route>
+      {/* </Switch> */}
+    </Router>
   );
 }
 

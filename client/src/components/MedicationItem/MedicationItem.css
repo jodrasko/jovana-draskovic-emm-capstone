@@ -1,0 +1,62 @@
+/* $mobile-breakpoint: 320px; $tablet-breakpoint: 768px; $desktop-breakpoint: 1280px;
+*/
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir-Next";
+  src: url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff2") format("woff2"), url("../../assets/fonts/avenir-next-ltpro-fonts/AvenirNextLTPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@media screen and (min-width: 48rem) {
+  .medication-item {
+    min-width: 13rem;
+    max-width: 13rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .medication-item {
+    min-width: 17.5rem;
+    max-width: 17.5rem;
+  }
+}
+.medication-item__heading {
+  font-style: normal;
+  font-family: "Avenir-Next";
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: #13182c;
+  margin: 0;
+}
+@media screen and (min-width: 48rem) {
+  .medication-item__heading {
+    font-style: normal;
+    font-family: "Avenir-Next";
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.375rem;
+    color: #13182c;
+  }
+}
+.medication-item__value {
+  margin: 0.5rem 0 1rem 0;
+}
+.medication-item__alert {
+  color: red;
+}
+
+.medication-action {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 1rem;
+}
+.medication-action__link {
+  height: 1.5rem;
+  margin-right: 1rem;
+}/*# sourceMappingURL=MedicationItem.css.map */

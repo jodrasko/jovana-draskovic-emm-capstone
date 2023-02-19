@@ -29,7 +29,7 @@ const EditMedication = () => {
     setName(e.target.value);
   };
 
-  parseDate((dateStr) => {
+  const parseDate = (dateStr) => {
     const arr = dateStr.split("-");
 
     const d = new Date(
@@ -38,12 +38,12 @@ const EditMedication = () => {
       parseInt(arr[2])
     );
     return d;
-  });
+  };
 
   // submit form
   const handleSubmit = (e) => {
     e.preventDefault();
-    const d = this.parseDate(refillExpireDate);
+    const d = parseDate(refillExpireDate);
     const token = sessionStorage.getItem("token");
     const profileId = sessionStorage.getItem("profileId");
     if (isAdd) {
@@ -112,7 +112,7 @@ const EditMedication = () => {
       .catch((err) => console.log(err));
   };
 
-  useEffect = () => {
+  useEffect(() => {
     //     // take token from sessionStorage
     const token = sessionStorage.getItem("token");
     if (medicationId) {
@@ -139,7 +139,7 @@ const EditMedication = () => {
 
     // Read all physicians
     getAllPhysicians();
-  };
+  });
 
   //   componentDidMount() {
 

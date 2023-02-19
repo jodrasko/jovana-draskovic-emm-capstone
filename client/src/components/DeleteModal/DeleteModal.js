@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import Button from "../Button/Button";
 
 const DeleteModal = (props) => {
-  function truncateText(s) {
+  const truncateText = (s) => {
     const maxLength = 100;
     let result = "";
     if (s.length > maxLength) {
@@ -14,7 +14,7 @@ const DeleteModal = (props) => {
       result = s;
     }
     return result;
-  }
+  };
 
   return (
     <div className="backdrop">
